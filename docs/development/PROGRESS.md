@@ -4,7 +4,9 @@
 
 **Owner direction:** `main` has been pushed to the remote. Implement new work on `release/dev`, then use a reviewed pull request from `release/dev` into `main` for promotion. Existing Dependabot pull requests should be retargeted to `release/dev` before resolution.
 
-**In progress:** Updated Dependabot's future target branch and both PR policy jobs for this route. GitHub's connected app returned 403 for PR edits, and the available browser session is signed out, so the nine existing PR bases remain `main` pending repository write access. The existing PR checks reveal that GitHub Dependency Graph is disabled and that Knip treats the retained Lighthouse CLI as unused. A homepage-only Lighthouse command now uses the CLI and passes all three local runs; the source-backed [About plan](PHASE_4_ABOUT_PLAN.md) is prepared.
+**Completed locally:** Updated Dependabot's target branch and PR policy, retargeted all nine existing Dependabot PRs, and applied their changes directly to `release/dev` after Dependabot automatically closed the retargeted PRs. The [resolution record](DEPENDABOT_RESOLUTION.md) maps each old PR to its commit and tests. A homepage-only Lighthouse command uses the retained CLI and passed three local runs. The source-backed [About plan](PHASE_4_ABOUT_PLAN.md) is prepared.
+
+**Remaining:** Push the dependency commits and validate remote CI. The owner chose to enable GitHub Dependency Graph; its disabled state caused the old PR dependency-review checks to fail. The security job remains intact.
 
 ## 2026-10-16 — Full-image homepage hero and local Git setup
 
