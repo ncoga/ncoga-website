@@ -23,6 +23,7 @@
     "test:e2e": "playwright test",
     "test:smoke": "playwright test --project=chromium",
     "test:a11y": "playwright test tests/e2e/accessibility.spec.ts --project=chromium",
+    "quality:lighthouse": "lhci autorun",
     "security:secrets": "secretlint \"**/*\"",
     "security:audit": "node scripts/security-audit.mjs",
     "deps:check": "knip --include files,dependencies",

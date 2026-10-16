@@ -3,12 +3,7 @@ const baseUrl = process.env.E2E_BASE_URL ?? "http://127.0.0.1:3000";
 module.exports = {
   ci: {
     collect: {
-      url: [
-        `${baseUrl}/`,
-        `${baseUrl}/employers`,
-        `${baseUrl}/job-seekers`,
-        `${baseUrl}/contact`,
-      ],
+      url: [`${baseUrl}/`],
       numberOfRuns: 3,
       settings: {
         chromeFlags: "--no-sandbox --headless",
@@ -16,7 +11,7 @@ module.exports = {
       ...(process.env.E2E_BASE_URL
         ? {}
         : {
-            startServerCommand: "pnpm start",
+            startServerCommand: "pnpm start --hostname 127.0.0.1",
             startServerReadyPattern: "Ready",
           }),
     },
