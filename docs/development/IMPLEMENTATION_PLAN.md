@@ -1,13 +1,12 @@
 # Implementation plan — after Phase 0
 
-**Status 2026-10-15:** Phase 0 is documented, the owner approved the Phase 1 direction, and the [Phase 2 shared foundation is closed](PHASE_2_VERIFICATION.md). The [noindex app preview](<../../src/app/(ncoga)/design-system/page.tsx>) renders the intended locally hosted fonts and subtle motifs. Static checks, unit tests, production build, responsive review, keyboard navigation, and focused accessibility checks pass. Phase 3 is next: build and verify one NCOGA homepage slice using sourced content. See [workflow phases](../../.agents/instructions/02-AGENT-WORKFLOW.md).
+**Status 2026-10-16:** Phases 0–2 are documented and the Phase 3 homepage is implemented and verified locally. The owner pushed `main` and created `release/dev`. Continue page implementation on `release/dev`; promote that branch into `main` through a pull request after review. Dependabot should target `release/dev`. See the [homepage verification](PHASE_3_HOMEPAGE_VERIFICATION.md) and [workflow phases](../../.agents/instructions/02-AGENT-WORKFLOW.md).
 
 ## Immediate next steps
 
-1. Prepare a homepage content sheet from the [parent inventory](../content/NCOGA_CONTENT_INVENTORY.md): verify each public claim, navigation label, primary action, destination, and image or editorial fallback.
-2. Confirm whether the local parent logo and any organizational photography are current, approved, and permissioned. Keep the documented type-led treatment until an asset is cleared.
-3. Build the homepage as one Phase 3 slice on the approved design system. Verify its content, metadata, navigation, keyboard flow, responsive layout, and primary actions before expanding to other routes.
-4. Replace the global legacy identity, SEO defaults, sitemap, and route navigation as verified NCOGA pages ship. Keep copied form/storage integrations disconnected from NCOGA data until ownership and privacy decisions are verified.
+1. Retarget existing Dependabot pull requests from `main` to `release/dev`, review their changes and checks, and merge compatible updates there. Keep major updates separate for explicit compatibility testing.
+2. Prepare a source-backed content and action plan for the next parent route, starting with `/about`, and confirm photo rights before using new imagery.
+3. Implement and verify each NCOGA page on `release/dev`, then replace global legacy identity, SEO defaults, sitemap, and route navigation as verified pages ship. Keep copied form/storage integrations disconnected from NCOGA data until ownership and privacy decisions are verified.
 
 ## Dependencies and gates
 

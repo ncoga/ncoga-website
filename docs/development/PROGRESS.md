@@ -1,5 +1,11 @@
 # Project progress
 
+## 2026-10-16 — Release branch and dependency intake
+
+**Owner direction:** `main` has been pushed to the remote. Implement new work on `release/dev`, then use a reviewed pull request from `release/dev` into `main` for promotion. Existing Dependabot pull requests should be retargeted to `release/dev` before resolution.
+
+**In progress:** Updated Dependabot's future target branch and both PR policy jobs for this route. GitHub's connected app returned 403 for PR edits, and the available browser session is signed out, so the nine existing PR bases remain `main` pending repository write access. Dependency review and the next page's source planning can continue locally.
+
 ## 2026-10-16 — Full-image homepage hero and local Git setup
 
 **Completed:** Moved the homepage copy and actions onto a full-width local photograph with a flat, high-contrast green overlay and responsive crop. Documented the approved pattern in [DESIGN.md](../design/DESIGN.md). Initialized a local Git repository on `main`; this does not add a remote or deploy the site. Repository setup and verification are recorded in the [Git readiness note](GIT_READINESS.md).

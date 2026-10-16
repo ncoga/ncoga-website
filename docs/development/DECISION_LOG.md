@@ -1,5 +1,13 @@
 # Decision log
 
+## Release branch workflow — 2026-10-16
+
+**Status:** Owner directed; local workflow configuration updated. Existing remote Dependabot pull requests still need retargeting.
+
+**Decision:** Implement pages and receive dependency updates on `release/dev`. Promote `release/dev` to `main` through a reviewed pull request. The PR policy allows Dependabot only into `release/dev` and allows `main` pull requests only from `release/dev`.
+
+**Reason:** Keep the published branch distinct from active development and dependency intake.
+
 ## Full-image homepage hero — 2026-10-16
 
 **Status:** Implemented locally at the owner's request; verification is recorded in the [Phase 3 record](PHASE_3_HOMEPAGE_VERIFICATION.md).
