@@ -1,12 +1,20 @@
 # Project progress
 
+## 2026-10-16 — Phase 4 About page
+
+**Completed locally:** Replaced the copied `/about` landing page with a source-backed NCOGA page and connected verified About navigation from the homepage and shared NCOGA header. It uses the official mission and vision, labels older council activities as historical, and links to the official YAY page and public email. Removed three orphaned copied components after confirming they had no remaining imports. See the [content plan](PHASE_4_ABOUT_PLAN.md) and [verification record](PHASE_4_ABOUT_VERIFICATION.md).
+
+**Verification:** `pnpm verify` passed, including the production build; 16 focused Chromium checks passed across About, homepage, and foundation routes. Mobile and desktop full-page captures were reviewed. No deployment or other route migration occurred.
+
+**Next:** Continue the first page wave with source-backed YAY and contact routes. Keep all copied routes and integrations isolated until their own migration; replace the legacy sitemap and robots rules before launch.
+
 ## 2026-10-16 — Release branch and dependency intake
 
 **Owner direction:** `main` has been pushed to the remote. Implement new work on `release/dev`, then use a reviewed pull request from `release/dev` into `main` for promotion. Existing Dependabot pull requests should be retargeted to `release/dev` before resolution.
 
 **Completed locally:** Updated Dependabot's target branch and PR policy, retargeted all nine existing Dependabot PRs, and applied their changes directly to `release/dev` after Dependabot automatically closed the retargeted PRs. The [resolution record](DEPENDABOT_RESOLUTION.md) maps each old PR to its commit and tests. A homepage-only Lighthouse command uses the retained CLI and passed three local runs. The source-backed [About plan](PHASE_4_ABOUT_PLAN.md) is prepared.
 
-**Remaining:** Push the dependency commits and validate remote CI. The owner chose to enable GitHub Dependency Graph; its disabled state caused the old PR dependency-review checks to fail. The security job remains intact.
+**Remote verification:** All three GitHub push workflows (CI, Security, Workflow Security) passed for dependency commit `9d92bc3` on `release/dev`. The owner chose to enable GitHub Dependency Graph; its disabled state caused the old PR dependency-review checks to fail. The security job remains intact and needs validation on a future PR after the setting is enabled.
 
 ## 2026-10-16 — Full-image homepage hero and local Git setup
 

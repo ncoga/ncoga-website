@@ -33,7 +33,7 @@ export const foundationFooterGroups = [
 
 /** Verified against ncoga.com on 2026-10-15; see PHASE_3_HOMEPAGE_PLAN.md. */
 export const homepageNavigation = [
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
   { label: "Mission & vision", href: "/#mission" },
   { label: "NCOGA YAY", href: "/#yay" },
   { label: "Contact", href: "/#contact" },
@@ -43,7 +43,7 @@ export const homepageFooterGroups = [
   {
     title: "On this page",
     links: [
-      { label: "About NCOGA", href: "/#about" },
+      { label: "About NCOGA", href: "/about" },
       { label: "Mission & vision", href: "/#mission" },
       { label: "NCOGA YAY", href: "/#yay" },
     ],

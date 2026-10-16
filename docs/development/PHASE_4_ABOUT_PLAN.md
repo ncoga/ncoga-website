@@ -22,7 +22,7 @@
 ## Page actions and implementation
 
 1. Replace the legacy `/about` route under the NCOGA layout. Remove the conflicting copied route file; leave other legacy routes untouched during this slice. Use the shared header, footer, type, color, and responsive spacing system.
-2. Make the primary action a direct email to NCOGA and the secondary action a link to the official YAY page until `/ncoga-yay` ships. Link back to `/` in the breadcrumb or page body.
+2. Make the primary action a direct email to NCOGA, with an in-page mission jump. Link to the official YAY page in the branch section until `/ncoga-yay` ships. Link back to `/` in the breadcrumb.
 3. Include overview, official mission and vision, a restrained historical section, and the parent/YAY relationship. Avoid cards or animation where the copy does not need them.
 4. Give `/about` specific metadata and a canonical URL. Update the NCOGA header's About destination to the local route only after verification; keep legacy navigation disconnected from NCOGA.
 5. Check the route at 320, 375, 768, 1024, 1440, and 1920px; inspect keyboard order, focus, sidebar behavior, reduced motion, contrast, automated accessibility, metadata, external links, and the production build. Record results before moving to another route.

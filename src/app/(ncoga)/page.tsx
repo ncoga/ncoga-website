@@ -129,12 +129,8 @@ export default function NcogaHomePage() {
                 organization based in New York City, representing Ghanaian
                 associations in the United States.
               </p>
-              <Link
-                className="ncoga-text-link"
-                href="https://ncoga.com/about-us/"
-              >
-                Read more on NCOGA&apos;s current site{" "}
-                <span aria-hidden="true">↗</span>
+              <Link className="ncoga-text-link" href="/about">
+                Read more about NCOGA <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>

@@ -906,7 +906,206 @@
   overflow-wrap: anywhere;
 }
 
+/* Phase 4 parent About page */
+.ncoga-about-hero {
+  padding-block: 26px clamp(68px, 8vw, 112px);
+}
+.ncoga-about-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--ncoga-stone);
+  color: var(--muted-foreground);
+  font-size: 0.82rem;
+}
+.ncoga-about-breadcrumb a {
+  color: var(--ncoga-heritage);
+  font-weight: 700;
+}
+.ncoga-about-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: stretch;
+  gap: clamp(40px, 6vw, 96px);
+  padding-top: clamp(62px, 7vw, 108px);
+}
+.ncoga-about-hero-copy {
+  align-self: center;
+}
+.ncoga-about-hero h1 {
+  max-width: 11ch;
+  margin: 22px 0 30px;
+  font-size: clamp(3.5rem, 5.5vw, 6rem);
+  line-height: 0.99;
+}
+.ncoga-about-hero-copy .ncoga-lead {
+  max-width: 56ch;
+  margin-bottom: 34px;
+}
+.ncoga-about-year {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 480px;
+  padding: clamp(28px, 4vw, 52px);
+  background: var(--ncoga-heritage);
+  color: var(--ncoga-ivory);
+}
+.ncoga-about-year > span {
+  color: var(--ncoga-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.ncoga-about-year strong {
+  font-family: var(--ncoga-serif);
+  font-size: clamp(5.5rem, 9vw, 9rem);
+  font-weight: 400;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+}
+.ncoga-about-year p {
+  max-width: 24ch;
+  margin: 0;
+  padding-top: 18px;
+  border-top: 1px solid rgb(255 255 255 / 0.45);
+  font-size: 0.9rem;
+}
+.ncoga-about-purpose {
+  background: #fff;
+}
+.ncoga-about-purpose-grid,
+.ncoga-about-yay-grid,
+.ncoga-about-contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(36px, 8vw, 120px);
+}
+.ncoga-about-purpose-copy p {
+  max-width: 62ch;
+  margin-top: 0;
+}
+.ncoga-about-purpose-copy p + p {
+  margin-top: 22px;
+}
+.ncoga-about-statements {
+  background: var(--ncoga-heritage);
+  color: var(--ncoga-ivory);
+}
+.ncoga-about-statements .ncoga-eyebrow,
+.ncoga-about-statements-grid article > span {
+  color: var(--ncoga-gold);
+}
+.ncoga-about-statements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 7vw, 100px);
+  margin-top: 50px;
+}
+.ncoga-about-statements-grid article {
+  padding-top: 22px;
+  border-top: 1px solid rgb(255 255 255 / 0.45);
+}
+.ncoga-about-statements-grid article > span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.ncoga-about-statements-grid h3 {
+  margin: 26px 0 16px;
+  font-size: clamp(2rem, 2.9vw, 3rem);
+  line-height: 1.1;
+}
+.ncoga-about-statements-grid p {
+  max-width: 48ch;
+  margin: 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+}
+.ncoga-about-history {
+  background: var(--ncoga-sand);
+}
+.ncoga-about-history-intro {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: clamp(36px, 7vw, 100px);
+  align-items: end;
+}
+.ncoga-about-history-intro p {
+  max-width: 54ch;
+  margin: 0 0 26px;
+}
+.ncoga-about-history-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 54px);
+  margin: 52px 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.ncoga-about-history-list li {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ncoga-heritage);
+}
+.ncoga-about-history-list li > span {
+  color: var(--ncoga-red);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.ncoga-about-history-list h3 {
+  margin: 0 0 14px;
+  color: var(--ncoga-heritage);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.1;
+}
+.ncoga-about-history-list p {
+  max-width: 34ch;
+  margin: 0;
+}
+.ncoga-about-yay {
+  background: var(--ncoga-ivory);
+}
+.ncoga-about-yay-grid > div:last-child {
+  padding-left: clamp(24px, 4vw, 52px);
+  border-left: 4px solid var(--ncoga-red);
+}
+.ncoga-about-yay-grid p {
+  margin-top: 0;
+}
+.ncoga-about-yay-grid [data-slot="button"] {
+  margin-top: 22px;
+}
+.ncoga-about-contact {
+  background: #fff;
+}
+.ncoga-about-contact-grid {
+  align-items: end;
+}
+.ncoga-about-contact-grid p {
+  max-width: 48ch;
+  margin-top: 0;
+}
+
 @media (max-width: 900px) {
+  .ncoga-about-hero-grid {
+    gap: 36px;
+  }
+  .ncoga-about-year {
+    min-height: 400px;
+  }
+  .ncoga-about-year strong {
+    font-size: clamp(5rem, 8vw, 7rem);
+  }
+  .ncoga-about-history-list {
+    grid-template-columns: 1fr 1fr;
+  }
   .ncoga-home-hero-inner {
     min-height: 660px;
   }
@@ -1079,6 +1278,34 @@
   }
 }
 @media (max-width: 700px) {
+  .ncoga-about-hero-grid,
+  .ncoga-about-purpose-grid,
+  .ncoga-about-statements-grid,
+  .ncoga-about-history-intro,
+  .ncoga-about-history-list,
+  .ncoga-about-yay-grid,
+  .ncoga-about-contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .ncoga-about-hero-grid {
+    padding-top: 58px;
+  }
+  .ncoga-about-hero h1 {
+    font-size: clamp(3.2rem, 10vw, 5rem);
+  }
+  .ncoga-about-year {
+    min-height: 290px;
+  }
+  .ncoga-about-statements-grid {
+    margin-top: 34px;
+  }
+  .ncoga-about-history-list {
+    gap: 28px;
+    margin-top: 36px;
+  }
+  .ncoga-about-yay-grid > div:last-child {
+    padding-left: 22px;
+  }
   .ncoga-home-about,
   .ncoga-home-focus-grid,
   .ncoga-home-statement-grid,
@@ -1177,6 +1404,9 @@
   }
 }
 @media (max-width: 430px) {
+  .ncoga-about-year strong {
+    font-size: 5.4rem;
+  }
   .ncoga-brand-logo {
     width: 48px;
     height: 48px;
