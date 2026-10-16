@@ -28,7 +28,9 @@ test("About presents sourced NCOGA content and working actions", async ({
     page.getByRole("link", { name: "Explore NCOGA YAY" }),
   ).toHaveAttribute("href", "https://ncoga.com/ncoga-youth/");
   await expect(
-    page.getByRole("link", { name: "Contact NCOGA" }),
+    page
+      .locator(".ncoga-about-hero")
+      .getByRole("link", { name: "Contact NCOGA" }),
   ).toHaveAttribute("href", "mailto:info@ncoga.com");
   await expect(page.getByText("Platinum Staffing")).toHaveCount(0);
   await expect(

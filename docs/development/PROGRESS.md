@@ -1,5 +1,13 @@
 # Project progress
 
+## 2026-10-16 — Phase 4 Contact page
+
+**Completed locally:** Replaced the copied `/contact` landing page with a source-backed NCOGA email page. The only direct contact action is `info@ncoga.com`; unverified office details and the copied form were excluded. Updated shared Contact navigation and clarified the shared footer label for links that span pages. See the [plan](PHASE_4_CONTACT_PLAN.md) and [verification record](PHASE_4_CONTACT_VERIFICATION.md).
+
+**Verification:** `pnpm verify` passed; final About and Contact browser checks passed 8/8, with the homepage and foundation regression checks passing in the preceding combined run. Phone and desktop captures were reviewed. No deployment occurred.
+
+**Next:** Implement the source-backed YAY landing page. Keep its draft programs, leadership details, and forms out of publication until verified. Legacy routes, sitemap, and robots still need migration before launch.
+
 ## 2026-10-16 — Phase 4 About page
 
 **Completed locally:** Replaced the copied `/about` landing page with a source-backed NCOGA page and connected verified About navigation from the homepage and shared NCOGA header. It uses the official mission and vision, labels older council activities as historical, and links to the official YAY page and public email. Removed three orphaned copied components after confirming they had no remaining imports. See the [content plan](PHASE_4_ABOUT_PLAN.md) and [verification record](PHASE_4_ABOUT_VERIFICATION.md).
