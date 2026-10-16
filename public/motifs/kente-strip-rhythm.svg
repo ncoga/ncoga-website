@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" fill="none">
+  <title>Abstract strip and weft rhythm informed by Kente construction</title>
+  <desc>Original low contrast geometric study. It does not reproduce a named Kente cloth or pattern.</desc>
+  <path d="M8 0v144M44 0v144M80 0v144M116 0v144" stroke="#123F32" stroke-opacity=".09" stroke-width="1.5"/>
+  <path d="M18 0v144M54 0v144M90 0v144M126 0v144" stroke="#D9A227" stroke-opacity=".17" stroke-width="3"/>
+  <path d="M8 22h36M8 72h36M8 122h36M80 22h36M80 72h36M80 122h36" stroke="#123F32" stroke-opacity=".09" stroke-width="2"/>
+  <path d="M44 46h36M44 96h36M116 46h28M116 96h28" stroke="#D9A227" stroke-opacity=".17" stroke-width="3"/>
+  <path d="M25 34h12v12H25zM61 83h12v12H61zM97 34h12v12H97zM133 83h11v12h-11z" fill="#123F32" fill-opacity=".075"/>
+</svg>

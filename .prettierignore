@@ -1,0 +1,11 @@
+.next
+coverage
+node_modules
+playwright-report
+test-results
+public/brand
+public/logos
+docs/reference
+
+# Dependabot regenerates this; do not Prettier-format
+pnpm-lock.yaml
