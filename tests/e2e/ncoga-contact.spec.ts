@@ -30,7 +30,7 @@ test("Contact shows the verified general address without copied contact details"
     page
       .locator(".ncoga-contact-paths")
       .getByRole("link", { name: /Young Adult & Youth/ }),
-  ).toHaveAttribute("href", "https://ncoga.com/ncoga-youth/");
+  ).toHaveAttribute("href", "/ncoga-yay");
   await expect(page.getByText("Platinum Staffing")).toHaveCount(0);
   await expect(page.getByText("New Mexico")).toHaveCount(0);
   await expect(page.locator("form")).toHaveCount(0);

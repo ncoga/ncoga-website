@@ -201,9 +201,7 @@ export default function NcogaAboutPage() {
               global engagement.
             </p>
             <Button asChild>
-              <a href="https://ncoga.com/ncoga-youth/">
-                Explore NCOGA YAY <span aria-hidden="true">↗</span>
-              </a>
+              <Link href="/ncoga-yay">Explore NCOGA YAY</Link>
             </Button>
           </div>
         </div>

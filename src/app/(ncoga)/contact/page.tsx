@@ -74,15 +74,15 @@ export default function NcogaContactPage() {
                 <small>01 / Parent council</small>
                 <strong>About NCOGA</strong>
               </span>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">→</span>
             </Link>
-            <a href="https://ncoga.com/ncoga-youth/">
+            <Link href="/ncoga-yay">
               <span>
                 <small>02 / A branch of NCOGA</small>
                 <strong>Young Adult &amp; Youth</strong>
               </span>
-              <span aria-hidden="true">↗</span>
-            </a>
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>

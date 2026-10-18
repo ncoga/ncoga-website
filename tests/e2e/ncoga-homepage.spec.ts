@@ -27,7 +27,7 @@ test("homepage presents sourced content, metadata, and working actions", async (
   );
   await expect(
     page.getByRole("link", { name: "Visit NCOGA YAY" }),
-  ).toHaveAttribute("href", "https://ncoga.com/ncoga-youth/");
+  ).toHaveAttribute("href", "/ncoga-yay");
   await expect(page.locator(".ncoga-home-email")).toHaveAttribute(
     "href",
     "mailto:info@ncoga.com",

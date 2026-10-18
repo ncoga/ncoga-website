@@ -1207,8 +1207,188 @@
   align-self: start;
   font-size: 1.6rem;
 }
+.ncoga-yay-page-hero {
+  background: var(--ncoga-sand);
+}
+.ncoga-yay-page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(40px, 7vw, 110px);
+  align-items: stretch;
+  padding-block: clamp(64px, 8vw, 120px) clamp(80px, 9vw, 130px);
+}
+.ncoga-yay-page-hero-copy {
+  align-self: center;
+}
+.ncoga-yay-page-hero .ncoga-eyebrow,
+.ncoga-yay-page-intro .ncoga-eyebrow,
+.ncoga-yay-page-pillars .ncoga-eyebrow {
+  color: var(--ncoga-red);
+}
+.ncoga-yay-page-hero h1 {
+  margin: 24px 0 32px;
+  font-family: var(--ncoga-serif);
+  font-size: clamp(3.8rem, 6.5vw, 7rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+.ncoga-yay-page-hero .ncoga-lead {
+  max-width: 54ch;
+  margin-bottom: 32px;
+}
+.ncoga-yay-page-art {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 540px;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 52px);
+  background: var(--ncoga-red);
+  color: var(--ncoga-ivory);
+}
+.ncoga-yay-page-art::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 42%;
+  background: url("/motifs/kente-strip-rhythm.svg") repeat;
+  background-size: 136px 136px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.ncoga-yay-page-art span,
+.ncoga-yay-page-art strong {
+  position: relative;
+  z-index: 1;
+}
+.ncoga-yay-page-art span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.ncoga-yay-page-art strong {
+  align-self: center;
+  font-family: var(--ncoga-serif);
+  font-size: clamp(9rem, 19vw, 20rem);
+  font-weight: 400;
+  letter-spacing: -0.12em;
+  line-height: 0.8;
+}
+.ncoga-yay-page-art span:last-child {
+  align-self: end;
+  padding-top: 16px;
+  border-top: 1px solid rgb(255 255 255 / 0.55);
+}
+.ncoga-yay-page-intro {
+  background: #fff;
+}
+.ncoga-yay-page-intro-grid,
+.ncoga-yay-page-pillars-grid,
+.ncoga-yay-page-next-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(48px, 8vw, 140px);
+}
+.ncoga-yay-page-intro-grid .ncoga-lead {
+  margin: 0;
+}
+.ncoga-yay-page-statements {
+  background: var(--ncoga-heritage);
+  color: var(--ncoga-ivory);
+}
+.ncoga-yay-page-statements .ncoga-eyebrow,
+.ncoga-yay-page-statements-grid article > span {
+  color: var(--ncoga-gold);
+}
+.ncoga-yay-page-statements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(40px, 7vw, 100px);
+  margin-top: 52px;
+}
+.ncoga-yay-page-statements-grid article {
+  padding-top: 24px;
+  border-top: 1px solid rgb(255 255 255 / 0.45);
+}
+.ncoga-yay-page-statements-grid article > span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.ncoga-yay-page-statements-grid h3 {
+  margin: 18px 0 14px;
+  font-family: var(--ncoga-serif);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 400;
+}
+.ncoga-yay-page-statements-grid p {
+  max-width: 55ch;
+  margin: 0;
+  color: var(--ncoga-ivory);
+}
+.ncoga-yay-page-pillars {
+  background: #fff;
+}
+.ncoga-yay-page-pillars-grid > div > p {
+  max-width: 45ch;
+  margin-top: 24px;
+}
+.ncoga-yay-page-pillar-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ncoga-heritage);
+}
+.ncoga-yay-page-pillar-list li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  min-height: 92px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--ncoga-stone);
+}
+.ncoga-yay-page-pillar-list li > span {
+  color: var(--ncoga-red);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.ncoga-yay-page-pillar-list h3 {
+  margin: 0;
+  color: var(--ncoga-heritage);
+  font-family: var(--ncoga-serif);
+  font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+.ncoga-yay-page-next {
+  background: var(--ncoga-sand);
+}
+.ncoga-yay-page-next-grid > div:last-child > p {
+  max-width: 48ch;
+  margin: 0;
+}
 
 @media (max-width: 900px) {
+  .ncoga-yay-page-hero-grid {
+    gap: 36px;
+  }
+  .ncoga-yay-page-art {
+    min-height: 430px;
+  }
+  .ncoga-yay-page-art strong {
+    font-size: clamp(8rem, 17vw, 12rem);
+  }
+  .ncoga-yay-page-intro-grid,
+  .ncoga-yay-page-pillars-grid,
+  .ncoga-yay-page-next-grid {
+    gap: 42px;
+  }
   .ncoga-contact-hero-grid,
   .ncoga-contact-explore-grid {
     gap: 48px;
@@ -1397,6 +1577,29 @@
   }
 }
 @media (max-width: 700px) {
+  .ncoga-yay-page-hero-grid,
+  .ncoga-yay-page-intro-grid,
+  .ncoga-yay-page-statements-grid,
+  .ncoga-yay-page-pillars-grid,
+  .ncoga-yay-page-next-grid {
+    grid-template-columns: 1fr;
+  }
+  .ncoga-yay-page-hero-grid {
+    gap: 44px;
+    padding-block: 64px 84px;
+  }
+  .ncoga-yay-page-hero h1 {
+    font-size: clamp(3.5rem, 11vw, 5rem);
+  }
+  .ncoga-yay-page-art {
+    min-height: 360px;
+  }
+  .ncoga-yay-page-art strong {
+    font-size: clamp(8rem, 28vw, 13rem);
+  }
+  .ncoga-yay-page-statements-grid {
+    margin-top: 36px;
+  }
   .ncoga-contact-hero-grid,
   .ncoga-contact-explore-grid {
     grid-template-columns: 1fr;
@@ -1543,6 +1746,15 @@
   }
 }
 @media (max-width: 430px) {
+  .ncoga-yay-page-hero h1 {
+    font-size: 3.25rem;
+  }
+  .ncoga-yay-page-art {
+    min-height: 320px;
+  }
+  .ncoga-yay-page-art strong {
+    font-size: 8rem;
+  }
   .ncoga-contact-hero h1 {
     font-size: 3.35rem;
   }

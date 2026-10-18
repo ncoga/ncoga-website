@@ -1,5 +1,13 @@
 # Project progress
 
+## 2026-10-17 — Phase 4 YAY landing page
+
+**Completed locally:** Added `/ncoga-yay` under the NCOGA layout with a verified branch overview, published mission and vision, five focus-area names, local parent/contact routes, and a type-led visual fallback. Connected shared and related-page YAY navigation to the new route. See the [source plan](PHASE_4_YAY_PLAN.md) and [verification record](PHASE_4_YAY_VERIFICATION.md).
+
+**Verification:** `pnpm verify` passed; the combined NCOGA Chromium suite passed 24/24 checks and the complete Chromium smoke suite passed 53/53, including a correction to the stale copied-contact-form assertion that had failed remote CI for the preceding Contact commit. Phone and desktop full-page YAY captures were reviewed. No deployment occurred.
+
+**Next:** Review NCOGA/YAY content and pillar naming with the organization; replace legacy metadata, sitemap/robots, and copied public routes before launch. New detail pages need their own verified content and actions.
+
 ## 2026-10-16 — Phase 4 Contact page
 
 **Completed locally:** Replaced the copied `/contact` landing page with a source-backed NCOGA email page. The only direct contact action is `info@ncoga.com`; unverified office details and the copied form were excluded. Updated shared Contact navigation and clarified the shared footer label for links that span pages. See the [plan](PHASE_4_CONTACT_PLAN.md) and [verification record](PHASE_4_CONTACT_VERIFICATION.md).

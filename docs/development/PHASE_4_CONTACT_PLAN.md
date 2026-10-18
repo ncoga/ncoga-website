@@ -19,3 +19,5 @@
 4. Verify content, links, keyboard access, responsive layout at 320–1920px, automated WCAG A/AA at phone and desktop, and the production build. Preserve homepage and About regression coverage.
 
 **Publication limit:** Owner approval of content and mailbox ownership is still needed before launch. Legacy sitemap/robots and remaining copied routes are separate migration gates.
+
+**Route update 2026-10-17:** The verified `/ncoga-yay` landing page now replaces the interim external YAY destination in Contact navigation.

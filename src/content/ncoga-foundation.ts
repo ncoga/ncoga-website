@@ -35,7 +35,7 @@ export const foundationFooterGroups = [
 export const homepageNavigation = [
   { label: "About", href: "/about" },
   { label: "Mission & vision", href: "/#mission" },
-  { label: "NCOGA YAY", href: "/#yay" },
+  { label: "NCOGA YAY", href: "/ncoga-yay" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -45,14 +45,13 @@ export const homepageFooterGroups = [
     links: [
       { label: "About NCOGA", href: "/about" },
       { label: "Mission & vision", href: "/#mission" },
-      { label: "NCOGA YAY", href: "/#yay" },
+      { label: "NCOGA YAY", href: "/ncoga-yay" },
     ],
   },
   {
     title: "Official resources",
     links: [
       { label: "NCOGA website", href: "https://ncoga.com/" },
-      { label: "NCOGA YAY", href: "https://ncoga.com/ncoga-youth/" },
       { label: "Contact NCOGA", href: "/contact" },
     ],
   },

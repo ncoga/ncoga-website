@@ -28,3 +28,5 @@
 5. Check the route at 320, 375, 768, 1024, 1440, and 1920px; inspect keyboard order, focus, sidebar behavior, reduced motion, contrast, automated accessibility, metadata, external links, and the production build. Record results before moving to another route.
 
 **Publication limit:** The new page will be a local source-backed implementation. Organizational approval, legacy route cleanup, sitemap/robots replacement, and image rights review remain launch gates.
+
+**Route update 2026-10-17:** The verified `/ncoga-yay` landing page now replaces the interim external YAY destination in About navigation.

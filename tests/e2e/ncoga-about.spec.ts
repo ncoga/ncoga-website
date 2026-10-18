@@ -26,7 +26,7 @@ test("About presents sourced NCOGA content and working actions", async ({
   await expect(page.getByRole("heading", { name: "Our vision" })).toBeVisible();
   await expect(
     page.getByRole("link", { name: "Explore NCOGA YAY" }),
-  ).toHaveAttribute("href", "https://ncoga.com/ncoga-youth/");
+  ).toHaveAttribute("href", "/ncoga-yay");
   await expect(
     page
       .locator(".ncoga-about-hero")

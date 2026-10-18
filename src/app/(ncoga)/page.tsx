@@ -245,9 +245,7 @@ export default function NcogaHomePage() {
                 communications.
               </p>
               <Button asChild>
-                <Link href="https://ncoga.com/ncoga-youth/">
-                  Visit NCOGA YAY <span aria-hidden="true">↗</span>
-                </Link>
+                <Link href="/ncoga-yay">Visit NCOGA YAY</Link>
               </Button>
             </div>
             <div
