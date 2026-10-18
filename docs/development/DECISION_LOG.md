@@ -1,8 +1,18 @@
 # Decision log
 
+## First-wave NCOGA routes and YAY visual fallback — 2026-10-17
+
+**Status:** Implemented and verified locally on `release/dev`; organizational content approval and production publication remain pending. See [About](PHASE_4_ABOUT_VERIFICATION.md), [Contact](PHASE_4_CONTACT_VERIFICATION.md), and [YAY](PHASE_4_YAY_VERIFICATION.md).
+
+**Decision:** Move `/about` and `/contact` from the copied marketing layout to the NCOGA layout and add `/ncoga-yay` as the connected branch landing page. Use sourced statements and the published general email, omit template contact details and copied forms, and keep historical work explicitly historical. Use the approved type-led YAY variant with a solid red field and abstract Kente strip where specific YAY imagery and mark rights are unapproved. The YAY page lists five high-level focus areas; “Internal & Public Affairs” remains a provisional short name pending the organization's decision.
+
+**Reason:** These routes complete the planned first landing-page wave without inventing programs, people, statistics, or active events. The connected navigation no longer sends visitors from a new NCOGA page into the copied staffing site.
+
+**Consequence:** Legacy child routes remain live in the checkout, and copied sitemap/robots output still needs replacement before launch. Copied integrations receive no NCOGA data. The old Contact form smoke assertion was replaced with a check that the NCOGA Contact page exposes no copied form. Current content, mailbox ownership, pillar naming, and publication rights need organizational review.
+
 ## Release branch workflow — 2026-10-16
 
-**Status:** Owner directed; local workflow configuration updated. Existing remote Dependabot pull requests still need retargeting.
+**Status:** Owner directed and implemented. Nine remote Dependabot pull requests were retargeted; Dependabot closed them automatically, and their changes were applied and tested on `release/dev` as recorded in [resolution](DEPENDABOT_RESOLUTION.md).
 
 **Decision:** Implement pages and receive dependency updates on `release/dev`. Promote `release/dev` to `main` through a reviewed pull request. The PR policy allows Dependabot only into `release/dev` and allows `main` pull requests only from `release/dev`.
 
