@@ -41,11 +41,13 @@ test("homepage presents sourced content, metadata, and working actions", async (
       .locator(".ncoga-home-hero-photo img")
       .evaluate((image: HTMLImageElement) => image.naturalWidth),
   ).toBeGreaterThan(0);
-  expect(
-    await page
-      .locator(".ncoga-home-focus-photo img")
-      .evaluate((image: HTMLImageElement) => image.naturalWidth),
-  ).toBeGreaterThan(0);
+  const focusPhoto = page.locator(".ncoga-home-focus-photo img");
+  await focusPhoto.scrollIntoViewIfNeeded();
+  await expect
+    .poll(() =>
+      focusPhoto.evaluate((image: HTMLImageElement) => image.naturalWidth),
+    )
+    .toBeGreaterThan(0);
   await expect(page.locator(".ncoga-home-focus-list li")).toHaveCount(4);
   await expect(page.locator(".ncoga-home-focus-mark")).toHaveCount(4);
   await expect(

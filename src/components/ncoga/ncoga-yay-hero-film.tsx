@@ -59,7 +59,10 @@ export function NcogaYayHeroFilm() {
           <iframe
             src={filmSrc}
             title="NCOGA Young Adult and Youth film"
-            allow="autoplay; encrypted-media"
+            // WebKit raises a page error if the player checks Fullscreen
+            // and this frame has not been granted it.
+            allow="autoplay; encrypted-media; fullscreen"
+            allowFullScreen
             referrerPolicy="strict-origin-when-cross-origin"
           />
         ) : (
