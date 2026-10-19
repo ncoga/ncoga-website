@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: ["/og-default.png"],
   },
+  robots: { index: false, follow: false },
 };
 
 export default function MarketingLayout({
