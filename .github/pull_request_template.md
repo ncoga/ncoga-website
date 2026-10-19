@@ -11,4 +11,4 @@ Describe the user-visible or operational outcome.
 
 ## Release path
 
-- [ ] This PR targets `main`
+- [ ] This PR targets `release/dev`, or promotes `release/dev` into `main`

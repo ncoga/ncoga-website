@@ -1,5 +1,109 @@
 # Project progress
 
+## 2026-10-18 — First-version navigation, portraits, and pillar leaders
+
+**Completed locally:** Martina Antwi is hidden. Council photographs use equal square cards, cropped slightly above center so the person stays in frame. Home, Our Programs, and Partner with Us sit in the main navigation. The header and footer use the two marks with a divider. The homepage place label is Headquarters. Internal & Public Affairs leads the YAY focus section. Each pillar page names its council leaders and repeats published program and press copy on alternating ivory, sand, and heritage sections. Events labels the five pillar meetings Coming Soon. The partnership inquiry button label is white.
+
+**Verification:** Phone and desktop layouts were reviewed in the browser, including the header lockup, full portraits, the inquiry button, the footer lockup, the mobile menu, and an Internal & Public Affairs pillar page. Chromium checks for YAY, the homepage, About, and Contact passed, 24 of 24.
+
+**Next:** Deploy this version to Vercel.
+
+## 2026-10-18 — YAY council photographs and biographies
+
+**Completed locally:** Council cards on `/ncoga-yay` use the supplied portraits, matched by filename and checked as portraits. Published biographies open from those cards. Wendy and Shumuel are shown from JPEG copies of the HEIF files. Martina Antwi still has no photograph or biography.
+
+**Verification:** Phone and desktop council cards were reviewed in the browser. Chromium checks for YAY, the homepage, About, and Contact passed, 24 of 24.
+
+**Next:** Sitemap, robots, and legacy-route cleanup before a Vercel launch.
+
+## 2026-10-18 — YAY September page copy
+
+**Completed locally:** Partner, Programs, Events, Press, and the five pillar pages now use the September draft. The draft moved from `public/` to [docs/content/PAGES UPDATE SEPTEMBER 2026.md](../content/PAGES%20UPDATE%20SEPTEMBER%202026.md). Infinite Vision / Restore Ghana, the written forms, and the dated meetings are published. Missing announcements, recaps, photos, and the fiscal calendar stay off the site. Membership uses the form already on `/ncoga-yay` and is described as free.
+
+**Verification:** Phone and desktop layouts were reviewed in the browser, including the banners, the Community Engagement pillar title, the ivory wave, and an 80px header. 24/24 Chromium checks passed across YAY, homepage, About, and Contact. No deployment occurred.
+
+**Next:** Sitemap, robots, and legacy-route cleanup before a Vercel launch.
+
+## 2026-10-18 — YAY heroes and Our Programs
+
+**Completed locally:** Pillar pages use the shared YAY illustration with an ivory wave. Press, Events, Partner, and Our Programs use their supplied banners. Our Programs is in the YAY menu at `/ncoga-yay/programs`. Page bodies are still short. The next content pass is written up in [YAY_PAGE_BUILD_HANDOFF.md](YAY_PAGE_BUILD_HANDOFF.md).
+
+**Verification:** Phone and desktop heroes were reviewed in the browser. 24/24 Chromium checks passed across YAY, homepage, About, and Contact. No deployment occurred.
+
+**Next:** Fill Partner, Programs, Events, Press, and the five pillar pages from the September draft. Then sitemap, robots, and legacy-route cleanup before a Vercel launch.
+
+## 2026-10-18 — YAY mark and section color
+
+**Completed locally:** The NCOGA YAY mark sits in the header on `/ncoga-yay` only. The shared NCOGA wordmark stays, and the footer shows the NCOGA crest above the council name. About, mission and vision, pillars, council, and membership use alternating white, heritage, and sand backgrounds.
+
+**Verification:** 24/24 Chromium checks passed across YAY, homepage, About, and Contact. Phone and desktop layouts were reviewed in the browser. No deployment occurred.
+
+**Next:** Pillar detail and other public pages, then sitemap, robots, and legacy-route cleanup before a Vercel launch.
+
+## 2026-10-18 — YAY about copy, full-bleed film, and council additions
+
+**Completed locally:** Placed the live YAY about copy on `/ncoga-yay`, set the supplied film as the full hero background, and nested the YAY menu as About, Pillars, and Partner with Us. Added Irene Dwamena-Ansong, Martina Antwi, William Oppong, Gaylord Kweku Appiah, and Kuukua Abraham. Photographs, biographies, and named partnership programs stay unpublished. See the [decision log](DECISION_LOG.md).
+
+**Verification:** 24/24 Chromium checks passed across YAY, homepage, About, and Contact. Phone and desktop layouts were reviewed in the browser, including the full-bleed film, the nested menu, and `/ncoga-yay/partner`. No deployment occurred.
+
+**Next:** Pillar detail and other public pages, then sitemap, robots, and legacy-route cleanup before a Vercel launch.
+
+## 2026-10-18 — YAY page and shared header
+
+**Completed locally:** Rebuilt `/ncoga-yay` with the muted film, the October 2024 branch sentence, the verbatim YAY mission and vision, five pillar cards linked to the existing pillar routes, the March 8, 2025 account, and the thirteen live-page council names. Photographs and biographies stay unpublished. The shared header now discloses NCOGA YAY and adds Press & Media and Events, which open short holding pages. Mission & vision remains on the homepage and in the footer. See the [decision log](DECISION_LOG.md).
+
+**Verification:** 24/24 Chromium checks passed across YAY, homepage, About, and Contact, including width, keyboard, reduced motion, and WCAG scans. Phone and desktop layouts were reviewed in the browser: muted autoplay, pause, the reduced-motion still, pillar routes, the leader dialog, the desktop dropdown, the mobile sidebar, and both holding pages. No deployment occurred.
+
+**Next:** Pillar detail and other public pages, then sitemap, robots, and legacy-route cleanup before a Vercel launch.
+
+## 2026-10-18 — About page editorial rebuild
+
+**Completed locally:** Rebuilt `/about` in place with the official mission and vision, published history, the stated-needs account, and a YAY branch section that links to the existing pillar routes. The banquet photograph spans the content width. History, the account of change, and the official statements each have a separate local photograph. YAY pillars use the supplied marks in a five-part layout. Dr. Victor Essien’s name and retreat quotation stay out. See the [decision log](DECISION_LOG.md).
+
+**Verification:** 5/5 About Chromium checks passed, including width, keyboard, reduced motion, and WCAG scans at 375px and 1440px. Phone and desktop layout were reviewed in the browser. No deployment occurred.
+
+**Next:** Pillar and other public pages, then sitemap, robots, and legacy-route cleanup before a Vercel launch.
+
+## 2026-10-18 — Homepage focus graphics, pillars, and membership
+
+**Completed locally:** Extended `/` with original solid-color marks for the four sourced focus areas, five YAY pillar explanations using the supplied logos, the YAY youth mark, and one membership action to the owner-supplied YAY form. Pillar cards do not link to pages that are not built yet. See the [decision log](DECISION_LOG.md).
+
+**Verification:** 7/7 homepage Chromium checks passed, including WCAG scans at 375px and 1440px. Phone and desktop layout of the new sections was reviewed in the browser, and the membership link opened the YAY form. No deployment occurred.
+
+**Next:** Pillar and other public pages, then sitemap, robots, and legacy-route cleanup before a Vercel launch.
+
+## 2026-10-17 — Phase 4 YAY landing page
+
+**Completed locally:** Added `/ncoga-yay` under the NCOGA layout with a verified branch overview, published mission and vision, five focus-area names, local parent/contact routes, and a type-led visual fallback. Connected shared and related-page YAY navigation to the new route. See the [source plan](PHASE_4_YAY_PLAN.md) and [verification record](PHASE_4_YAY_VERIFICATION.md).
+
+**Verification:** `pnpm verify` passed; the combined NCOGA Chromium suite passed 24/24 checks and the complete Chromium smoke suite passed 53/53, including a correction to the stale copied-contact-form assertion that had failed remote CI for the preceding Contact commit. Phone and desktop full-page YAY captures were reviewed. No deployment occurred.
+
+**Next:** Review NCOGA/YAY content and pillar naming with the organization; replace legacy metadata, sitemap/robots, and copied public routes before launch. New detail pages need their own verified content and actions.
+
+## 2026-10-16 — Phase 4 Contact page
+
+**Completed locally:** Replaced the copied `/contact` landing page with a source-backed NCOGA email page. The only direct contact action is `info@ncoga.com`; unverified office details and the copied form were excluded. Updated shared Contact navigation and clarified the shared footer label for links that span pages. See the [plan](PHASE_4_CONTACT_PLAN.md) and [verification record](PHASE_4_CONTACT_VERIFICATION.md).
+
+**Verification:** `pnpm verify` passed; final About and Contact browser checks passed 8/8, with the homepage and foundation regression checks passing in the preceding combined run. Phone and desktop captures were reviewed. No deployment occurred.
+
+**Next:** Implement the source-backed YAY landing page. Keep its draft programs, leadership details, and forms out of publication until verified. Legacy routes, sitemap, and robots still need migration before launch.
+
+## 2026-10-16 — Phase 4 About page
+
+**Completed locally:** Replaced the copied `/about` landing page with a source-backed NCOGA page and connected verified About navigation from the homepage and shared NCOGA header. It uses the official mission and vision, labels older council activities as historical, and links to the official YAY page and public email. Removed three orphaned copied components after confirming they had no remaining imports. See the [content plan](PHASE_4_ABOUT_PLAN.md) and [verification record](PHASE_4_ABOUT_VERIFICATION.md).
+
+**Verification:** `pnpm verify` passed, including the production build; 16 focused Chromium checks passed across About, homepage, and foundation routes. Mobile and desktop full-page captures were reviewed. No deployment or other route migration occurred.
+
+**Next:** Continue the first page wave with source-backed YAY and contact routes. Keep all copied routes and integrations isolated until their own migration; replace the legacy sitemap and robots rules before launch.
+
+## 2026-10-16 — Release branch and dependency intake
+
+**Owner direction:** `main` has been pushed to the remote. Implement new work on `release/dev`, then use a reviewed pull request from `release/dev` into `main` for promotion. Existing Dependabot pull requests should be retargeted to `release/dev` before resolution.
+
+**Completed locally:** Updated Dependabot's target branch and PR policy, retargeted all nine existing Dependabot PRs, and applied their changes directly to `release/dev` after Dependabot automatically closed the retargeted PRs. The [resolution record](DEPENDABOT_RESOLUTION.md) maps each old PR to its commit and tests. A homepage-only Lighthouse command uses the retained CLI and passed three local runs. The source-backed [About plan](PHASE_4_ABOUT_PLAN.md) is prepared.
+
+**Remote verification:** All three GitHub push workflows (CI, Security, Workflow Security) passed for dependency commit `9d92bc3` on `release/dev`. The owner chose to enable GitHub Dependency Graph; its disabled state caused the old PR dependency-review checks to fail. The security job remains intact and needs validation on a future PR after the setting is enabled.
+
 ## 2026-10-16 — Full-image homepage hero and local Git setup
 
 **Completed:** Moved the homepage copy and actions onto a full-width local photograph with a flat, high-contrast green overlay and responsive crop. Documented the approved pattern in [DESIGN.md](../design/DESIGN.md). Initialized a local Git repository on `main`; this does not add a remote or deploy the site. Repository setup and verification are recorded in the [Git readiness note](GIT_READINESS.md).

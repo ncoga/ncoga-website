@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ncogaIdentity } from "@/content/ncoga-foundation";
@@ -19,11 +20,32 @@ export function NcogaFooter({
       <div className="ncoga-container">
         <div className="ncoga-footer-grid">
           <div>
-            <p className="ncoga-footer-name">{ncogaIdentity.shortName}</p>
-            <p className="ncoga-footer-description">{ncogaIdentity.name}</p>
-            <p className="ncoga-footer-description">
-              {ncogaIdentity.yayName} is a branch of NCOGA.
-            </p>
+            <div className="ncoga-footer-brand">
+              <Link
+                className="ncoga-footer-logo"
+                href="/"
+                aria-label={ncogaIdentity.name}
+              >
+                <Image
+                  src="/images/ncoga-logo.png"
+                  alt=""
+                  width={500}
+                  height={500}
+                />
+              </Link>
+              <Link
+                className="ncoga-footer-yay"
+                href="/ncoga-yay"
+                aria-label="NCOGA Young Adult and Youth"
+              >
+                <Image
+                  src="/logos/ncoga-yay-logos/ncoga_youth_logo.png"
+                  alt=""
+                  width={666}
+                  height={375}
+                />
+              </Link>
+            </div>
           </div>
           {groups.map((group) => (
             <div key={group.title}>

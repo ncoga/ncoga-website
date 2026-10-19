@@ -1,8 +1,16 @@
+import { yayPillars } from "@/content/yay-pillars";
+
 export const ncogaIdentity = {
   name: "National Council of Ghanaian Associations",
   shortName: "NCOGA",
   yayName: "NCOGA Young Adult & Youth",
 } as const;
+
+export type NcogaNavItem = {
+  label: string;
+  href: string;
+  children?: readonly NcogaNavItem[];
+};
 
 /** Anchors for the isolated Phase 2 preview. Production routes are tracked in docs/architecture/ROUTING.md. */
 export const foundationNavigation = [
@@ -31,29 +39,46 @@ export const foundationFooterGroups = [
   },
 ] as const;
 
-/** Verified against ncoga.com on 2026-10-15; see PHASE_3_HOMEPAGE_PLAN.md. */
+/** Header destinations for the public NCOGA shell. Mission stays on the homepage. */
 export const homepageNavigation = [
-  { label: "About", href: "/#about" },
-  { label: "Mission & vision", href: "/#mission" },
-  { label: "NCOGA YAY", href: "/#yay" },
-  { label: "Contact", href: "/#contact" },
-] as const;
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  {
+    label: "NCOGA YAY",
+    href: "/ncoga-yay",
+    children: [
+      { label: "About", href: "/ncoga-yay" },
+      {
+        label: "Pillars",
+        href: "/ncoga-yay#yay-pillars",
+        children: yayPillars.map((pillar) => ({
+          label: pillar.name,
+          href: `/ncoga-yay/pillars/${pillar.slug}`,
+        })),
+      },
+    ],
+  },
+  { label: "Our Programs", href: "/ncoga-yay/programs" },
+  { label: "Partner with Us", href: "/ncoga-yay/partner" },
+  { label: "Press & Media", href: "/press" },
+  { label: "Events", href: "/events" },
+  { label: "Contact", href: "/contact" },
+] as const satisfies readonly NcogaNavItem[];
 
 export const homepageFooterGroups = [
   {
-    title: "On this page",
+    title: "Explore NCOGA",
     links: [
-      { label: "About NCOGA", href: "/#about" },
+      { label: "About NCOGA", href: "/about" },
       { label: "Mission & vision", href: "/#mission" },
-      { label: "NCOGA YAY", href: "/#yay" },
+      { label: "NCOGA YAY", href: "/ncoga-yay" },
     ],
   },
   {
     title: "Official resources",
     links: [
       { label: "NCOGA website", href: "https://ncoga.com/" },
-      { label: "NCOGA YAY", href: "https://ncoga.com/ncoga-youth/" },
-      { label: "Email NCOGA", href: "mailto:info@ncoga.com" },
+      { label: "Contact NCOGA", href: "/contact" },
     ],
   },
 ] as const;

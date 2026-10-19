@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { NcogaHomeMotion } from "@/components/ncoga/ncoga-home-motion";
+import { yayPillars } from "@/content/yay-pillars";
 
 const title = "National Council of Ghanaian Associations | NCOGA";
 const description =
@@ -49,6 +50,151 @@ const organization = {
   foundingDate: "1986",
   email: "info@ncoga.com",
 };
+
+const yayMembershipUrl = "https://forms.gle/a1cziJ8JJhDGz96j9";
+
+const focusAreas = [
+  {
+    icon: "unity",
+    number: "01",
+    title: "Unity among associations",
+    detail: "Fostering unity among member organizations.",
+  },
+  {
+    icon: "culture",
+    number: "02",
+    title: "Ghanaian culture",
+    detail: "Promoting Ghanaian culture.",
+  },
+  {
+    icon: "conflicts",
+    number: "03",
+    title: "Resolving community conflicts",
+    detail: "Resolving conflicts within the community.",
+  },
+  {
+    icon: "activities",
+    number: "04",
+    title: "Coordinated activities",
+    detail:
+      "Coordinating joint activities, including celebrations of Ghana's independence.",
+  },
+] as const;
+
+type FocusIcon = (typeof focusAreas)[number]["icon"];
+
+function FocusMark({ icon }: { icon: FocusIcon }) {
+  switch (icon) {
+    case "unity":
+      return (
+        <svg
+          className="ncoga-home-focus-mark"
+          viewBox="0 0 40 40"
+          aria-hidden="true"
+        >
+          <rect
+            x="3"
+            y="9"
+            width="16"
+            height="22"
+            fill="var(--ncoga-heritage)"
+          />
+          <rect
+            x="21"
+            y="9"
+            width="16"
+            height="22"
+            fill="var(--ncoga-forest)"
+          />
+          <rect x="15" y="16" width="10" height="8" fill="var(--ncoga-gold)" />
+        </svg>
+      );
+    case "culture":
+      return (
+        <svg
+          className="ncoga-home-focus-mark"
+          viewBox="0 0 40 40"
+          aria-hidden="true"
+        >
+          <rect x="5" y="5" width="30" height="5" fill="var(--ncoga-gold)" />
+          <rect x="5" y="12" width="9" height="6" fill="var(--ncoga-red)" />
+          <rect
+            x="15.5"
+            y="12"
+            width="9"
+            height="6"
+            fill="var(--ncoga-heritage)"
+          />
+          <rect x="26" y="12" width="9" height="6" fill="var(--ncoga-forest)" />
+          <rect
+            x="5"
+            y="20"
+            width="30"
+            height="5"
+            fill="var(--ncoga-heritage)"
+          />
+          <rect x="5" y="27" width="9" height="6" fill="var(--ncoga-forest)" />
+          <rect x="15.5" y="27" width="9" height="6" fill="var(--ncoga-gold)" />
+          <rect x="26" y="27" width="9" height="6" fill="var(--ncoga-red)" />
+        </svg>
+      );
+    case "conflicts":
+      return (
+        <svg
+          className="ncoga-home-focus-mark"
+          viewBox="0 0 40 40"
+          aria-hidden="true"
+        >
+          <polygon points="3,7 18,20 3,33" fill="var(--ncoga-heritage)" />
+          <polygon points="37,7 22,20 37,33" fill="var(--ncoga-forest)" />
+          <rect x="16" y="15" width="8" height="10" fill="var(--ncoga-gold)" />
+        </svg>
+      );
+    case "activities":
+      return (
+        <svg
+          className="ncoga-home-focus-mark"
+          viewBox="0 0 40 40"
+          aria-hidden="true"
+        >
+          <rect
+            x="3"
+            y="3"
+            width="15"
+            height="15"
+            fill="var(--ncoga-heritage)"
+          />
+          <rect
+            x="22"
+            y="3"
+            width="15"
+            height="15"
+            fill="var(--ncoga-forest)"
+          />
+          <rect
+            x="3"
+            y="22"
+            width="15"
+            height="15"
+            fill="var(--ncoga-forest)"
+          />
+          <rect
+            x="22"
+            y="22"
+            width="15"
+            height="15"
+            fill="var(--ncoga-heritage)"
+          />
+          <rect x="17" y="3" width="6" height="34" fill="var(--ncoga-gold)" />
+          <rect x="3" y="17" width="34" height="6" fill="var(--ncoga-gold)" />
+        </svg>
+      );
+    default: {
+      const exhaustive: never = icon;
+      return exhaustive;
+    }
+  }
+}
 
 export default function NcogaHomePage() {
   return (
@@ -100,7 +246,7 @@ export default function NcogaHomePage() {
                 <strong>1986</strong>
               </p>
               <p>
-                <span>Based in</span>
+                <span>Headquarters</span>
                 <strong>New York City</strong>
               </p>
               <p>
@@ -129,12 +275,8 @@ export default function NcogaHomePage() {
                 organization based in New York City, representing Ghanaian
                 associations in the United States.
               </p>
-              <Link
-                className="ncoga-text-link"
-                href="https://ncoga.com/about-us/"
-              >
-                Read more on NCOGA&apos;s current site{" "}
-                <span aria-hidden="true">↗</span>
+              <Link className="ncoga-text-link" href="/about">
+                Read more about NCOGA <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -164,19 +306,18 @@ export default function NcogaHomePage() {
                 areas of focus.
               </p>
               <ol className="ncoga-home-focus-list">
-                <li>
-                  <span aria-hidden="true">01</span> Unity among associations
-                </li>
-                <li>
-                  <span aria-hidden="true">02</span> Ghanaian culture
-                </li>
-                <li>
-                  <span aria-hidden="true">03</span> Resolving community
-                  conflicts
-                </li>
-                <li>
-                  <span aria-hidden="true">04</span> Coordinated activities
-                </li>
+                {focusAreas.map((area) => (
+                  <li key={area.title}>
+                    <div className="ncoga-home-focus-meta" aria-hidden="true">
+                      <span>{area.number}</span>
+                      <FocusMark icon={area.icon} />
+                    </div>
+                    <div>
+                      <h3>{area.title}</h3>
+                      <p>{area.detail}</p>
+                    </div>
+                  </li>
+                ))}
               </ol>
             </div>
           </div>
@@ -231,37 +372,88 @@ export default function NcogaHomePage() {
           id="yay"
           aria-labelledby="yay-title"
         >
-          <div className="ncoga-container ncoga-home-yay-grid">
-            <div>
-              <span className="ncoga-eyebrow">The next generation</span>
-              <h2 id="yay-title" className="ncoga-heading">
-                NCOGA Young Adult &amp; Youth
-              </h2>
-              <p className="ncoga-lead">
-                Established in October 2024, NCOGA YAY is a branch of the
-                council focused on young Ghanaians, leadership, cultural pride,
-                and global engagement.
-              </p>
-              <p>
-                Its work is organized around five pillars: education; networking
-                and career growth; community engagement, health and
-                philanthropy; internal and public affairs; and public
-                communications.
-              </p>
-              <Button asChild>
-                <Link href="https://ncoga.com/ncoga-youth/">
-                  Visit NCOGA YAY <span aria-hidden="true">↗</span>
-                </Link>
-              </Button>
+          <div className="ncoga-container">
+            <div className="ncoga-home-yay-grid">
+              <div>
+                <span className="ncoga-eyebrow">The next generation</span>
+                <h2 id="yay-title" className="ncoga-heading">
+                  NCOGA Young Adult &amp; Youth
+                </h2>
+                <p className="ncoga-lead">
+                  Established in October 2024, NCOGA YAY is a branch of the
+                  council focused on young Ghanaians, leadership, cultural
+                  pride, and global engagement.
+                </p>
+                <p>Its work is organized around five pillars.</p>
+                <Button asChild>
+                  <Link href="/ncoga-yay">Visit NCOGA YAY</Link>
+                </Button>
+              </div>
+              <figure className="ncoga-home-yay-mark" data-ncoga-reveal>
+                <Image
+                  src="/logos/ncoga-yay-logos/ncoga_youth_logo.png"
+                  alt=""
+                  width={666}
+                  height={375}
+                  sizes="(max-width: 700px) 100vw, 42vw"
+                />
+              </figure>
             </div>
-            <div
-              className="ncoga-home-yay-art"
-              aria-hidden="true"
-              data-ncoga-reveal
-            >
-              <span>NCOGA</span>
-              <strong>YAY</strong>
-              <span>Young Adult &amp; Youth</span>
+            <ol className="ncoga-home-pillars">
+              {yayPillars.map((pillar) => (
+                <li key={pillar.name} className="ncoga-home-pillar">
+                  <div className="ncoga-home-pillar-mark">
+                    <Image
+                      src={pillar.src}
+                      alt=""
+                      width={666}
+                      height={375}
+                      sizes="(max-width: 700px) 80vw, (max-width: 900px) 40vw, 280px"
+                    />
+                  </div>
+                  <div className="ncoga-home-pillar-copy">
+                    <h3>{pillar.name}</h3>
+                    <p>{pillar.detail}</p>
+                  </div>
+                  <Button asChild>
+                    <Link href={`/ncoga-yay/pillars/${pillar.slug}`}>
+                      {pillar.action}
+                    </Link>
+                  </Button>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section
+          className="ncoga-section ncoga-home-join"
+          aria-labelledby="join-title"
+        >
+          <div className="ncoga-container ncoga-home-join-inner">
+            <div>
+              <span className="ncoga-eyebrow">Join NCOGA YAY</span>
+              <h2 id="join-title" className="ncoga-heading">
+                Register to be a member.
+              </h2>
+            </div>
+            <div>
+              <p>
+                Join NCOGA Young Adult &amp; Youth through the council&apos;s
+                membership form.
+              </p>
+              <div className="ncoga-actions">
+                <Button asChild>
+                  <a
+                    href={yayMembershipUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Register to be a member
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>

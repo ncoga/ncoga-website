@@ -72,6 +72,10 @@ The owner asked for more visual richness and a restrained GSAP treatment, starti
 
 The owner selected a full-image background for the NCOGA homepage hero. Keep the image edge to edge and put the headline, supporting copy, and actions within one flat, dark heritage-green overlay. The overlay must provide contrast independent of the photograph's lightest crop; use ivory text and clearly distinct button states. Do not use a gradient or place type directly on an uncontrolled part of the image. On narrow screens, let the copy settle below a visible band of photography while remaining within the image stage. Keep meaningful image alternative text, a solid-color fallback, responsive `cover` cropping, and the factual rail below the stage. Later pages may use this pattern only when their imagery and copy support it; test the crop and contrast at the required viewport widths.
 
+### Type-led YAY page variant — 2026-10-17
+
+When YAY photography or logo provenance is unapproved, lead with the shared Newsreader/DM Sans hierarchy and a single solid red typographic field. The abstract Kente strip study can sit at low contrast inside that field; it should never carry essential content. Use the parent green for mission/vision and core navigation so YAY remains visibly part of NCOGA. Do not turn every YAY section into a red card or add unverified people imagery. The `/ncoga-yay` landing page demonstrates this variant.
+
 ## Pending implementation decisions
 
 The approved **direction and request for subtle motifs** do not approve specific copy, leaders, logos, photos, social destinations, or program status. The two documented motif studies have passed rendered review in the Phase 2 preview; their placement and contrast must be checked again wherever future pages use them. Final optical tuning with real page content, form-state colors, and production image treatment still need validation. Do not silently introduce one-off styling that conflicts with this system; record a reusable variant or a design decision when needed.

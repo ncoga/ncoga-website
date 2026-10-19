@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 // Only migrated NCOGA routes belong to launch smoke coverage. Copied routes
 // remain available for migration work but are not ready for NCOGA publication.
-const routes = ["/", "/design-system"];
+const routes = ["/", "/about", "/contact", "/ncoga-yay", "/design-system"];
 
 for (const route of routes) {
   test(`${route} renders without browser errors`, async ({ page }) => {
@@ -50,17 +50,19 @@ test("security headers are present", async ({ request }) => {
   expect(response.headers()["x-powered-by"]).toBeUndefined();
 });
 
-test("contact validation prevents an empty submission", async ({ page }) => {
+test("NCOGA contact does not expose a copied submission form", async ({
+  page,
+}) => {
   const mutationRequests: string[] = [];
   page.on("request", (request) => {
     if (request.method() !== "GET") mutationRequests.push(request.url());
   });
 
   await page.goto("/contact");
-  await page.getByRole("button", { name: "Send Message" }).click();
-
-  await expect(page.getByRole("alert").first()).toBeVisible();
-  await expect(page.getByText("First name is required")).toBeVisible();
+  await expect(page.locator("form")).toHaveCount(0);
+  await expect(
+    page.getByRole("link", { name: /info@ncoga.com/ }),
+  ).toHaveAttribute("href", "mailto:info@ncoga.com");
   expect(mutationRequests).toEqual([]);
 });
 

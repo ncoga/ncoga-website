@@ -44,8 +44,13 @@ jobs:
           esac
 
           trusted_dependabot=false
-          if [[ "$AUTHOR" == "dependabot[bot]" && "$BASE_REF" == "main" ]]; then
+          if [[ "$AUTHOR" == "dependabot[bot]" && "$BASE_REF" == "release/dev" ]]; then
             trusted_dependabot=true
+          fi
+
+          if [[ "$BASE_REF" == "main" && "$HEAD_REF" != "release/dev" ]]; then
+            echo "reason=Only release/dev may be promoted into main." >> "$GITHUB_OUTPUT"
+            exit 1
           fi
 
           if [[ "$HEAD_REPOSITORY" != "$REPOSITORY" ]]; then

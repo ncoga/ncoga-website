@@ -1,8 +1,10 @@
-# Initial information architecture — Phase 0 proposal
+# Information architecture and first-wave route status
 
-This is a content-led route hypothesis, **not an approved implementation map**. NCOGA remains the parent; YAY is a subsection. Phase 2 should reconcile actual WordPress URLs and redirects after a fuller export/crawl. Do not launch empty routes to satisfy a sitemap.
+This began as a content-led route hypothesis, **not a blanket approval to implement every route**. NCOGA remains the parent; YAY is a subsection. Reconcile actual WordPress URLs and redirects after a fuller export/crawl. Do not launch empty routes to satisfy a sitemap.
 
 **Phase 2 implementation note (2026-10-15):** `/design-system` is an isolated, noindex foundation preview with section-anchor navigation. It is not part of the proposed public sitemap. The copied marketing routes still serve legacy content; no WordPress redirects or public NCOGA routes have been activated.
+
+**Phase 4 implementation note (2026-10-17):** `/`, `/about`, `/contact`, and `/ncoga-yay` now use the shared NCOGA layout and link to one another. Their content plans and browser checks are recorded in [progress](../development/PROGRESS.md). The public site has not been deployed. Other copied routes, the sitemap, robots rules, and WordPress redirects still require migration; this table remains a plan for those later pages.
 
 ## First content waves
 
