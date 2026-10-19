@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { NcogaSuppliedHero } from "@/components/ncoga/ncoga-page-hero";
@@ -13,31 +12,15 @@ import {
   weDey,
   yaySeptemberBySlug,
 } from "@/content/yay-september";
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
-const title = "Our Programs | NCOGA YAY";
 const description = programsIntro.paragraphs[0];
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ncoga.com"),
-  title: { absolute: title },
+export const metadata = ncogaPageMetadata({
+  title: "Our Programs | NCOGA YAY",
   description,
-  alternates: { canonical: "/ncoga-yay/programs" },
-  openGraph: {
-    type: "website",
-    url: "https://ncoga.com/ncoga-yay/programs",
-    siteName: "NCOGA",
-    title,
-    description,
-    images: [
-      {
-        url: "/images/program.png",
-        width: 2172,
-        height: 724,
-        alt: "Programs. Creating opportunities, building community, and expanding access.",
-      },
-    ],
-  },
-};
+  path: "/ncoga-yay/programs",
+});
 
 export default function NcogaYayProgramsPage() {
   return (

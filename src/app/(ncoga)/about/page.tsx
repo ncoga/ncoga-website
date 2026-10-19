@@ -1,36 +1,20 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import { NcogaAboutMotion } from "@/components/ncoga/ncoga-about-motion";
 import { Button } from "@/components/ui/button";
 import { yayPillars } from "@/content/yay-pillars";
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
 const title = "About NCOGA | National Council of Ghanaian Associations";
 const description =
   "Learn about NCOGA, the New York City-based umbrella council for Ghanaian associations in the United States, founded in 1986.";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ncoga.com"),
-  title: { absolute: title },
+export const metadata = ncogaPageMetadata({
+  title,
   description,
-  alternates: { canonical: "/about" },
-  openGraph: {
-    type: "website",
-    url: "https://ncoga.com/about",
-    siteName: "NCOGA",
-    title,
-    description,
-    images: [
-      {
-        url: "/images/ncoga-logo.png",
-        width: 500,
-        height: 500,
-        alt: "NCOGA logo",
-      },
-    ],
-  },
-};
+  path: "/about",
+});
 
 const historyNotes = [
   {

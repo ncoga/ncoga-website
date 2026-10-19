@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { NcogaSuppliedHero } from "@/components/ncoga/ncoga-page-hero";
@@ -18,31 +17,15 @@ import {
   townHallPress,
   yayMembershipUrl,
 } from "@/content/yay-september";
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
-const title = "Press & Media | NCOGA";
 const description = pressIntro.paragraphs[0];
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ncoga.com"),
-  title: { absolute: title },
+export const metadata = ncogaPageMetadata({
+  title: "Press & Media | NCOGA",
   description,
-  alternates: { canonical: "/press" },
-  openGraph: {
-    type: "website",
-    url: "https://ncoga.com/press",
-    siteName: "NCOGA",
-    title,
-    description,
-    images: [
-      {
-        url: "/images/press-media-banner.png",
-        width: 2172,
-        height: 724,
-        alt: "Press and Media. Stay informed with announcements, event highlights, media coverage, and stories about NCOGA YAY.",
-      },
-    ],
-  },
-};
+  path: "/press",
+});
 
 function FishermanParagraph({ text }: { text: string }) {
   const parts = text.split("The Fisherman");

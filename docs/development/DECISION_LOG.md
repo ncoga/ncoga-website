@@ -1,5 +1,15 @@
 # Decision log
 
+## Public search and link previews — 2026-10-18
+
+**Status:** Implemented on the public NCOGA pages.
+
+**Decision:** Social link previews use one compressed copy of the supplied council photograph. Each public page keeps its own title and description, with a canonical URL on `https://ncoga.com`. The sitemap lists those pages. The copied staffing routes stay out of the sitemap and are marked not to be indexed.
+
+**Reason:** The owner asked for a shared link preview, a Google description, and the other search basics before the next `release/dev` deploy.
+
+**Consequence:** Search engines are asked to treat `https://ncoga.com` as the public site. The original preview file remains in the repository; crawlers receive the smaller JPEG.
+
 ## Council portraits use one square crop — 2026-10-18
 
 **Status:** Implemented locally on the council cards and the portrait dialog.

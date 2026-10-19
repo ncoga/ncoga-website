@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +6,7 @@ import { NcogaYayHeroFilm } from "@/components/ncoga/ncoga-yay-hero-film";
 import { NcogaYayMotion } from "@/components/ncoga/ncoga-yay-motion";
 import { Button } from "@/components/ui/button";
 import { getYayPillar, type YayPillar } from "@/content/yay-pillars";
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
 const yayFocusSlugs = [
   "internal-public-affairs",
@@ -34,27 +34,11 @@ const mission =
 const vision =
   "To create an inspired, connected, and proactive community of young Ghanaian leaders who are equipped to influence and innovate across cultures and continents, driving progress and representation for Ghanaians worldwide.";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ncoga.com"),
-  title: { absolute: title },
+export const metadata = ncogaPageMetadata({
+  title,
   description,
-  alternates: { canonical: "/ncoga-yay" },
-  openGraph: {
-    type: "website",
-    url: "https://ncoga.com/ncoga-yay",
-    siteName: "NCOGA",
-    title,
-    description,
-    images: [
-      {
-        url: "/images/ncoga-logo.png",
-        width: 500,
-        height: 500,
-        alt: "NCOGA logo",
-      },
-    ],
-  },
-};
+  path: "/ncoga-yay",
+});
 
 function AccountMark() {
   return (

@@ -1,44 +1,20 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { NcogaHomeMotion } from "@/components/ncoga/ncoga-home-motion";
 import { yayPillars } from "@/content/yay-pillars";
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
 const title = "National Council of Ghanaian Associations | NCOGA";
 const description =
   "NCOGA is a New York City-based umbrella organization for Ghanaian associations in the United States, founded in 1986.";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ncoga.com"),
-  title: { absolute: title },
+export const metadata = ncogaPageMetadata({
+  title,
   description,
-  applicationName: "NCOGA",
-  alternates: { canonical: "/" },
-  icons: { icon: "/images/ncoga-logo.png", apple: "/images/ncoga-logo.png" },
-  openGraph: {
-    type: "website",
-    url: "https://ncoga.com/",
-    siteName: "NCOGA",
-    title,
-    description,
-    images: [
-      {
-        url: "/images/ncoga-logo.png",
-        width: 500,
-        height: 500,
-        alt: "NCOGA logo",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary",
-    title,
-    description,
-    images: ["/images/ncoga-logo.png"],
-  },
-};
+  path: "/",
+});
 
 const organization = {
   "@context": "https://schema.org",
@@ -47,8 +23,15 @@ const organization = {
   alternateName: "NCOGA",
   url: "https://ncoga.com/",
   logo: "https://ncoga.com/images/ncoga-logo.png",
+  image: "https://ncoga.com/og-metadata.jpg",
+  description,
   foundingDate: "1986",
   email: "info@ncoga.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "New York City",
+    addressCountry: "US",
+  },
 };
 
 const yayMembershipUrl = "https://forms.gle/a1cziJ8JJhDGz96j9";
