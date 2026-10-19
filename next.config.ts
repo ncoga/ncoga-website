@@ -23,7 +23,7 @@ const contentSecurityPolicy = [
   "img-src 'self' blob: data:",
   "font-src 'self'",
   "connect-src 'self' https://challenges.cloudflare.com",
-  "frame-src https://challenges.cloudflare.com",
+  "frame-src https://challenges.cloudflare.com https://www.youtube-nocookie.com",
   "worker-src 'self' blob:",
   "manifest-src 'self'",
 ].join("; ");

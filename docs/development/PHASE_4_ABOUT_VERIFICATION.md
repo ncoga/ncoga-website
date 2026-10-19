@@ -1,6 +1,18 @@
 # Phase 4 About page verification
 
-**Checked:** 2026-10-16 on `release/dev`.
+## 2026-10-18 — Editorial rebuild
+
+Rebuilt `/about` in place. Official mission and vision stay verbatim and are labeled official statements. Historical examples, including AIDS assistance, are labeled as published history. Stated needs are not presented as launched programs. Dr. Victor Essien’s name, chairman title, and retreat quotation are omitted. The page uses `ncoga-dinner.jpg` once, with neutral alt text and no caption. `ncoga-image-2.jpg`, `ncoga-yay.webp`, and the homepage photographs are not reused. The YAY membership form is not used.
+
+| Check                | Result                                                                                                                                                                                                                                 |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| About Chromium suite | 5 passed: sourced content and actions, eight widths with mobile keyboard navigation, reduced-motion visibility, and axe WCAG A/AA at 375px and 1440px.                                                                                 |
+| Keyboard             | The mission link moves to `#mission`. On a phone-width layout, opening the sidebar focuses About; Escape closes it and returns focus to the menu button.                                                                               |
+| Reduced motion       | With `prefers-reduced-motion: reduce`, the heading and photograph stay at full opacity with no transform.                                                                                                                              |
+| Visual review        | Phone and desktop layouts were inspected in the browser: type-led opening, year panel, banquet photograph, history rows, stated needs, official statements, YAY links, and the email close. No horizontal overflow at 375px or 1440px. |
+| Publication limits   | Local only. Photograph rights, named leadership, and organizational approval remain open. Sitemap, robots, and deployment were not changed.                                                                                            |
+
+## 2026-10-16 — First source-backed page
 
 The legacy `/about` landing page was replaced with a parent NCOGA page using the approved visual system. The page presents facts and wording traced in the [content and action plan](PHASE_4_ABOUT_PLAN.md). The original mission and vision remain verbatim. Older activities are identified as historical examples, with no claim that they are currently available. The former About page's copied Platinum components had no remaining imports and were removed.
 
@@ -17,6 +29,6 @@ The legacy `/about` landing page was replaced with a parent NCOGA page using the
 
 ## Publication limits
 
-This is a local source-backed implementation. Organizational content approval is still required before publishing. The copied sitemap and robots rules still refer to the legacy site, and other copied routes remain on the legacy layout. They must be migrated or removed before NCOGA launch. The About page uses no new photography or copied form/integration.
+This is a local source-backed implementation. Organizational content approval is still required before publishing. The copied sitemap and robots rules still refer to the legacy site, and other copied routes remain on the legacy layout. They must be migrated or removed before NCOGA launch. At this check, the About page used no new photography or copied form.
 
 **Later route update:** On 2026-10-17, the YAY action was moved from the interim external published page to the verified local `/ncoga-yay` landing page and passed the combined NCOGA browser regression suite.

@@ -1,5 +1,95 @@
 # Decision log
 
+## Council portraits use one square crop — 2026-10-18
+
+**Status:** Implemented locally on the council cards and the portrait dialog.
+
+**Decision:** Council photographs sit in equal square frames. The shared crop covers the frame and sits slightly above center (`object-position: center 8%`) so the person stays in view. Anna Agbotse, John Kyeremeh, William Oppong, and Kuukua Abraham use a higher anchor so the empty space above their faces is reduced. Names keep a two-line height so the cards match.
+
+**Reason:** Full photographs made the cards different heights. The owner asked to return to equal cards and shift the crop up so each person stays in focus.
+
+**Consequence:** The earlier choice to show each photograph in full is superseded. Tall portraits lose some of the lower body. Landscape photographs lose the sides.
+
+## First-version navigation, portraits, and pillar leaders — 2026-10-18
+
+**Status:** Implemented locally. Production deployment follows this pass.
+
+**Decision:** Hide Martina Antwi until a photograph is available. Show each council photograph in full. Put Home, Our Programs, and Partner with Us on the main navigation, and leave the YAY menu as About and Pillars. Use the NCOGA mark and the YAY mark together, with a divider and no wordmark, in the header and footer on every public page. Label the homepage place fact Headquarters. On the YAY focus section, place Internal & Public Affairs before Education. Assign the named council leaders to the five pillar pages and fill those pages with work already published elsewhere on the site. On Events, label the five pillar meetings Coming Soon. Keep the partnership inquiry button label white.
+
+**Reason:** The owner asked for these changes before the first Vercel deployment.
+
+**Consequence:** Gaylord Kweku Appiah remains on the council page with a photograph and no biography. Pillar pages repeat sourced program and press sentences. They do not add new dates, statistics, or partnership claims.
+
+## YAY council photographs and biographies — 2026-10-18
+
+**Status:** Implemented locally on `/ncoga-yay`. Production publication and deployment remain pending.
+
+**Decision:** Map each supplied file in `public/images/council-leaders/` to the matching council name. Wendy Asante and Shumuel Ofosu-Koranteng use JPEG copies of the HEIF files so the browser can show them. Publish the biographies supplied with those photographs. Elizabeth Ameke’s milestones URL is a link. Irene Dwamena-Ansong and Gaylord Kweku Appiah have photographs and no biography. Martina Antwi has neither, so that card keeps initials and the unpublished-biography note. Michael Ansong uses `Micheal .jpeg` and stays separate from Derrick Dwamena.
+
+**Reason:** The owner supplied the photographs and the biography text and asked for each image to be checked against the name on the page.
+
+**Consequence:** The earlier choice to leave council photographs and biographies unpublished is superseded for the people who now have them. Spellings stay Getrude, Bennet, Shumuel, and Kuukua.
+
+## YAY September page copy — 2026-10-18
+
+**Status:** Implemented locally on Partner, Programs, Events, Press, and the five pillar routes. Production publication and deployment remain pending.
+
+**Decision:** Use [the September draft](../content/PAGES%20UPDATE%20SEPTEMBER%202026.md) as the copy for those pages. Publish Infinite Vision / Restore Ghana, the inquiry, partner, and ambassador forms, the November 6 and November 7 meetings, the October 2026 pillar meetings, and the statement that membership is free. Membership registration stays the form already on `/ncoga-yay`. Leave announcement, recap, photo, graphic, flyer, and fiscal-calendar placeholders unpublished. Do not add a quiet page, ages, or a price. The draft file lives in `docs/content/` so a deploy cannot serve it from `public/`.
+
+**Reason:** The owner made this draft the source for the next pass and asked for it to leave `public/` before any deploy. An earlier decision had kept the named partnership and September forms off the site.
+
+**Consequence:** That earlier limit is superseded on these routes. The quiet-page form URL stays unused. Sitemap, robots, and deployment stay later work.
+
+## YAY heroes and Our Programs shell — 2026-10-18
+
+**Status:** Heroes and the programs route are local. Full page copy from the September draft is the next pass. Production publication and deployment remain pending.
+
+**Decision:** Every pillar page uses `/images/ncoga-yay.webp` as the hero, with a flat scrim and an ivory wave. Press, Events, Partner, and the new Our Programs page use the supplied banners as the hero image. Our Programs is `/ncoga-yay/programs`, between Pillars and Partner with Us. Body copy stays the short holding text until the next pass.
+
+**Reason:** The owner asked for these heroes and the menu item, and asked for the September draft to be implemented afterward.
+
+**Consequence:** The next content pass follows [YAY_PAGE_BUILD_HANDOFF.md](YAY_PAGE_BUILD_HANDOFF.md) and [the September draft](../content/PAGES%20UPDATE%20SEPTEMBER%202026.md). Sitemap, robots, and deployment stay later work.
+
+## YAY about copy, full-bleed film, and council additions — 2026-10-18
+
+**Status:** Implemented locally on `/ncoga-yay` and `/ncoga-yay/partner`. Production publication and deployment remain pending.
+
+**Decision:** Use the live YAY about copy on `/ncoga-yay`, including the 1986 parent founding, the October 2024 branch establishment, the five-pillar account, and the March 8, 2025 announcement at the Ghana Independence Gala and Fundraising Event. Play the supplied film as the full hero background, with the headline and action on a solid plate. Change the YAY menu to About, Pillars (the five existing routes), and Partner with Us. Add Irene Dwamena-Ansong, Martina Antwi, William Oppong, Gaylord Kweku Appiah, and Kuukua Abraham to the council list. Photographs and biographies stay unpublished. Do not publish draft partner names or forms.
+
+**Reason:** The owner supplied this about copy from the current public YAY page and asked for these five names, a partner page, the nested menu, and a full-bleed film. The 1986 founding is already verified for NCOGA. Partnership programs in the September draft are still unverified.
+
+**Consequence:** The council list now has eighteen names. `/ncoga-yay/partner` invites inquiry at `info@ncoga.com` and does not name partners. The film stays on youtube-nocookie.com. The YAY mark appears in the header on `/ncoga-yay` only, and the footer shows the NCOGA crest. Sitemap, robots, and deployment stay later work.
+
+## YAY page rebuild and shared header — 2026-10-18
+
+**Status:** Implemented locally on `/ncoga-yay`, with `/press` and `/events` holding pages. Production publication and deployment remain pending.
+
+**Decision:** Rebuild `/ncoga-yay` in the editorial system and extend the shared header so NCOGA YAY discloses the branch overview and the five existing pillar routes. Header order is About, NCOGA YAY, Press & Media, Events, and Contact. Mission & vision stays on the homepage and in the footer, and leaves the header. Press and Events are short notes that those sections are being prepared. Publish these council names from the current public YAY page, with spellings unchanged and no titles: Anna Agbotse; Akwasi “Owura” Owusu-Asumeng; Wendy Asante; Tizard Ofori-Twum Carlton; Mabel Adu; John Kyeremeh; Pearl Dodoo; Getrude Eshun; Bennet Brown; Derrick Dwamena; Michael Ansong; Elizabeth Ameke; Shumuel Ofosu-Koranteng. Each card uses initials. The dialog says only that a biography has not been published yet. Do not add names from the meeting notes.
+
+**Reason:** The owner asked for the live-page council names, the muted film at `https://www.youtube.com/watch?v=izmN42dVWBM`, pillar cards that open the existing pillar routes, and the new header destinations. Photographs and biographies are still unpublished. The meeting notes request other roster changes; those names are not on this page.
+
+**Consequence:** `/ncoga-yay` shows the thirteen names, the October 2024 branch sentence, the verbatim YAY mission and vision, and the March 8, 2025 leadership announcement. Pillar logos sit on the card with no plate behind them. The film autoplays muted from youtube-nocookie.com, and reduced motion or a blocked embed keeps a still. Sitemap, robots, and deployment stay later work.
+
+## About page editorial rebuild — 2026-10-18
+
+**Status:** Implemented locally on `/about`. Production publication and deployment remain pending.
+
+**Decision:** Rebuild the existing About page in the homepage editorial system without cloning its sections. Use the official mission and vision verbatim, label historical work as history, and keep one primary action, “Contact NCOGA,” to `mailto:info@ncoga.com`. Place `ncoga-dinner.jpg` once, with neutral alt text and no caption. Omit Dr. Victor Essien’s name, the chairman title, and the retreat quotation. Omit `ncoga-image-2.jpg`, `ncoga-yay.webp`, and a second use of the homepage photographs. Link YAY with “Explore NCOGA YAY” and the action labels already in `src/content/yay-pillars.ts`. Do not reuse the YAY membership form.
+
+**Reason:** The live About page mixes sourced council history with an old charity theme. The local page already had the sourced statements, but it did not yet use the permitted photograph or the homepage’s warmth. Named parent leadership is still pending review in the content inventory. The banquet portrait of four people would read as a leadership picture, and the unused YAY image is an illustration of fictional people.
+
+**Consequence:** `/about` now shows local photographs whose dates, subjects, and rights are still undocumented. The banquet photograph spans the content width. History, the account of change, and the official statements each have a separate crop so the right side of those sections is not empty. AIDS assistance is labeled published history, not a current program. Stated needs are not presented as launched programs. YAY pillars use the supplied marks in a five-part layout. Homepage membership stays on the homepage. Sitemap, robots, and deployment stay later work.
+
+## Homepage focus graphics, YAY pillars, and membership — 2026-10-18
+
+**Status:** Implemented locally on `/`. Production publication and deployment remain pending.
+
+**Decision:** Keep the existing homepage sequence and add original solid-color marks to the four sourced focus areas. Explain the five YAY pillars with the supplied logos on black stages, and place the YAY youth mark on a black stage with a red accent. Use one membership action, “Register to be a member,” pointing to `https://forms.gle/a1cziJ8JJhDGz96j9`. “Join us” uses that same form, so it is not a second section. Pillar cards do not link onward. Do not add ages, fees, donations, campaigns, testimonials, or leadership from the current site.
+
+**Reason:** The owner asked for more homepage graphics, pillar explanations, and this membership form. The logo files are wide PNGs with black canvases, so a black stage keeps them from appearing as stray rectangles. The September draft had recorded a different form URL; the owner-supplied form is the homepage destination.
+
+**Consequence:** This request authorizes these marks on the homepage. It does not approve them for other routes. The draft URL `https://forms.gle/pb7QKrs7X1pDyP9n6` is not used here. Pillar cards link to `/ncoga-yay/pillars/[slug]` and currently show the sourced description only; fuller pillar pages, sitemap cleanup, and deployment stay later work.
+
 ## First-wave NCOGA routes and YAY visual fallback — 2026-10-17
 
 **Status:** Implemented and verified locally on `release/dev`; organizational content approval and production publication remain pending. See [About](PHASE_4_ABOUT_VERIFICATION.md), [Contact](PHASE_4_CONTACT_VERIFICATION.md), and [YAY](PHASE_4_YAY_VERIFICATION.md).

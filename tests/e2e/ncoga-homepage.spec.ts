@@ -47,6 +47,66 @@ test("homepage presents sourced content, metadata, and working actions", async (
       .evaluate((image: HTMLImageElement) => image.naturalWidth),
   ).toBeGreaterThan(0);
   await expect(page.locator(".ncoga-home-focus-list li")).toHaveCount(4);
+  await expect(page.locator(".ncoga-home-focus-mark")).toHaveCount(4);
+  await expect(
+    page.getByRole("link", { name: "Find learning opportunities" }),
+  ).toHaveAttribute("href", "/ncoga-yay/pillars/education");
+  await expect(
+    page.getByRole("link", { name: "Meet mentors and peers" }),
+  ).toHaveAttribute("href", "/ncoga-yay/pillars/networking-career-growth");
+  await expect(
+    page.getByRole("link", { name: "Volunteer with your community" }),
+  ).toHaveAttribute("href", "/ncoga-yay/pillars/community-health-philanthropy");
+  await expect(
+    page.getByRole("link", { name: "Take part in civic work" }),
+  ).toHaveAttribute("href", "/ncoga-yay/pillars/internal-public-affairs");
+  await expect(
+    page.getByRole("link", { name: "See what we share" }),
+  ).toHaveAttribute("href", "/ncoga-yay/pillars/public-communications");
+  await expect(page.getByRole("heading", { name: "Education" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Networking & Career Growth" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: "Community Engagement, Health & Philanthropy",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Internal & Public Affairs" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Public Communications" }),
+  ).toBeVisible();
+  await expect(page.locator(".ncoga-home-pillar-mark img")).toHaveCount(5);
+  await expect(page.locator(".ncoga-home-yay-mark img")).toHaveAttribute(
+    "src",
+    /ncoga_youth_logo/,
+  );
+  await expect(
+    page.locator(".ncoga-home-pillar-mark img").nth(0),
+  ).toHaveAttribute("src", /website_Education_logo/);
+  await expect(
+    page.locator(".ncoga-home-pillar-mark img").nth(1),
+  ).toHaveAttribute("src", /networking_logo/);
+  await expect(
+    page.locator(".ncoga-home-pillar-mark img").nth(2),
+  ).toHaveAttribute("src", /community_engagement_logo/);
+  await expect(
+    page.locator(".ncoga-home-pillar-mark img").nth(3),
+  ).toHaveAttribute("src", /internal_affairs_logo/);
+  await expect(
+    page.locator(".ncoga-home-pillar-mark img").nth(4),
+  ).toHaveAttribute("src", /public_communication/);
+  const membership = page.getByRole("link", {
+    name: "Register to be a member",
+  });
+  await expect(membership).toHaveAttribute(
+    "href",
+    "https://forms.gle/a1cziJ8JJhDGz96j9",
+  );
+  await expect(membership).toHaveAttribute("target", "_blank");
+  await expect(membership).toHaveAttribute("rel", "noopener noreferrer");
 
   await page.getByRole("link", { name: "Discover NCOGA" }).click();
   await expect(page).toHaveURL(/#about$/);
@@ -65,6 +125,10 @@ test("homepage fits required widths and mobile keyboard navigation works", async
   );
   for (const width of widths) {
     await page.setViewportSize({ width, height: 900 });
+    await expect(page.locator(".ncoga-home-hero-photo")).toHaveCSS(
+      "transform",
+      "none",
+    );
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth),
       `overflow at ${width}px`,
@@ -105,7 +169,9 @@ test("homepage fits required widths and mobile keyboard navigation works", async
       .evaluate((link) => getComputedStyle(link).animationName),
   ).toBe("ncoga-menu-link-in");
   await expect(
-    page.getByRole("link", { name: "About", exact: true }).first(),
+    page
+      .getByRole("navigation", { name: "Mobile navigation" })
+      .getByRole("link", { name: "Home", exact: true }),
   ).toBeFocused();
   await page.keyboard.press("Shift+Tab");
   await expect(page.locator(".ncoga-sidebar-close")).toBeFocused();

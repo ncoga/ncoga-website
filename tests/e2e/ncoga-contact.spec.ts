@@ -62,7 +62,7 @@ test("Contact fits required widths and keeps mobile navigation keyboard accessib
   await expect(
     page
       .getByRole("navigation", { name: "Mobile navigation" })
-      .getByRole("link", { name: "About", exact: true }),
+      .getByRole("link", { name: "Home", exact: true }),
   ).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(menu).toBeFocused();
