@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { NcogaSuppliedHero } from "@/components/ncoga/ncoga-page-hero";
@@ -13,31 +12,15 @@ import {
   infiniteVisionUrl,
   yaySeptemberBySlug,
 } from "@/content/yay-september";
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
-const title = "Partner with Us | NCOGA YAY";
 const description = partnerIntro.paragraphs[0];
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ncoga.com"),
-  title: { absolute: title },
+export const metadata = ncogaPageMetadata({
+  title: "Partner with Us | NCOGA YAY",
   description,
-  alternates: { canonical: "/ncoga-yay/partner" },
-  openGraph: {
-    type: "website",
-    url: "https://ncoga.com/ncoga-yay/partner",
-    siteName: "NCOGA",
-    title,
-    description,
-    images: [
-      {
-        url: "/images/partner-with-ncoga-yay-banner.png",
-        width: 2172,
-        height: 724,
-        alt: "Partner with NCOGA YAY. Building opportunities, strengthening connections, and expanding access.",
-      },
-    ],
-  },
-};
+  path: "/ncoga-yay/partner",
+});
 
 export default function NcogaYayPartnerPage() {
   return (

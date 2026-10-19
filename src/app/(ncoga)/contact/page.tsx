@@ -1,31 +1,16 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
 const title = "Contact NCOGA | National Council of Ghanaian Associations";
 const description =
   "Contact the National Council of Ghanaian Associations at its published general email address, info@ncoga.com.";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ncoga.com"),
-  title: { absolute: title },
+export const metadata = ncogaPageMetadata({
+  title,
   description,
-  alternates: { canonical: "/contact" },
-  openGraph: {
-    type: "website",
-    url: "https://ncoga.com/contact",
-    siteName: "NCOGA",
-    title,
-    description,
-    images: [
-      {
-        url: "/images/ncoga-logo.png",
-        width: 500,
-        height: 500,
-        alt: "NCOGA logo",
-      },
-    ],
-  },
-};
+  path: "/contact",
+});
 
 export default function NcogaContactPage() {
   return (

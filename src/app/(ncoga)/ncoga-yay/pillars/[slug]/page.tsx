@@ -21,6 +21,7 @@ import {
   type YayPillar,
   yayPillars,
 } from "@/content/yay-pillars";
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
 const pillarSurfaces: Record<
   YayPillar["slug"],
@@ -60,20 +61,11 @@ export async function generateMetadata({
   const pillar = getYayPillar(slug);
   if (!pillar) return {};
 
-  const title = `${pillar.name} | NCOGA YAY`;
-  return {
-    metadataBase: new URL("https://ncoga.com"),
-    title: { absolute: title },
+  return ncogaPageMetadata({
+    title: `${pillar.name} | NCOGA YAY`,
     description: pillar.detail,
-    alternates: { canonical: `/ncoga-yay/pillars/${pillar.slug}` },
-    openGraph: {
-      type: "website",
-      url: `https://ncoga.com/ncoga-yay/pillars/${pillar.slug}`,
-      siteName: "NCOGA",
-      title,
-      description: pillar.detail,
-    },
-  };
+    path: `/ncoga-yay/pillars/${pillar.slug}`,
+  });
 }
 
 export default async function YayPillarPage({ params }: PillarPageProps) {

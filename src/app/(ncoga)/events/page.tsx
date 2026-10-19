@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { NcogaSuppliedHero } from "@/components/ncoga/ncoga-page-hero";
@@ -10,31 +9,15 @@ import {
   upcomingMeetings,
   yaySeptemberBySlug,
 } from "@/content/yay-september";
+import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
-const title = "Events | NCOGA";
 const description = eventsIntro.lead;
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://ncoga.com"),
-  title: { absolute: title },
+export const metadata = ncogaPageMetadata({
+  title: "Events | NCOGA",
   description,
-  alternates: { canonical: "/events" },
-  openGraph: {
-    type: "website",
-    url: "https://ncoga.com/events",
-    siteName: "NCOGA",
-    title,
-    description,
-    images: [
-      {
-        url: "/images/event-meeting-banner.png",
-        width: 2170,
-        height: 725,
-        alt: "Events and Meetings. Stay connected with upcoming NCOGA YAY meetings, pillar gatherings, programs, and community engagements.",
-      },
-    ],
-  },
-};
+  path: "/events",
+});
 
 function FishermanText({ text }: { text: string }) {
   const parts = text.split("The Fisherman");
