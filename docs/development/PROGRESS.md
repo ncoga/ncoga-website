@@ -1,5 +1,13 @@
 # Project progress
 
+## 2026-10-25 — Editorial article column
+
+**Completed locally:** Press articles use one centered reading column. Text stays left-aligned. The Fisherman and Health Is Wealth photographs sit in the story instead of a two-up gallery.
+
+## 2026-10-25 — Footer social links
+
+**Completed locally:** The footer links to the NCOGA YAY Instagram, LinkedIn, and YouTube profiles supplied by the owner.
+
 ## 2026-10-25 — Press graphics, story links, and the missing page
 
 **Completed locally:** Press stories use distinct link lines. The Fisherman, Health Is Wealth, the Presidential Diaspora Town Hall, and the 2027 horizon use the newly supplied graphics. Health Is Wealth shows the forum photographs two at a time, and The Fisherman includes the spotlight card and the Quad Cinema photograph. Unknown addresses use an NCOGA 404 with the supplied search animation and highlightable route buttons. The footer credits Nana with a heart, linking to princeagyeituffour.com.

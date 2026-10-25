@@ -6,6 +6,21 @@ export const ncogaIdentity = {
   yayName: "NCOGA Young Adult & Youth",
 } as const;
 
+export const ncogaSocial = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/ncogayay",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/ncoga-yay",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@NCOGAYAY",
+  },
+] as const;
+
 export type NcogaNavItem = {
   label: string;
   href: string;
