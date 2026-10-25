@@ -30,10 +30,11 @@ export function NcogaHeader({
   const triggerRef = useRef<HTMLButtonElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
-  const desktopMenuRef = useRef<HTMLDivElement>(null);
-  const desktopTriggerRef = useRef<HTMLButtonElement>(null);
+  const desktopMenus = useRef(new Map<string, HTMLDivElement>());
+  const desktopTriggers = useRef(new Map<string, HTMLButtonElement>());
   const menuId = useId();
-  const showYayMark = usePathname() === "/ncoga-yay";
+  const pathname = usePathname();
+  const showYayMark = pathname === "/ncoga-yay";
 
   useEffect(() => {
     const desktop = window.matchMedia("(min-width: 901px)");
@@ -57,10 +58,11 @@ export function NcogaHeader({
       if (event.key !== "Escape") return;
       setDesktopOpenLabel(null);
       setDesktopNestedLabel(null);
-      desktopTriggerRef.current?.focus();
+      desktopTriggers.current.get(desktopOpenLabel)?.focus();
     };
     const onPointerDown = (event: PointerEvent) => {
-      if (!desktopMenuRef.current?.contains(event.target as Node)) {
+      const menu = desktopMenus.current.get(desktopOpenLabel);
+      if (!menu?.contains(event.target as Node)) {
         setDesktopOpenLabel(null);
         setDesktopNestedLabel(null);
       }
@@ -179,20 +181,27 @@ export function NcogaHeader({
           )}
         </div>
         <nav className="ncoga-desktop-nav" aria-label="Main navigation">
-          {items.map((item) =>
-            item.children ? (
+          {items.map((item) => {
+            const desktopId = `${menuId}-${item.label.replaceAll(" ", "-")}`;
+            return item.children ? (
               <div
                 key={item.label}
                 className="ncoga-nav-item"
-                ref={desktopMenuRef}
+                ref={(node) => {
+                  if (node) desktopMenus.current.set(item.label, node);
+                  else desktopMenus.current.delete(item.label);
+                }}
               >
                 <button
-                  ref={desktopTriggerRef}
+                  ref={(node) => {
+                    if (node) desktopTriggers.current.set(item.label, node);
+                    else desktopTriggers.current.delete(item.label);
+                  }}
                   type="button"
                   className="ncoga-nav-trigger"
-                  id={`${menuId}-desktop-trigger`}
+                  id={`${desktopId}-trigger`}
                   aria-expanded={desktopOpenLabel === item.label}
-                  aria-controls={`${menuId}-desktop-menu`}
+                  aria-controls={`${desktopId}-menu`}
                   onClick={() => {
                     setDesktopNestedLabel(null);
                     setDesktopOpenLabel((current) =>
@@ -204,9 +213,9 @@ export function NcogaHeader({
                   <span className="ncoga-nav-chevron" aria-hidden="true" />
                 </button>
                 <ul
-                  id={`${menuId}-desktop-menu`}
+                  id={`${desktopId}-menu`}
                   className="ncoga-nav-menu"
-                  aria-labelledby={`${menuId}-desktop-trigger`}
+                  aria-labelledby={`${desktopId}-trigger`}
                   data-state={
                     desktopOpenLabel === item.label ? "open" : "closed"
                   }
@@ -220,7 +229,7 @@ export function NcogaHeader({
                             type="button"
                             className="ncoga-nav-subtrigger"
                             aria-expanded={desktopNestedLabel === child.label}
-                            aria-controls={`${menuId}-desktop-${child.label}`}
+                            aria-controls={`${desktopId}-${child.label}`}
                             onClick={() =>
                               setDesktopNestedLabel((current) =>
                                 current === child.label ? null : child.label,
@@ -234,7 +243,7 @@ export function NcogaHeader({
                             />
                           </button>
                           <ul
-                            id={`${menuId}-desktop-${child.label}`}
+                            id={`${desktopId}-${child.label}`}
                             className="ncoga-nav-submenu"
                             hidden={desktopNestedLabel !== child.label}
                           >
@@ -251,7 +260,13 @@ export function NcogaHeader({
                           </ul>
                         </>
                       ) : (
-                        <Link href={child.href} onClick={closeDesktopMenu}>
+                        <Link
+                          href={child.href}
+                          aria-current={
+                            pathname === child.href ? "page" : undefined
+                          }
+                          onClick={closeDesktopMenu}
+                        >
                           {child.label}
                         </Link>
                       )}
@@ -263,8 +278,8 @@ export function NcogaHeader({
               <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>
-            ),
-          )}
+            );
+          })}
         </nav>
         <button
           ref={triggerRef}
@@ -386,6 +401,9 @@ export function NcogaHeader({
                             <Link
                               key={child.href}
                               href={child.href}
+                              aria-current={
+                                pathname === child.href ? "page" : undefined
+                              }
                               onClick={closeAfterNavigation}
                             >
                               {child.label}

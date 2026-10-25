@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 
-import { ncogaOrigin } from "@/lib/ncoga-metadata";
+import { pressArticles } from "@/content/press-articles";
 import { yayPillars } from "@/content/yay-pillars";
+import { ncogaOrigin } from "@/lib/ncoga-metadata";
 
 const publicRoutes = [
   "/",
@@ -12,6 +13,8 @@ const publicRoutes = [
   "/ncoga-yay/partner",
   "/press",
   "/events",
+  "/ncoga-yay/events",
+  ...pressArticles.map((article) => `/press/${article.slug}`),
   ...yayPillars.map((pillar) => `/ncoga-yay/pillars/${pillar.slug}`),
 ];
 
@@ -22,7 +25,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: route === "/" ? `${ncogaOrigin}/` : `${ncogaOrigin}${route}`,
     lastModified: now,
     changeFrequency:
-      route === "/" || route === "/events" ? "weekly" : "monthly",
+      route === "/" || route === "/events" || route === "/ncoga-yay/events"
+        ? "weekly"
+        : "monthly",
     priority:
       route === "/"
         ? 1

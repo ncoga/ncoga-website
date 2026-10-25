@@ -6,6 +6,21 @@ export const ncogaIdentity = {
   yayName: "NCOGA Young Adult & Youth",
 } as const;
 
+export const ncogaSocial = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/ncogayay",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/ncoga-yay",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@NCOGAYAY",
+  },
+] as const;
+
 export type NcogaNavItem = {
   label: string;
   href: string;
@@ -61,7 +76,14 @@ export const homepageNavigation = [
   { label: "Our Programs", href: "/ncoga-yay/programs" },
   { label: "Partner with Us", href: "/ncoga-yay/partner" },
   { label: "Press & Media", href: "/press" },
-  { label: "Events", href: "/events" },
+  {
+    label: "Events",
+    href: "/events",
+    children: [
+      { label: "NCOGA Events", href: "/events" },
+      { label: "NCOGA YAY Events", href: "/ncoga-yay/events" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ] as const satisfies readonly NcogaNavItem[];
 

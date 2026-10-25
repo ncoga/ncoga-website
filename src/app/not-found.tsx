@@ -1,34 +1,50 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
+import { MissingAnimation } from "@/components/ncoga/missing-animation";
+import { NcogaChrome } from "@/components/ncoga/ncoga-chrome";
 import { Button } from "@/components/ui/button";
+
+import "@/styles/ncoga-theme.css";
+
+export const metadata: Metadata = {
+  title: "Page not found | NCOGA",
+  robots: { index: false, follow: false },
+};
+
+const routes = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/press", label: "Press & Media" },
+  { href: "/events", label: "NCOGA Events" },
+  { href: "/ncoga-yay", label: "NCOGA YAY" },
+  { href: "/contact", label: "Contact" },
+] as const;
 
 export default function NotFound() {
   return (
-    <main
-      id="main"
-      className="mx-auto flex min-h-[70vh] max-w-2xl flex-col justify-center px-5 py-20"
-    >
-      <p className="text-primary text-xs font-semibold tracking-[0.18em] uppercase">
-        404
-      </p>
-      <h1 className="font-heading text-foreground mt-3 text-4xl font-bold tracking-tight">
-        Page not found
-      </h1>
-      <p className="text-muted-foreground mt-4">
-        The page you&apos;re looking for doesn&apos;t exist or has moved. Try
-        returning home, searching jobs, or contacting our team.
-      </p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Button asChild>
-          <Link href="/">Back to Home</Link>
-        </Button>
-        <Button asChild variant="outline">
-          <Link href="/jobs">Search Jobs</Link>
-        </Button>
-        <Button asChild variant="ghost">
-          <Link href="/contact">Contact</Link>
-        </Button>
-      </div>
-    </main>
+    <NcogaChrome>
+      <section className="ncoga-missing" aria-labelledby="missing-title">
+        <div className="ncoga-container ncoga-missing-copy">
+          <MissingAnimation />
+          <p className="ncoga-eyebrow">404</p>
+          <h1 id="missing-title" className="ncoga-heading">
+            This page is not here.
+          </h1>
+          <p className="ncoga-lead">
+            The address may have changed, or the page was never published.
+          </p>
+          <ul className="ncoga-missing-links">
+            {routes.map((route) => (
+              <li key={route.href}>
+                <Button asChild variant="outline">
+                  <Link href={route.href}>{route.label}</Link>
+                </Button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </NcogaChrome>
   );
 }

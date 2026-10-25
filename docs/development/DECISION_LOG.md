@@ -1,5 +1,41 @@
 # Decision log
 
+## Editorial article measure — 2026-10-25
+
+**Status:** Implemented locally.
+
+**Decision:** Press articles keep left-aligned text. The breadcrumb, title, hero, body, and related stories share one centered 720px column. Photographs in The Fisherman and Health Is Wealth sit in the story: a portrait beside the section it belongs to, the Quad Cinema photograph across the column, and the closing Health Is Wealth portrait centered on its own. The equal two-up galleries are gone.
+
+**Reason:** The owner asked for a centered article column without justified text, and for photographs to be placed editorially instead of side by side.
+
+## NCOGA YAY social links — 2026-10-25
+
+**Status:** Implemented locally.
+
+**Decision:** The footer links to the NCOGA YAY profiles the owner supplied: Instagram at instagram.com/ncogayay, LinkedIn at linkedin.com/company/ncoga-yay, and YouTube at youtube.com/@NCOGAYAY. The Instagram share token was left off so the public profile address stays stable.
+
+**Reason:** The owner asked for those three profiles, with icons, in the footer.
+
+## Press graphics, story links, and the missing page — 2026-10-25
+
+**Status:** Implemented locally.
+
+**Decision:** Each press index story uses its own link line. Supplied graphics replace the placeholders for The Fisherman, Health Is Wealth, the Presidential Diaspora Town Hall, and the 2027 horizon. Health Is Wealth shows the forum photographs two at a time, centered in the article. The Fisherman article includes the film-spotlight card and a photograph from the Quad Cinema conversation. The town hall date on the index follows the supplied poster, Friday, September 25, 2026. The short town hall and 2027 texts stay as already published. Unknown pages use an NCOGA 404 with the shared header and footer. The footer credits “Made with ❤️ by Nana,” linking to princeagyeituffour.com. The word stays available to screen readers. Unknown pages use the supplied Search Not Found animation, centered on the heritage field with its white plate removed, and the route choices are highlightable buttons.
+
+**Reason:** The owner supplied the graphics and asked for distinct story links, a consistent missing page, and a maker credit.
+
+**Consequence:** The previous staffing 404, including its jobs link, is no longer used.
+
+## Press articles and separate event calendars — 2026-10-24
+
+**Status:** Implemented locally. Production publication and deployment remain pending.
+
+**Decision:** Each section on Press & Media opens an article at `/press/[slug]`. The six supplied manuscripts are published as written, including Michael Ansong-Dwamena in the Fisherman recap and Williams Oppong in the Health Is Wealth recap. Council cards keep their existing spellings. The town hall note and the 2027 horizon use only the sentences already on the press page. Stories without a supplied graphic use a solid-color placeholder. The first general members meeting follows the supplied poster: Saturday, November 7, 2026, 12:00 noon–1:00 PM EST, via Zoom. That replaces the earlier 6:00 PM ET line. The November 6 council meeting stays at 8:00 PM ET. Events in the header opens two pages: NCOGA Events at `/events`, and NCOGA YAY Events at `/ncoga-yay/events`. The NCOGA page lists a placeholder for the Ghana Independence Celebration on March 6, 2027, with no venue or program. The YAY page keeps the supplied events banner and the meetings already published.
+
+**Reason:** The owner asked for an editorial press section with an article for each current story, and for Events to offer the parent council and YAY separately.
+
+**Consequence:** Older links to `/events` now open the parent calendar. YAY meetings, including pillar “coming soon” links, use `/ncoga-yay/events`.
+
 ## Public search and link previews — 2026-10-18
 
 **Status:** Implemented on the public NCOGA pages.

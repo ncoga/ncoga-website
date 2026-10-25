@@ -44,6 +44,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
+  experimental: {
+    agentUpgrade: "security",
+  },
   // googleapis is a large Node client; keep it external to the server bundle.
   serverExternalPackages: ["googleapis"],
   async headers() {
