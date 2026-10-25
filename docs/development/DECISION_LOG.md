@@ -1,5 +1,21 @@
 # Decision log
 
+## Editorial article measure — 2026-10-25
+
+**Status:** Implemented locally.
+
+**Decision:** Press articles keep left-aligned text. The breadcrumb, title, hero, body, and related stories share one centered 720px column. Photographs in The Fisherman and Health Is Wealth sit in the story: a portrait beside the section it belongs to, the Quad Cinema photograph across the column, and the closing Health Is Wealth portrait centered on its own. The equal two-up galleries are gone.
+
+**Reason:** The owner asked for a centered article column without justified text, and for photographs to be placed editorially instead of side by side.
+
+## NCOGA YAY social links — 2026-10-25
+
+**Status:** Implemented locally.
+
+**Decision:** The footer links to the NCOGA YAY profiles the owner supplied: Instagram at instagram.com/ncogayay, LinkedIn at linkedin.com/company/ncoga-yay, and YouTube at youtube.com/@NCOGAYAY. The Instagram share token was left off so the public profile address stays stable.
+
+**Reason:** The owner asked for those three profiles, with icons, in the footer.
+
 ## Press graphics, story links, and the missing page — 2026-10-25
 
 **Status:** Implemented locally.

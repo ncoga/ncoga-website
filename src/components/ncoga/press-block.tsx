@@ -5,6 +5,41 @@ import { PressFigure } from "@/components/ncoga/press-figure";
 import { Button } from "@/components/ui/button";
 import type { PressBlock } from "@/content/press-articles";
 
+type FigurePlacement = Extract<PressBlock, { kind: "figure" }>["placement"];
+
+function figureClassName(placement: FigurePlacement) {
+  switch (placement) {
+    case "wide":
+      return "is-wide";
+    case "left":
+      return "is-left";
+    case "right":
+      return "is-right";
+    case "inset":
+      return "is-inset";
+    default: {
+      const exhaustive: never = placement;
+      return exhaustive;
+    }
+  }
+}
+
+function figureSizes(placement: FigurePlacement) {
+  switch (placement) {
+    case "wide":
+      return "(min-width: 900px) 720px, 100vw";
+    case "left":
+    case "right":
+      return "(min-width: 700px) 280px, 100vw";
+    case "inset":
+      return "(min-width: 700px) 360px, 100vw";
+    default: {
+      const exhaustive: never = placement;
+      return exhaustive;
+    }
+  }
+}
+
 function ExternalLink({ href, label }: { href: string; label: string }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
@@ -93,21 +128,9 @@ export function PressBlockView({ block }: { block: PressBlock }) {
       return (
         <PressFigure
           figure={block.figure}
-          className="is-inset"
-          sizes="(min-width: 700px) 420px, 100vw"
+          className={figureClassName(block.placement)}
+          sizes={figureSizes(block.placement)}
         />
-      );
-    case "gallery":
-      return (
-        <div className="ncoga-article-gallery">
-          {block.figures.map((figure) => (
-            <PressFigure
-              key={figure.src}
-              figure={figure}
-              sizes="(min-width: 900px) 360px, 100vw"
-            />
-          ))}
-        </div>
       );
     case "actions":
       return (

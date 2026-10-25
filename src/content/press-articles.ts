@@ -44,8 +44,11 @@ export type PressBlock =
   | { kind: "list"; items: readonly string[] }
   | { kind: "signoff"; lines: readonly string[] }
   | { kind: "actions"; actions: readonly PressAction[] }
-  | { kind: "figure"; figure: PressImage }
-  | { kind: "gallery"; figures: readonly PressImage[] };
+  | {
+      kind: "figure";
+      figure: PressImage;
+      placement: "wide" | "left" | "right" | "inset";
+    };
 
 export type PressArticle = {
   slug: string;
@@ -260,6 +263,11 @@ export const pressArticles = [
         kind: "paragraph",
         text: "For Anna and Michael, the evening offered more than an opportunity to see a Ghanaian film. It was an opportunity to experience Ghanaian storytelling through the lens of the diaspora and then engage directly in a conversation about what the story represents.",
       },
+      {
+        kind: "figure",
+        figure: fishermanSpotlight,
+        placement: "right",
+      },
       { kind: "heading", text: "A Story That Felt Like Home" },
       {
         kind: "paragraph",
@@ -270,8 +278,9 @@ export const pressArticles = [
         text: "It is authentically Ghanaian from beginning to end. You can feel the waves, the atmosphere, the emotion, the hustle, and the joyful presence of the culture in every part of the film. It brings you a little closer to home and reminds you what home feels like.",
       },
       {
-        kind: "gallery",
-        figures: [fishermanSpotlight, fishermanScreening],
+        kind: "figure",
+        figure: fishermanScreening,
+        placement: "wide",
       },
       { kind: "heading", text: "Carrying Culture Forward" },
       {
@@ -331,8 +340,9 @@ export const pressArticles = [
         text: "Representing NCOGA YAY at the forum were Anna Agbotse, MPA, Chair of Public Affairs, and Williams Oppong. Their participation provided an opportunity to listen to professionals and advocates who have spent years working across cancer care, public health, advocacy, community support and women’s health.",
       },
       {
-        kind: "gallery",
-        figures: [healthPanel, healthGroup, healthGuest, healthPortrait],
+        kind: "figure",
+        figure: healthPanel,
+        placement: "right",
       },
       {
         kind: "paragraph",
@@ -353,6 +363,11 @@ export const pressArticles = [
       {
         kind: "paragraph",
         text: "That history made the conversation feel less theoretical.",
+      },
+      {
+        kind: "figure",
+        figure: healthGroup,
+        placement: "left",
       },
       {
         kind: "heading",
@@ -382,6 +397,11 @@ export const pressArticles = [
         kind: "paragraph",
         text: "And eventually, by asking where our own skills may be useful.",
       },
+      {
+        kind: "figure",
+        figure: healthGuest,
+        placement: "right",
+      },
       { kind: "heading", text: "A Conversation That Continues" },
       {
         kind: "paragraph",
@@ -402,6 +422,11 @@ export const pressArticles = [
       {
         kind: "paragraph",
         text: "Those are conversations worth continuing.",
+      },
+      {
+        kind: "figure",
+        figure: healthPortrait,
+        placement: "inset",
       },
       {
         kind: "quote",
