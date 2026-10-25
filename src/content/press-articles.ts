@@ -110,6 +110,14 @@ const fishermanSpotlight: PressImage = {
   height: 1672,
 };
 
+const fishermanScreening: PressImage = {
+  kind: "image",
+  src: "/images/fisherman-1.png",
+  alt: "A conversation on stage at Quad Cinema, with the Quad screen behind the speakers and the audience seated in front.",
+  width: 2400,
+  height: 1800,
+};
+
 const healthPoster: PressImage = {
   kind: "image",
   src: "/images/health-is-wealth-title.PNG",
@@ -140,6 +148,14 @@ const healthGuest: PressImage = {
   alt: "An attendee stands in front of the Health Is Wealth backdrop at the Dorothy’s Hope Foundation forum.",
   width: 1242,
   height: 2208,
+};
+
+const healthPortrait: PressImage = {
+  kind: "image",
+  src: "/images/health-is-wealth.PNG",
+  alt: "An attendee in a dark suit stands before the Health Is Wealth banner at the Dorothy’s Hope Foundation forum.",
+  width: 1824,
+  height: 2280,
 };
 
 const townHallPoster: PressImage = {
@@ -253,7 +269,10 @@ export const pressArticles = [
         kind: "quote",
         text: "It is authentically Ghanaian from beginning to end. You can feel the waves, the atmosphere, the emotion, the hustle, and the joyful presence of the culture in every part of the film. It brings you a little closer to home and reminds you what home feels like.",
       },
-      { kind: "figure", figure: fishermanSpotlight },
+      {
+        kind: "gallery",
+        figures: [fishermanSpotlight, fishermanScreening],
+      },
       { kind: "heading", text: "Carrying Culture Forward" },
       {
         kind: "paragraph",
@@ -313,7 +332,7 @@ export const pressArticles = [
       },
       {
         kind: "gallery",
-        figures: [healthPanel, healthGroup, healthGuest],
+        figures: [healthPanel, healthGroup, healthGuest, healthPortrait],
       },
       {
         kind: "paragraph",

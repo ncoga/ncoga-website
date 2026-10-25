@@ -2,7 +2,7 @@
 
 ## 2026-10-25 — Press graphics, story links, and the missing page
 
-**Completed locally:** Press stories use distinct link lines. The Fisherman, Health Is Wealth, the Presidential Diaspora Town Hall, and the 2027 horizon use the newly supplied graphics. Health Is Wealth includes the forum photographs, and The Fisherman includes the spotlight card. Unknown addresses use an NCOGA 404 with the supplied search animation and highlightable route buttons. The footer credits Nana with a heart, linking to princeagyeituffour.com.
+**Completed locally:** Press stories use distinct link lines. The Fisherman, Health Is Wealth, the Presidential Diaspora Town Hall, and the 2027 horizon use the newly supplied graphics. Health Is Wealth shows the forum photographs two at a time, and The Fisherman includes the spotlight card and the Quad Cinema photograph. Unknown addresses use an NCOGA 404 with the supplied search animation and highlightable route buttons. The footer credits Nana with a heart, linking to princeagyeituffour.com.
 
 **Next:** Review the updated stories, the 404, and the footer, then deploy this version to Vercel.
 

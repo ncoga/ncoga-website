@@ -104,7 +104,7 @@ export function PressBlockView({ block }: { block: PressBlock }) {
             <PressFigure
               key={figure.src}
               figure={figure}
-              sizes="(min-width: 700px) 240px, 100vw"
+              sizes="(min-width: 900px) 360px, 100vw"
             />
           ))}
         </div>
