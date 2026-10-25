@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { MissingAnimation } from "@/components/ncoga/missing-animation";
 import { NcogaChrome } from "@/components/ncoga/ncoga-chrome";
+import { Button } from "@/components/ui/button";
 
 import "@/styles/ncoga-theme.css";
 
@@ -23,7 +25,8 @@ export default function NotFound() {
   return (
     <NcogaChrome>
       <section className="ncoga-missing" aria-labelledby="missing-title">
-        <div className="ncoga-container">
+        <div className="ncoga-container ncoga-missing-copy">
+          <MissingAnimation />
           <p className="ncoga-eyebrow">404</p>
           <h1 id="missing-title" className="ncoga-heading">
             This page is not here.
@@ -34,7 +37,9 @@ export default function NotFound() {
           <ul className="ncoga-missing-links">
             {routes.map((route) => (
               <li key={route.href}>
-                <Link href={route.href}>{route.label}</Link>
+                <Button asChild variant="outline">
+                  <Link href={route.href}>{route.label}</Link>
+                </Button>
               </li>
             ))}
           </ul>
