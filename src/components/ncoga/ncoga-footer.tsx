@@ -64,6 +64,18 @@ export function NcogaFooter({
           <span>
             © {new Date().getFullYear()} {ncogaIdentity.shortName}
           </span>
+          <span className="ncoga-footer-credit">
+            Made with <span aria-hidden="true">❤️</span>
+            <span className="sr-only">love</span> by{" "}
+            <a
+              href="https://princeagyeituffour.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Nana
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </span>
           {preview ? (
             <span>Design foundation preview · not the public NCOGA site</span>
           ) : null}

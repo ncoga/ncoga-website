@@ -95,10 +95,19 @@ test("YAY presents its sourced branch identity, statements, and routes", async (
   await expect(
     main.getByRole("link", { name: "Press & Media" }),
   ).toHaveAttribute("href", "/press");
-  await expect(main.getByRole("link", { name: "Events" })).toHaveAttribute(
-    "href",
-    "/events",
-  );
+  const events = main.getByRole("button", { name: "Events" });
+  await expect(events).toHaveAttribute("aria-expanded", "false");
+  await events.click();
+  await expect(events).toHaveAttribute("aria-expanded", "true");
+  await expect(
+    main.getByRole("link", { name: "NCOGA Events" }),
+  ).toHaveAttribute("href", "/events");
+  await expect(
+    main.getByRole("link", { name: "NCOGA YAY Events" }),
+  ).toHaveAttribute("href", "/ncoga-yay/events");
+  await page.keyboard.press("Escape");
+  await expect(events).toBeFocused();
+  await expect(events).toHaveAttribute("aria-expanded", "false");
   await expect(main.getByRole("link", { name: "Contact" })).toHaveAttribute(
     "href",
     "/contact",
@@ -276,6 +285,18 @@ test("YAY fits required widths and mobile navigation remains keyboard accessible
   await expect(
     mobile.getByRole("link", { name: "Home", exact: true }),
   ).toBeFocused();
+  const events = mobile.getByRole("button", { name: "Events" });
+  await events.click();
+  const ncogaEvents = mobile.getByRole("link", { name: "NCOGA Events" });
+  await expect(ncogaEvents).toHaveAttribute("href", "/events");
+  await expect(
+    mobile.getByRole("link", { name: "NCOGA YAY Events" }),
+  ).toHaveAttribute("href", "/ncoga-yay/events");
+  expect(
+    await ncogaEvents.evaluate((link) => link.getBoundingClientRect().height),
+  ).toBeGreaterThanOrEqual(44);
+  await events.click();
+
   const yay = mobile.getByRole("button", { name: "NCOGA YAY" });
   await yay.click();
   await expect(yay).toHaveAttribute("aria-expanded", "true");
@@ -320,11 +341,39 @@ test("Press, Events, Partner, Programs, and pillars use the September draft", as
   await expect(page.getByText("This section is being prepared.")).toHaveCount(
     0,
   );
-  await expect(page.getByText("Michael Dwamena-Ansong")).toBeVisible();
-  await expect(page.getByText("Anna Agbotse")).toBeVisible();
-  await expect(page.getByText("Zoey Martinson")).toHaveCount(2);
-  await expect(page.getByText("NCOGA YAY membership is free.")).toBeVisible();
   await expect(page.getByText(/\$|fee|dues/i)).toHaveCount(0);
+  await expect(page.locator('a[href*="zoom.us"]')).toHaveCount(0);
+  await expect(page.getByText(/fiscal calendar/i)).toHaveCount(0);
+  await expect(page.locator(".ncoga-hero-wave")).toHaveCount(0);
+  await expect(page.locator(".ncoga-supplied-hero img")).toBeVisible();
+  await expect(page.locator(".ncoga-press-placeholder").first()).toBeVisible();
+  const fisherman = page.getByRole("link", {
+    name: /The Fisherman: Storytelling/,
+  });
+  await expect(fisherman).toHaveAttribute("href", "/press/the-fisherman");
+  await expect(
+    page.getByRole("link", { name: /Restore Ghana/ }),
+  ).toHaveAttribute("href", "/press/restore-ghana");
+
+  await page.goto("/press/the-fisherman");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "The Fisherman",
+  );
+  await expect(page.getByText("Michael Ansong-Dwamena")).toBeVisible();
+  await expect(page.getByText("Anna Agbotse")).toBeVisible();
+  await expect(page.getByText("Zoey Martinson").first()).toBeVisible();
+  await expect(page.getByText("Quad Cinema").first()).toBeVisible();
+  await expect(
+    page.getByText("authentically Ghanaian from beginning to end"),
+  ).toBeVisible();
+
+  await page.goto("/press/health-is-wealth");
+  await expect(page.getByText("Williams Oppong")).toBeVisible();
+  await expect(
+    page.getByText(/Dorothy.s Hope Foundation/).first(),
+  ).toBeVisible();
+
+  await page.goto("/press/restore-ghana");
   const vision = page.getByRole("link", { name: /infn8vzn\.org/ });
   await expect(vision).toHaveAttribute("href", "http://infn8vzn.org");
   await expect(vision).toHaveAttribute("target", "_blank");
@@ -333,22 +382,48 @@ test("Press, Events, Partner, Programs, and pillars use the September draft", as
     page.getByRole("link", { name: /restoreghana\.ca/ }),
   ).toHaveAttribute("href", "http://restoreghana.ca");
   await expect(
+    page.getByText("first approved strategic external partnership"),
+  ).toBeVisible();
+
+  await page.goto("/press/membership-2026-2027");
+  await expect(page.getByText("Membership is free.")).toBeVisible();
+  await expect(page.getByText(/\$|fee|dues/i)).toHaveCount(0);
+  await expect(
     page.getByRole("link", { name: /Become a member/ }),
   ).toHaveAttribute("href", membershipUrl);
+
+  await page.goto("/press/ambassador-program");
   await expect(
-    page.getByRole("link", { name: /Click here to apply\/nominate/ }),
+    page.getByRole("link", {
+      name: /Express interest or nominate an ambassador/,
+    }),
   ).toHaveAttribute("href", "https://forms.gle/U1bRPMErkXgAQqmW8");
+
+  await page.goto("/press/first-general-members-meeting");
   await expect(
-    page.getByRole("link", { name: "Saturday, November 7, 2026 | 6:00 PM ET" }),
-  ).toHaveAttribute("href", "/events");
+    page.getByRole("link", {
+      name: "Saturday, November 7, 2026 | 12:00 noon–1:00 PM EST",
+    }),
+  ).toHaveAttribute("href", "/ncoga-yay/events");
   await expect(page.locator('a[href*="zoom.us"]')).toHaveCount(0);
-  await expect(page.getByText(/fiscal calendar/i)).toHaveCount(0);
-  await expect(page.locator(".ncoga-hero-wave")).toHaveCount(0);
-  await expect(page.locator(".ncoga-supplied-hero img")).toBeVisible();
 
   await page.goto("/events");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Upcoming Events & Meetings.",
+    "NCOGA Events",
+  );
+  await expect(
+    page.getByRole("heading", { name: "Ghana Independence Celebration" }),
+  ).toBeVisible();
+  await expect(page.getByText("March 6, 2027")).toBeVisible();
+  await expect(page.getByText("Details to be announced.")).toBeVisible();
+  await expect(page.locator(".ncoga-supplied-hero")).toHaveCount(0);
+  await expect(
+    page.getByRole("link", { name: "NCOGA YAY Events" }),
+  ).toHaveAttribute("href", "/ncoga-yay/events");
+
+  await page.goto("/ncoga-yay/events");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "NCOGA YAY Events",
   );
   await expect(
     page.getByRole("heading", { name: "Council Leaders Meeting" }),
@@ -362,7 +437,7 @@ test("Press, Events, Partner, Programs, and pillars use the September draft", as
     }),
   ).toBeVisible();
   await expect(
-    page.getByText("Saturday, November 7, 2026 | 6:00 PM ET"),
+    page.getByText("Saturday, November 7, 2026 | 12:00 noon–1:00 PM EST"),
   ).toBeVisible();
   await expect(page.getByText("Virtual via Zoom")).toHaveCount(2);
   await expect(page.getByText("Meeting details coming soon.")).toHaveCount(5);
@@ -444,7 +519,7 @@ test("Press, Events, Partner, Programs, and pillars use the September draft", as
     page.getByRole("link", {
       name: "Community Engagement, Health & Philanthropy Pillar Meeting",
     }),
-  ).toHaveAttribute("href", "/events");
+  ).toHaveAttribute("href", "/ncoga-yay/events");
   await expect(page.getByText("Meeting details coming soon.")).toBeVisible();
   await expect(page.getByRole("button", { name: "Mabel Adu" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Martina Antwi" })).toHaveCount(
