@@ -124,6 +124,10 @@ export const eventsIntro = {
   pastTitle: "Past Events & Engagements",
 } as const;
 
+/** Poster for the first general meeting. Replaces the earlier 6:00 PM ET line. */
+export const generalMembersMeetingWhen =
+  "Saturday, November 7, 2026 | 12:00 noon–1:00 PM EST";
+
 export const upcomingMeetings = [
   {
     title: "Council Leaders Meeting",
@@ -134,7 +138,7 @@ export const upcomingMeetings = [
   },
   {
     title: "NCOGA YAY First General Members Meeting",
-    when: "Saturday, November 7, 2026 | 6:00 PM ET",
+    when: generalMembersMeetingWhen,
     place: "Virtual via Zoom",
     body: "Our first General Members Meeting will bring the NCOGA YAY community together to hear organizational updates, learn what's ahead across our pillars, and explore opportunities to become more involved.",
     audience: "All NCOGA YAY members are encouraged to attend.",
@@ -222,7 +226,7 @@ export const lookingAhead = {
   meetingWhen: "Member Update | November 2026",
   meetingBody:
     "NCOGA YAY members will gather for our First General Members Meeting to hear organizational updates, connect with leadership, learn what's happening across our pillars, and get a closer look at what's ahead.",
-  meetingDate: "Saturday, November 7, 2026 | 6:00 PM ET",
+  meetingDate: generalMembersMeetingWhen,
 } as const;
 
 type PillarSlug = YayPillar["slug"];

@@ -1,22 +1,9 @@
 import Link from "next/link";
 
 import { NcogaSuppliedHero } from "@/components/ncoga/ncoga-page-hero";
-import { Button } from "@/components/ui/button";
-import {
-  ambassadorApplicationUrl,
-  ambassadorProgram,
-  councilPress,
-  fishermanPress,
-  healthPress,
-  infiniteVisionUrl,
-  lookingAhead,
-  membershipPress,
-  pressIntro,
-  restoreGhana,
-  restoreGhanaUrl,
-  townHallPress,
-  yayMembershipUrl,
-} from "@/content/yay-september";
+import { PressStory } from "@/components/ncoga/press-story";
+import { pressArticle } from "@/content/press-articles";
+import { pressIntro } from "@/content/yay-september";
 import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
 const description = pressIntro.paragraphs[0];
@@ -27,21 +14,21 @@ export const metadata = ncogaPageMetadata({
   path: "/press",
 });
 
-function FishermanParagraph({ text }: { text: string }) {
-  const parts = text.split("The Fisherman");
-  return (
-    <p>
-      {parts.map((part, index) => (
-        <span key={`${index}-${part.slice(0, 16)}`}>
-          {index > 0 ? <em>The Fisherman</em> : null}
-          {part}
-        </span>
-      ))}
-    </p>
-  );
-}
+const leadSizes = "(min-width: 900px) 62vw, 100vw";
+const pairSizes = "(min-width: 900px) 36vw, 100vw";
+const rowSizes = "(min-width: 900px) 320px, 100vw";
 
 export default function NcogaPressPage() {
+  const restore = pressArticle("restore-ghana");
+  const fisherman = pressArticle("the-fisherman");
+  const health = pressArticle("health-is-wealth");
+  const townHall = pressArticle("presidential-diaspora-town-hall");
+  const membership = pressArticle("membership-2026-2027");
+  const ambassador = pressArticle("ambassador-program");
+  const council = pressArticle("council-leadership-2026-2027");
+  const horizon = pressArticle("2027-horizon");
+  const meeting = pressArticle("first-general-members-meeting");
+
   return (
     <>
       <NcogaSuppliedHero
@@ -50,16 +37,14 @@ export default function NcogaPressPage() {
         width={2172}
         height={724}
       />
-      <section
-        className="ncoga-section ncoga-editorial"
-        aria-label="Press and Media"
-      >
+      <section className="ncoga-section ncoga-editorial ncoga-press-intro">
         <div className="ncoga-container">
           <nav className="ncoga-about-breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page">Press &amp; Media</span>
           </nav>
+          <h1 className="ncoga-heading">{pressIntro.title}</h1>
           <div className="ncoga-editorial-prose">
             {pressIntro.paragraphs.map((paragraph) => (
               <p key={paragraph} className="ncoga-lead">
@@ -67,71 +52,38 @@ export default function NcogaPressPage() {
               </p>
             ))}
           </div>
+          <PressStory
+            article={restore}
+            className="ncoga-press-lead"
+            heading="h2"
+            priority
+            sizes={leadSizes}
+          />
         </div>
       </section>
 
-      <section
-        className="ncoga-section ncoga-editorial is-sand"
-        aria-labelledby="press-title"
-      >
+      <section className="ncoga-section ncoga-editorial is-sand">
         <div className="ncoga-container">
-          <h1 id="press-title" className="ncoga-heading">
-            {pressIntro.title}
-          </h1>
-          <div className="ncoga-editorial-stack">
-            <article>
-              <h2>{restoreGhana.title}</h2>
-              <p className="ncoga-editorial-kicker">{restoreGhana.announced}</p>
-              {restoreGhana.pressParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-              <p>
-                <a
-                  href={infiniteVisionUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  infn8vzn.org
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-                <span aria-hidden="true"> | </span>
-                <a
-                  href={restoreGhanaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  restoreghana.ca
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              </p>
-            </article>
-            <article>
-              <h2>
-                <em>The Fisherman</em>: Film, Storytelling &amp; the Diaspora
-                Experience
-              </h2>
-              <p className="ncoga-editorial-kicker">{fishermanPress.when}</p>
-              <FishermanParagraph text={fishermanPress.invited} />
-              <FishermanParagraph text={fishermanPress.conversation} />
-              <p>{fishermanPress.themes}</p>
-            </article>
-            <article>
-              <h2>{healthPress.title}</h2>
-              <p className="ncoga-editorial-kicker">{healthPress.when}</p>
-              <p>{healthPress.paragraphs[0]}</p>
-              <p>{healthPress.paragraphs[1]}</p>
-              <p>
-                For NCOGA YAY, the conversation also raised an important
-                question: {healthPress.question}
-              </p>
-              <p>{healthPress.paragraphs[2]}</p>
-            </article>
-            <article>
-              <h2>{townHallPress.title}</h2>
-              <p className="ncoga-editorial-kicker">{townHallPress.when}</p>
-              <p>{townHallPress.body}</p>
-            </article>
+          <div className="ncoga-press-pair">
+            <PressStory
+              article={fisherman}
+              className="ncoga-press-feature"
+              heading="h2"
+              sizes={pairSizes}
+            />
+            <PressStory
+              article={health}
+              className="ncoga-press-feature is-copy-first"
+              heading="h2"
+              sizes={pairSizes}
+            />
           </div>
+          <PressStory
+            article={townHall}
+            className="ncoga-press-row"
+            heading="h2"
+            sizes={rowSizes}
+          />
         </div>
       </section>
 
@@ -143,60 +95,25 @@ export default function NcogaPressPage() {
           <h2 id="from-yay" className="ncoga-heading">
             From NCOGA YAY
           </h2>
-          <div className="ncoga-editorial-stack">
-            <article>
-              <h3>{membershipPress.title}</h3>
-              <p className="ncoga-editorial-kicker">{membershipPress.when}</p>
-              {membershipPress.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-              <p>{membershipPress.free}</p>
-              <div className="ncoga-actions">
-                <Button asChild>
-                  <a
-                    href={yayMembershipUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {membershipPress.action}
-                    <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
-                </Button>
-              </div>
-            </article>
-            <article>
-              <h3>{ambassadorProgram.title}</h3>
-              <p className="ncoga-editorial-kicker">
-                {ambassadorProgram.pressKicker}
-              </p>
-              {ambassadorProgram.pressParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-              <div className="ncoga-actions">
-                <Button asChild>
-                  <a
-                    href={ambassadorApplicationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {ambassadorProgram.applyLabel}
-                    <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
-                </Button>
-                <Button asChild variant="outline">
-                  <Link href="/ncoga-yay/programs#ambassador-program">
-                    Ambassador Program
-                  </Link>
-                </Button>
-              </div>
-            </article>
-            <article>
-              <h3>{councilPress.title}</h3>
-              <p className="ncoga-editorial-kicker">{councilPress.when}</p>
-              <p>{councilPress.body}</p>
-              <p className="ncoga-editorial-kicker">{councilPress.year2026}</p>
-              <p className="ncoga-editorial-kicker">{councilPress.year2027}</p>
-            </article>
+          <div className="ncoga-press-rows">
+            <PressStory
+              article={membership}
+              className="ncoga-press-row"
+              heading="h3"
+              sizes={rowSizes}
+            />
+            <PressStory
+              article={ambassador}
+              className="ncoga-press-row is-reverse"
+              heading="h3"
+              sizes={rowSizes}
+            />
+            <PressStory
+              article={council}
+              className="ncoga-press-row"
+              heading="h3"
+              sizes={rowSizes}
+            />
           </div>
         </div>
       </section>
@@ -207,28 +124,21 @@ export default function NcogaPressPage() {
       >
         <div className="ncoga-container">
           <h2 id="looking-ahead" className="ncoga-heading">
-            {lookingAhead.title}
+            Looking Ahead
           </h2>
-          <div className="ncoga-editorial-stack">
-            <article>
-              <h3>{lookingAhead.horizonTitle}</h3>
-              <p className="ncoga-editorial-kicker">
-                {lookingAhead.horizonWhen}
-              </p>
-              {lookingAhead.horizonParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </article>
-            <article>
-              <h3>{lookingAhead.meetingTitle}</h3>
-              <p className="ncoga-editorial-kicker">
-                {lookingAhead.meetingWhen}
-              </p>
-              <p>{lookingAhead.meetingBody}</p>
-              <p>
-                <Link href="/events">{lookingAhead.meetingDate}</Link>
-              </p>
-            </article>
+          <div className="ncoga-press-rows">
+            <PressStory
+              article={horizon}
+              className="ncoga-press-row"
+              heading="h3"
+              sizes={rowSizes}
+            />
+            <PressStory
+              article={meeting}
+              className="ncoga-press-row is-reverse"
+              heading="h3"
+              sizes={rowSizes}
+            />
           </div>
         </div>
       </section>

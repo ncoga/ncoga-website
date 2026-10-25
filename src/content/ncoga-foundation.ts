@@ -61,7 +61,14 @@ export const homepageNavigation = [
   { label: "Our Programs", href: "/ncoga-yay/programs" },
   { label: "Partner with Us", href: "/ncoga-yay/partner" },
   { label: "Press & Media", href: "/press" },
-  { label: "Events", href: "/events" },
+  {
+    label: "Events",
+    href: "/events",
+    children: [
+      { label: "NCOGA Events", href: "/events" },
+      { label: "NCOGA YAY Events", href: "/ncoga-yay/events" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ] as const satisfies readonly NcogaNavItem[];
 

@@ -207,7 +207,7 @@ export default async function YayPillarPage({ params }: PillarPageProps) {
       <section className="ncoga-section ncoga-editorial">
         <div className="ncoga-container ncoga-editorial-prose">
           <h2>
-            <Link href="/events">{copy.meetingTitle}</Link>
+            <Link href="/ncoga-yay/events">{copy.meetingTitle}</Link>
           </h2>
           <p className="ncoga-editorial-kicker">{pillarMeetingWhen}</p>
           <p>{copy.meetingBody}</p>

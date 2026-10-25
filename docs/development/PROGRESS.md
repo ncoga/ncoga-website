@@ -1,5 +1,17 @@
 # Project progress
 
+## 2026-10-25 — Press graphics, story links, and the missing page
+
+**Completed locally:** Press stories use distinct link lines. The Fisherman, Health Is Wealth, the Presidential Diaspora Town Hall, and the 2027 horizon use the newly supplied graphics. Health Is Wealth includes the forum photographs, and The Fisherman includes the spotlight card. Unknown addresses use an NCOGA 404. The footer credits Nana, with a link to princeagyeituffour.com.
+
+**Next:** Review the updated stories, the 404, and the footer, then deploy this version to Vercel.
+
+## 2026-10-24 — Press articles and split event calendars
+
+**Completed locally:** Press & Media is an editorial index. Each story opens at `/press/[slug]`, using the supplied manuscripts and graphics, with solid-color placeholders where no image was provided. Events is a header menu with NCOGA Events at `/events` and NCOGA YAY Events at `/ncoga-yay/events`. The parent page lists the March 6, 2027 Ghana Independence Celebration as a placeholder. The first general members meeting uses the poster time, 12:00 noon–1:00 PM EST. See the [decision log](DECISION_LOG.md).
+
+**Next:** Review the articles and both event pages, then deploy this version to Vercel.
+
 ## 2026-10-18 — First-version navigation, portraits, and pillar leaders
 
 **Completed locally:** Martina Antwi is hidden. Council photographs use equal square cards, cropped slightly above center so the person stays in frame. Home, Our Programs, and Partner with Us sit in the main navigation. The header and footer use the two marks with a divider. The homepage place label is Headquarters. Internal & Public Affairs leads the YAY focus section. Each pillar page names its council leaders and repeats published program and press copy on alternating ivory, sand, and heritage sections. Events labels the five pillar meetings Coming Soon. The partnership inquiry button label is white.
