@@ -16,7 +16,7 @@ const routes = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/press", label: "Press & Media" },
-  { href: "/events", label: "NCOGA Events" },
+  { href: "/events", label: "Events & Meetings" },
   { href: "/ncoga-yay", label: "NCOGA YAY" },
   { href: "/contact", label: "Contact" },
 ] as const;

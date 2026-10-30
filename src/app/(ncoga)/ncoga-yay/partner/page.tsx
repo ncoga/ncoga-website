@@ -4,8 +4,8 @@ import { NcogaSuppliedHero } from "@/components/ncoga/ncoga-page-hero";
 import { Button } from "@/components/ui/button";
 import { yayPillars } from "@/content/yay-pillars";
 import {
-  becomePartnerUrl,
   partnerIntro,
+  partnershipInquiryLabel,
   partnershipInquiryUrl,
   restoreGhana,
   restoreGhanaUrl,
@@ -15,6 +15,23 @@ import {
 import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
 const description = partnerIntro.paragraphs[0];
+
+function PartnershipInquiryLink() {
+  return (
+    <div className="ncoga-actions">
+      <Button asChild>
+        <a
+          href={partnershipInquiryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {partnershipInquiryLabel}
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
+      </Button>
+    </div>
+  );
+}
 
 export const metadata = ncogaPageMetadata({
   title: "Partner with Us | NCOGA YAY",
@@ -50,6 +67,7 @@ export default function NcogaYayPartnerPage() {
             {partnerIntro.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            <PartnershipInquiryLink />
           </div>
         </div>
       </section>
@@ -78,6 +96,7 @@ export default function NcogaYayPartnerPage() {
               );
             })}
           </ul>
+          <PartnershipInquiryLink />
         </div>
       </section>
 
@@ -96,18 +115,6 @@ export default function NcogaYayPartnerPage() {
           {partnerIntro.exploreParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-          <div className="ncoga-actions">
-            <Button asChild>
-              <a
-                href={partnershipInquiryUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Partnership inquiry form
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -160,18 +167,7 @@ export default function NcogaYayPartnerPage() {
             {partnerIntro.buildTitle}
           </h2>
           <p>{partnerIntro.buildParagraph}</p>
-          <div className="ncoga-actions">
-            <Button asChild>
-              <a
-                href={becomePartnerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Become a partner
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            </Button>
-          </div>
+          <PartnershipInquiryLink />
           <h2 className="ncoga-heading">Questions?</h2>
           <p>
             {partnerIntro.questions}{" "}
