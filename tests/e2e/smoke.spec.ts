@@ -1,7 +1,5 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
-// Only migrated NCOGA routes belong to launch smoke coverage. Copied routes
-// remain available for migration work but are not ready for NCOGA publication.
 const routes = ["/", "/about", "/contact", "/ncoga-yay", "/design-system"];
 
 for (const route of routes) {
@@ -66,38 +64,15 @@ test("NCOGA contact does not expose a copied submission form", async ({
   expect(mutationRequests).toEqual([]);
 });
 
-test("employer validation does not send an empty inquiry", async ({ page }) => {
-  const mutationRequests: string[] = [];
-  page.on("request", (request) => {
-    if (request.method() !== "GET") mutationRequests.push(request.url());
-  });
-
-  await page.goto("/employers/request-talent");
-  await page.getByRole("button", { name: "Submit Employer Inquiry" }).click();
-
-  await expect(page.getByText("Company name is required")).toBeVisible();
-  await expect(page.locator("#industry-error")).toHaveText(
-    "Select an industry",
-  );
-  expect(mutationRequests).toEqual([]);
-});
-
-test("résumé validation does not upload or submit empty data", async ({
+test("a former staffing address uses the NCOGA missing page", async ({
   page,
 }) => {
-  const mutationRequests: string[] = [];
-  page.on("request", (request) => {
-    if (request.method() !== "GET") mutationRequests.push(request.url());
-  });
-
-  await page.goto("/job-seekers/submit-resume");
-  await page.getByRole("button", { name: "Join Our Talent Network" }).click();
-
-  await expect(page.getByText("First name is required")).toBeVisible();
+  const response = await page.goto("/employers");
+  expect(response?.status()).toBe(404);
   await expect(
-    page.getByText("Please confirm we may contact you"),
+    page.getByRole("heading", { name: "This page is not here." }),
   ).toBeVisible();
-  expect(mutationRequests).toEqual([]);
+  await expect(page.getByText("Platinum Staffing")).toHaveCount(0);
 });
 
 test("keyboard users can reveal and use the skip link", async ({ page }) => {

@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 const widths = [320, 375, 430, 768, 1024, 1280, 1440, 1920];
 
