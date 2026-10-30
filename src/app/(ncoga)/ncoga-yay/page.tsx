@@ -6,6 +6,7 @@ import { NcogaYayHeroFilm } from "@/components/ncoga/ncoga-yay-hero-film";
 import { NcogaYayMotion } from "@/components/ncoga/ncoga-yay-motion";
 import { Button } from "@/components/ui/button";
 import { getYayPillar, type YayPillar } from "@/content/yay-pillars";
+import { yayMembershipUrl } from "@/content/yay-september";
 import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
 const yayFocusSlugs = [
@@ -27,8 +28,6 @@ const yayFocusPillars = yayFocusSlugs.map((slug) => {
 const title = "NCOGA Young Adult & Youth | NCOGA YAY";
 const description =
   "Meet NCOGA Young Adult & Youth, the council's branch for young Ghanaians, established in October 2024.";
-const membershipUrl = "https://forms.gle/a1cziJ8JJhDGz96j9";
-
 const mission =
   "To cultivate leadership and foster a sense of unity among young Ghanaians by providing educational resources, cultural awareness, and advocacy opportunities that empower our young adults and youth to enrich our communities.";
 const vision =
@@ -172,6 +171,18 @@ export default function NcogaYayPage() {
               <p>{vision}</p>
             </article>
           </div>
+          <div className="ncoga-actions ncoga-yay-inline-join">
+            <Button asChild>
+              <a
+                href={yayMembershipUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Register to Become a Member
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -206,6 +217,18 @@ export default function NcogaYayPage() {
               </li>
             ))}
           </ul>
+          <div className="ncoga-actions ncoga-yay-inline-join">
+            <Button asChild>
+              <a
+                href={yayMembershipUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Register to Become a Member
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -240,7 +263,11 @@ export default function NcogaYayPage() {
           </p>
           <div className="ncoga-actions">
             <Button asChild>
-              <a href={membershipUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={yayMembershipUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Register to be a member
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>

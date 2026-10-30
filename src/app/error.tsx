@@ -28,8 +28,8 @@ export default function Error({
         We hit an unexpected error
       </h1>
       <p className="text-muted-foreground mt-4">
-        Please try again. If the problem continues, contact Platinum Staffing
-        and we&apos;ll help you from there.
+        Please try again. If the problem continues, write to NCOGA at
+        info@ncoga.com.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Button type="button" onClick={reset}>

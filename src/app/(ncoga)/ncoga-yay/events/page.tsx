@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { NcogaSuppliedHero } from "@/components/ncoga/ncoga-page-hero";
@@ -14,7 +15,7 @@ import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 const description = eventsIntro.lead;
 
 export const metadata = ncogaPageMetadata({
-  title: "NCOGA YAY Events | NCOGA",
+  title: "NCOGA YAY Events & Meetings | NCOGA",
   description,
   path: "/ncoga-yay/events",
 });
@@ -45,23 +46,36 @@ export default function NcogaYayEventsPage() {
           <nav className="ncoga-about-breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span aria-hidden="true">/</span>
-            <span aria-current="page">NCOGA YAY Events</span>
+            <span aria-current="page">NCOGA YAY Events &amp; Meetings</span>
           </nav>
           <p className="ncoga-lead">{eventsIntro.lead}</p>
           <h1 id="events-title" className="ncoga-heading">
-            NCOGA YAY Events
+            NCOGA YAY Events &amp; Meetings
           </h1>
           <h2 className="ncoga-press-section-label">{eventsIntro.title}</h2>
-          <div className="ncoga-editorial-stack">
+          <div className="ncoga-event-list">
             {upcomingMeetings.map((meeting) => (
-              <article key={meeting.title}>
-                <h3>{meeting.title}</h3>
-                <p className="ncoga-editorial-kicker">{meeting.when}</p>
-                <p className="ncoga-editorial-kicker">{meeting.place}</p>
-                <p>{meeting.body}</p>
-                <p>{meeting.audience}</p>
+              <article className="ncoga-event has-figure" key={meeting.title}>
+                <figure className="ncoga-event-figure">
+                  <Image
+                    src={meeting.image.src}
+                    alt={meeting.image.alt}
+                    width={meeting.image.width}
+                    height={meeting.image.height}
+                    sizes="(max-width: 800px) 100vw, 42vw"
+                  />
+                </figure>
+                <div>
+                  <h3>{meeting.title}</h3>
+                  <p className="ncoga-editorial-kicker">{meeting.when}</p>
+                  <p className="ncoga-editorial-kicker">{meeting.place}</p>
+                  <p>{meeting.body}</p>
+                  <p>{meeting.audience}</p>
+                </div>
               </article>
             ))}
+          </div>
+          <div className="ncoga-editorial-stack">
             {yayPillars.map((pillar) => {
               const copy = yaySeptemberBySlug[pillar.slug];
               return (

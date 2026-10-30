@@ -12,17 +12,7 @@ if (!["staging", "production"].includes(deploymentTarget)) {
   process.exit(1);
 }
 
-const requiredVariables = [
-  "NEXT_PUBLIC_SITE_URL",
-  "RESEND_API_KEY",
-  "CONTACT_FROM_EMAIL",
-  "CONTACT_TO_EMAIL",
-  "GOOGLE_SHEETS_SPREADSHEET_ID",
-  "GOOGLE_SERVICE_ACCOUNT_JSON_BASE64",
-  "BLOB_READ_WRITE_TOKEN",
-  "NEXT_PUBLIC_TURNSTILE_SITE_KEY",
-  "TURNSTILE_SECRET_KEY",
-];
+const requiredVariables = ["NEXT_PUBLIC_SITE_URL"];
 
 const missingVariables = requiredVariables.filter(
   (name) => !process.env[name]?.trim(),

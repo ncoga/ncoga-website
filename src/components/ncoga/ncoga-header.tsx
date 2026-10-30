@@ -165,11 +165,7 @@ export function NcogaHeader({
               </Link>
             </>
           ) : (
-            <Link
-              className="ncoga-brand"
-              href={homeHref}
-              aria-label={`${ncogaIdentity.shortName} home`}
-            >
+            <Link className="ncoga-brand" href={homeHref}>
               <span className="ncoga-brand-mark" aria-hidden="true">
                 N
               </span>
