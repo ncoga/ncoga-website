@@ -18,6 +18,8 @@ import {
 } from "@/content/site-announcement";
 
 const storageKey = `ncoga-announcement:${siteAnnouncement.id}`;
+const openAfterLoadMs = 5000;
+const openAfterInteractionMs = 3000;
 
 export function SiteAnnouncement() {
   const pathname = usePathname();
@@ -26,14 +28,47 @@ export function SiteAnnouncement() {
 
   useEffect(() => {
     if (pathname === "/design-system" || !active) return;
+    if (sessionStorage.getItem(storageKey)) return;
 
-    const openAnnouncement = window.setTimeout(() => {
-      if (sessionStorage.getItem(storageKey)) return;
+    let timer = 0;
+    let opened = false;
+
+    const show = () => {
+      if (opened || sessionStorage.getItem(storageKey)) return;
+      opened = true;
       sessionStorage.setItem(storageKey, "shown");
       setOpen(true);
-    }, 0);
+      window.clearTimeout(timer);
+      removeInteractionListeners();
+    };
 
-    return () => window.clearTimeout(openAnnouncement);
+    const schedule = (delay: number) => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(show, delay);
+    };
+
+    const onInteract = () => {
+      removeInteractionListeners();
+      schedule(openAfterInteractionMs);
+    };
+
+    function removeInteractionListeners() {
+      window.removeEventListener("pointerdown", onInteract);
+      window.removeEventListener("keydown", onInteract);
+      window.removeEventListener("wheel", onInteract);
+      window.removeEventListener("touchmove", onInteract);
+    }
+
+    schedule(openAfterLoadMs);
+    window.addEventListener("pointerdown", onInteract);
+    window.addEventListener("keydown", onInteract);
+    window.addEventListener("wheel", onInteract, { passive: true });
+    window.addEventListener("touchmove", onInteract, { passive: true });
+
+    return () => {
+      window.clearTimeout(timer);
+      removeInteractionListeners();
+    };
   }, [active, pathname]);
 
   if (pathname === "/design-system" || !active) return null;

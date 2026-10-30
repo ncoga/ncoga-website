@@ -55,7 +55,7 @@ test("YAY presents its sourced branch identity, statements, and routes", async (
   ).toBeVisible();
   await expect(page.getByText("Getrude Eshun")).toBeVisible();
   await expect(page.getByText("Shumuel Ofosu-Koranteng")).toBeVisible();
-  await expect(page.getByText("Irene Ansong-Dwamena")).toBeVisible();
+  await expect(page.getByText("Irene Dwamena-Ansong")).toBeVisible();
   await expect(page.getByText("Kuukua Abraham")).toBeVisible();
   await expect(
     page.locator(".ncoga-yay-join").getByRole("link", {

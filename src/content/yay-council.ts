@@ -157,12 +157,12 @@ export const yayCouncilLeaders: readonly YayCouncilLeader[] = [
     ],
   },
   {
-    name: "Irene Ansong-Dwamena",
+    name: "Irene Dwamena-Ansong",
     image: "/images/council-leaders/Irene.png",
     width: 1165,
     height: 1350,
     bio: [
-      "Irene Ansong-Dwamena serves as Co-Chair of Internal Affairs for NCOGA YAY, where she focuses on strengthening internal operations, organizational structure, and coordination among council leaders and members. Her role supports efficient processes, effective communication, and the smooth implementation of the organization’s initiatives.",
+      "Irene Dwamena-Ansong serves as Co-Chair of Internal Affairs for NCOGA YAY, where she focuses on strengthening internal operations, organizational structure, and coordination among council leaders and members. Her role supports efficient processes, effective communication, and the smooth implementation of the organization’s initiatives.",
       "Professionally, Irene is an Emergency Room Registered Nurse and holds a Bachelor of Science in Nursing (BSN) from Rutgers University. Her healthcare background brings valuable experience in organization, problem-solving, and teamwork to her leadership role within NCOGA YAY.",
     ],
   },
@@ -208,7 +208,7 @@ export const pillarCouncilLeaders = {
   "internal-public-affairs": [
     "Anna Agbotse, MPA",
     "Kuukua Abraham",
-    "Irene Ansong-Dwamena",
+    "Irene Dwamena-Ansong",
   ],
   education: ["Derrick Dwamena", "Bennet Brown"],
   "public-communications": [

@@ -1,5 +1,13 @@
 # Decision log
 
+## Announcement timing and Irene’s public name — 2026-10-29
+
+**Status:** Implemented locally.
+
+**Decision:** The meeting announcement stays closed when a page loads. It opens five seconds later. A click, tap, key press, or scroll before that opens it three seconds after the interaction instead. A scroll that the browser performs on its own does not count. It still appears once per browser tab, on any public page except the design system, through the end of November 8, 2026, Eastern time. The public name is Irene Dwamena-Ansong, including the biography sentence that names her.
+
+**Reason:** The announcement was opening as soon as the page appeared. The owner corrected Irene’s name.
+
 ## Council cards and biography dialog — 2026-10-29
 
 **Status:** Implemented locally.

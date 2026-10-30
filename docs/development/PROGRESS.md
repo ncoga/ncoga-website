@@ -1,5 +1,9 @@
 # Project progress
 
+## 2026-10-29 — Announcement timing and Irene’s name
+
+**Completed locally:** The meeting announcement waits five seconds after a page loads, or three seconds after the first click, key press, or scroll. Irene’s public name is Irene Dwamena-Ansong.
+
 ## 2026-10-29 — Council cards and biography dialog
 
 **Completed locally:** Biography text sits beside the portrait on a wide screen and below it on a phone. The portrait no longer covers the text. Cards use a heritage top edge, and Bio stays at the foot of each card.

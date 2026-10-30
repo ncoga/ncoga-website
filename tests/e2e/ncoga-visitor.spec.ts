@@ -7,8 +7,13 @@ const announcementKey =
 test("the meeting announcement opens once per tab, including a deep link", async ({
   page,
 }) => {
+  await page.clock.install();
   await page.goto("/press/the-fisherman");
   const dialog = page.getByRole("dialog");
+  await expect(dialog).toHaveCount(0);
+  await page.clock.fastForward(4_000);
+  await expect(dialog).toHaveCount(0);
+  await page.clock.fastForward(2_000);
   await expect(dialog).toBeVisible();
   await expect(
     dialog.getByText(
@@ -40,6 +45,19 @@ test("the meeting announcement opens once per tab, including a deep link", async
   );
   await page.goto("/about");
   await expect(page.getByRole("dialog")).toHaveCount(0);
+});
+
+test("interaction opens the meeting announcement after a short pause", async ({
+  page,
+}) => {
+  await page.clock.install();
+  await page.goto("/about");
+  const dialog = page.getByRole("dialog");
+  await page.keyboard.press("Tab");
+  await page.clock.fastForward(2_000);
+  await expect(dialog).toHaveCount(0);
+  await page.clock.fastForward(2_000);
+  await expect(dialog).toBeVisible();
 });
 
 test("the announcement stays off the design system", async ({ page }) => {
