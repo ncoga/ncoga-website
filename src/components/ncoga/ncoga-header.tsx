@@ -168,7 +168,7 @@ export function NcogaHeader({
             <Link
               className="ncoga-brand"
               href={homeHref}
-              aria-label={`${ncogaIdentity.shortName} home`}
+              aria-label={`${ncogaIdentity.shortName} home, ${ncogaIdentity.name}`}
             >
               <span className="ncoga-brand-mark" aria-hidden="true">
                 N
