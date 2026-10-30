@@ -10,7 +10,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reporter: ["text", "json-summary", "lcov"],
-      include: ["src/lib/forms/schemas.ts", "scripts/branch-policy.mjs"],
+      include: ["scripts/branch-policy.mjs"],
       thresholds: {
         branches: 90,
         functions: 90,

@@ -1,10 +1,10 @@
 import type { YayPillar } from "@/content/yay-pillars";
 
-/** Live membership form already on /ncoga-yay. The quiet-page form URL is not this destination. */
-export const yayMembershipUrl = "https://forms.gle/a1cziJ8JJhDGz96j9";
+/** Membership registration supplied for the YAY page and site announcement. */
+export const yayMembershipUrl = "https://forms.gle/H79ctbo7RD1oLnad8";
 
 export const partnershipInquiryUrl = "https://forms.gle/CWjmYktQ8yTi89YHA";
-export const becomePartnerUrl = "https://forms.gle/JWrXNdEqeB2nuf84A";
+export const partnershipInquiryLabel = "Become a Partner or Supporter";
 export const ambassadorApplicationUrl = "https://forms.gle/U1bRPMErkXgAQqmW8";
 
 export const infiniteVisionUrl = "http://infn8vzn.org";
@@ -19,17 +19,17 @@ export const partnerIntro = {
   ],
   areasIntro:
     "Our work is organized across several pillars, allowing us to connect potential partnerships directly to the area where they can have the greatest impact.",
-  differentTitle: "Have Something Different in Mind?",
+  differentTitle: "One form for every partnership and supporter",
   differentParagraphs: [
-    "Not every partnership fits neatly into one area.",
-    "If your organization has an opportunity, resource, program, event, or idea that you believe could benefit NCOGA YAY members or the broader Ghanaian diaspora, we encourage you to share it with us.",
-    "Our team will review your submission and identify the appropriate pillar or leadership team for further conversation.",
+    "The partnership inquiry form is the route for partnership and support of every kind, including the areas listed above.",
+    "Tell us about your organization and the opportunity you have in mind. Name a pillar when one is the closest fit, and say when an idea spans more than one area.",
+    "Our team reviews each submission and identifies the pillar or leadership team for the next conversation.",
   ],
   exploreTitle: "Let's Explore What's Possible",
   exploreParagraphs: [
-    "Interested in partnering with NCOGA YAY?",
-    "Complete our short Partnership Inquiry Form to tell us about your organization, your proposed partnership, and which NCOGA YAY pillar you believe aligns most closely with the opportunity.",
-    "Submitting an inquiry provides an opportunity for our team to review potential alignment and does not automatically establish a formal partnership.",
+    "Organizations, institutions, businesses, community groups, and individuals can use this form to become a partner or a supporter.",
+    "Complete the Partnership Inquiry Form with your organization, the partnership or support you have in mind, and the NCOGA YAY pillar that fits most closely, if you already know it.",
+    "Submitting an inquiry gives our team a chance to review alignment. It does not by itself create a formal partnership.",
   ],
   actionTitle: "Partnerships in Action",
   actionIntro:
@@ -130,18 +130,30 @@ export const generalMembersMeetingWhen =
 
 export const upcomingMeetings = [
   {
-    title: "Council Leaders Meeting",
-    when: "Friday, November 6, 2026 | 8:00 PM ET",
-    place: "Virtual via Zoom",
-    body: "NCOGA YAY Council Leaders will come together to align around organizational priorities, pillar updates, upcoming initiatives, and preparation for the work ahead.",
-    audience: "Council Leaders Only",
+    title: "Council Leaders Internal Meeting",
+    when: "Friday, November 6, 2026 | 7:00 PM EST",
+    place: "Via Zoom",
+    body: "A focused leadership meeting to review progress, align priorities, and prepare for the next phase of NCOGA YAY’s work.",
+    audience: "For NCOGA YAY Council Leadership only.",
+    image: {
+      src: "/images/council-meeting.png",
+      alt: "Council Leaders Internal Meeting flyer. Friday, November 6, 2026, 7:00 PM EST, via Zoom.",
+      width: 1122,
+      height: 1402,
+    },
   },
   {
-    title: "NCOGA YAY First General Members Meeting",
+    title: "NCOGA YAY First General Membership Meeting",
     when: generalMembersMeetingWhen,
-    place: "Virtual via Zoom",
-    body: "Our first General Members Meeting will bring the NCOGA YAY community together to hear organizational updates, learn what's ahead across our pillars, and explore opportunities to become more involved.",
+    place: "Via Zoom",
+    body: "Join Council Leadership and fellow NCOGA YAY members as the branch comes together as one community.",
     audience: "All NCOGA YAY members are encouraged to attend.",
+    image: {
+      src: "/images/ncoga-yay-first-general-meeting-poster.png",
+      alt: "NCOGA YAY First General Meeting flyer. Saturday, November 7, 2026, 12:00 noon to 1:00 PM EST, via Zoom.",
+      width: 1122,
+      height: 1402,
+    },
   },
 ] as const;
 

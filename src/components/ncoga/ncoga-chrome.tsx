@@ -2,8 +2,10 @@
 
 import { usePathname } from "next/navigation";
 
+import { CookieConsentBar } from "@/components/ncoga/cookie-consent-bar";
 import { NcogaFooter } from "@/components/ncoga/ncoga-footer";
 import { NcogaHeader } from "@/components/ncoga/ncoga-header";
+import { SiteAnnouncement } from "@/components/ncoga/site-announcement";
 import {
   foundationFooterGroups,
   foundationNavigation,
@@ -28,6 +30,8 @@ export function NcogaChrome({ children }: { children: React.ReactNode }) {
         groups={preview ? foundationFooterGroups : homepageFooterGroups}
         preview={preview}
       />
+      <CookieConsentBar />
+      {preview ? null : <SiteAnnouncement />}
     </div>
   );
 }

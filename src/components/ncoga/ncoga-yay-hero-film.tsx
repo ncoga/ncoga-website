@@ -2,6 +2,8 @@
 
 import { useState, useSyncExternalStore } from "react";
 
+import { useCookieConsent } from "@/components/ncoga/use-cookie-consent";
+
 const filmSrc =
   "https://www.youtube-nocookie.com/embed/izmN42dVWBM?autoplay=1&mute=1&playsinline=1&controls=0&rel=0";
 
@@ -46,11 +48,14 @@ export function NcogaYayHeroFilm() {
     motionAllowsAutoplay,
     () => false,
   );
+  const consent = useCookieConsent();
   const [userChoice, setUserChoice] = useState<"auto" | "play" | "pause">(
     "auto",
   );
+  const canEmbed = consent === "accepted";
   const playing =
-    userChoice === "play" || (userChoice === "auto" && motionAllows);
+    canEmbed &&
+    (userChoice === "play" || (userChoice === "auto" && motionAllows));
 
   return (
     <>
@@ -69,13 +74,15 @@ export function NcogaYayHeroFilm() {
           <YayFilmStill />
         )}
       </div>
-      <button
-        type="button"
-        className="ncoga-yay-film-control"
-        onClick={() => setUserChoice(playing ? "pause" : "play")}
-      >
-        {playing ? "Pause" : "Play"}
-      </button>
+      {canEmbed ? (
+        <button
+          type="button"
+          className="ncoga-yay-film-control"
+          onClick={() => setUserChoice(playing ? "pause" : "play")}
+        >
+          {playing ? "Pause" : "Play"}
+        </button>
+      ) : null}
     </>
   );
 }

@@ -135,6 +135,14 @@ export function NcogaFooter({
           <span>
             © {new Date().getFullYear()} {ncogaIdentity.shortName}
           </span>
+          {preview ? (
+            <span>Design foundation preview · not the public NCOGA site</span>
+          ) : (
+            <nav className="ncoga-footer-legal" aria-label="Legal">
+              <Link href="/privacy">Privacy</Link>
+              <Link href="/terms">Terms</Link>
+            </nav>
+          )}
           <span className="ncoga-footer-credit">
             Made with <span aria-hidden="true">❤️</span>
             <span className="sr-only">love</span> by{" "}
@@ -147,9 +155,6 @@ export function NcogaFooter({
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
           </span>
-          {preview ? (
-            <span>Design foundation preview · not the public NCOGA site</span>
-          ) : null}
         </div>
       </div>
     </footer>

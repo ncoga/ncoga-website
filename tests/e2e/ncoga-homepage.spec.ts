@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 const widths = [320, 375, 430, 768, 1024, 1280, 1440, 1920];
 
@@ -105,7 +105,7 @@ test("homepage presents sourced content, metadata, and working actions", async (
   });
   await expect(membership).toHaveAttribute(
     "href",
-    "https://forms.gle/a1cziJ8JJhDGz96j9",
+    "https://forms.gle/H79ctbo7RD1oLnad8",
   );
   await expect(membership).toHaveAttribute("target", "_blank");
   await expect(membership).toHaveAttribute("rel", "noopener noreferrer");

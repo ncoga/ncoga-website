@@ -16,7 +16,7 @@
   --font-mono:
     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Semantic colors (shadcn vocabulary) mapped to the Platinum palette */
+  /* Semantic colors (shadcn vocabulary). NCOGA pages remap these inside .ncoga-theme. */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -67,9 +67,7 @@
 }
 
 :root {
-  /* Brand palette
-     Executive Purple #4B2E83 · Deep Navy #1E2A44 · Platinum Silver #C7CCD6
-     Soft White #F8F9FB · Charcoal #2C2C2C · Emerald #2E8B57 */
+  /* Root interface tokens. Public NCOGA pages remap these inside .ncoga-theme. */
   --background: #f8f9fb;
   --foreground: #2c2c2c;
   --card: #ffffff;

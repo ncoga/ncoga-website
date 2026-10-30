@@ -1,5 +1,25 @@
 # Project progress
 
+## 2026-10-29 — Announcement timing and Irene’s name
+
+**Completed locally:** The meeting announcement waits five seconds after a page loads, or three seconds after the first click, key press, or scroll. Irene’s public name is Irene Dwamena-Ansong.
+
+## 2026-10-29 — Council cards and biography dialog
+
+**Completed locally:** Biography text sits beside the portrait on a wide screen and below it on a phone. The portrait no longer covers the text. Cards use a heritage top edge, and Bio stays at the foot of each card.
+
+## 2026-10-29 — Council biographies and the gala still
+
+**Completed locally:** Every published council card uses the biography supplied on October 29. Irene Ansong-Dwamena and Gaylord Jehu Appiah now have biographies. The Ghana @70 page shows the 2026 highlight still and links out to the video. The meeting announcement offers the WhatsApp channel as a button.
+
+## 2026-10-29 — Visitor next steps
+
+**Completed locally:** Membership links use the new registration form. NCOGA YAY repeats Register to Become a Member after mission and vision and after the five pillars. Leaders with a biography show a Bio cue. The Ambassador flyer sits with that program. Partner with Us offers Become a Partner or Supporter in three places, all on the inquiry form. Events is Events & Meetings, with the three supplied flyers, the flyer time for the November 6 council meeting, and a link to the 2026 gala highlights. A session announcement and an accept/reject cookie bar are on public pages. Privacy and terms are published and linked from the footer. The copied staffing site is removed.
+
+**Flagged:** Homepage and About mission and vision still use the current statements. They need a parent-NCOGA review before any rewrite. Privacy and terms need an organizational read before they are treated as counsel-approved. Mission 50,000 and Community Beach Day still need their graphics.
+
+**Next:** Review the visitor paths in the browser, then deploy this version to Vercel.
+
 ## 2026-10-25 — Editorial article column
 
 **Completed locally:** Press articles use one centered reading column. Text stays left-aligned. The Fisherman and Health Is Wealth photographs sit in the story instead of a two-up gallery.

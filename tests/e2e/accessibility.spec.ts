@@ -1,20 +1,18 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 const routes = [
   "/",
   "/about",
-  "/about/our-story",
-  "/employers",
-  "/employers/temporary-staffing",
-  "/employers/request-talent",
-  "/industries/manufacturing",
-  "/job-seekers",
-  "/job-seekers/submit-resume",
-  "/jobs",
-  "/resources/workforce-insights",
   "/contact",
-  "/contact/schedule-consultation",
+  "/ncoga-yay",
+  "/ncoga-yay/programs",
+  "/ncoga-yay/partner",
+  "/ncoga-yay/events",
+  "/events",
+  "/press",
+  "/privacy",
+  "/terms",
 ];
 
 for (const route of routes) {

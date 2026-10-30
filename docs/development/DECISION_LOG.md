@@ -1,5 +1,39 @@
 # Decision log
 
+## Announcement timing and Irene’s public name — 2026-10-29
+
+**Status:** Implemented locally.
+
+**Decision:** The meeting announcement stays closed when a page loads. It opens five seconds later. A click, tap, key press, or scroll before that opens it three seconds after the interaction instead. A scroll that the browser performs on its own does not count. It still appears once per browser tab, on any public page except the design system, through the end of November 8, 2026, Eastern time. The public name is Irene Dwamena-Ansong, including the biography sentence that names her.
+
+**Reason:** The announcement was opening as soon as the page appeared. The owner corrected Irene’s name.
+
+## Council cards and biography dialog — 2026-10-29
+
+**Status:** Implemented locally.
+
+**Decision:** Each council card keeps one square portrait, a heritage top edge, and a Bio label at the foot of the card. The biography dialog keeps the portrait in the page flow: beside the text on a wide screen, and above the text on a narrow screen. The biography scrolls inside the dialog. The photograph no longer sits on top of the text.
+
+**Reason:** Opening a biography hid part of the text behind the portrait. The owner asked for that overlap to be removed and for the cards and dialog to be easier to read.
+
+## Council biographies and the 2026 gala still — 2026-10-29
+
+**Status:** Implemented locally.
+
+**Decision:** Council cards use the biographies supplied on October 29, 2026. The public names follow those biographies: Anna Agbotse, MPA; Tizard Ofori Twum Carlton; Dr. Elizabeth Ameke; Irene Ansong-Dwamena; and Gaylord Jehu Appiah. Irene and Gaylord now have biographies, so their cards show Bio. The Ghana @70 listing shows the 2026 gala highlight still, saved on this site, and links out to the video. The meeting announcement’s WhatsApp action is a button, with a line that the channel carries update messages from council leaders.
+
+**Reason:** The owner supplied the biographies and asked for the highlight still and a WhatsApp button on the announcement.
+
+## Visitor paths, announcement, and the copied site — 2026-10-29
+
+**Status:** Implemented locally. The organization should read the privacy and terms pages before treating them as counsel-approved.
+
+**Decision:** Membership registration now uses the form at forms.gle/H79ctbo7RD1oLnad8. Partnership and supporter inquiries, including the listed pillar areas, use the existing inquiry form only. The header item is Events & Meetings. The November 6 council listing follows the supplied flyer: Friday, November 6, 2026, 7:00 PM EST, via Zoom, council leadership only. That replaces the earlier 8:00 PM ET line. The March 6, 2027 gala uses the supplied flyer facts and links out to the 2026 highlight video. A reusable announcement covers the November 7 general meeting through the end of November 8, 2026, Eastern time, once per browser tab. A first-party preference cookie records Accept or Reject; the YAY film stays on its still until Accept. Privacy and terms describe what this site does. The copied staffing site is removed.
+
+**Left unchanged:** Homepage and About mission and vision stay as published. Stakeholders asked for a parent-NCOGA review of that wording. YAY’s own statements stay separate. Five Pillars descriptions, council biographies, and the existing town hall card stay until replacement copy and graphics arrive. Mission 50,000 and Community Beach Day have no supplied graphics in the repository, so those figures are not shown.
+
+**Reason:** The owner asked for clearer membership, partnership, and event actions, a temporary meeting announcement, cookie choice, NCOGA legal pages, and removal of the copied site.
+
 ## Editorial article measure — 2026-10-25
 
 **Status:** Implemented locally.

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { NcogaHomeMotion } from "@/components/ncoga/ncoga-home-motion";
+import { yayMembershipUrl } from "@/content/yay-september";
 import { yayPillars } from "@/content/yay-pillars";
 import { ncogaPageMetadata } from "@/lib/ncoga-metadata";
 
@@ -33,8 +34,6 @@ const organization = {
     addressCountry: "US",
   },
 };
-
-const yayMembershipUrl = "https://forms.gle/a1cziJ8JJhDGz96j9";
 
 const focusAreas = [
   {

@@ -77,7 +77,7 @@ export const homepageNavigation = [
   { label: "Partner with Us", href: "/ncoga-yay/partner" },
   { label: "Press & Media", href: "/press" },
   {
-    label: "Events",
+    label: "Events & Meetings",
     href: "/events",
     children: [
       { label: "NCOGA Events", href: "/events" },
