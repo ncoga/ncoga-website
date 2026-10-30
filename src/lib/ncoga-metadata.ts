@@ -2,24 +2,53 @@ import type { Metadata } from "next";
 
 export const ncogaOrigin = "https://ncoga.com";
 
-const previewImage = {
+const sitePreview = {
   url: "/og-metadata.jpg",
   width: 1200,
   height: 675,
   alt: "National Council of Ghanaian Associations",
-  type: "image/jpeg",
 } as const;
+
+export type NcogaShareImage = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
+function imageType(url: string) {
+  const lower = url.toLowerCase();
+  if (lower.endsWith(".png")) return "image/png";
+  if (lower.endsWith(".webp")) return "image/webp";
+  if (lower.endsWith(".gif")) return "image/gif";
+  return "image/jpeg";
+}
 
 export function ncogaPageMetadata({
   title,
   description,
   path,
+  image,
 }: {
   title: string;
   description: string;
   path: string;
+  /** Omit to keep the homepage card. Pass null when this route has an opengraph-image file. */
+  image?: NcogaShareImage | null;
 }): Metadata {
   const url = path === "/" ? `${ncogaOrigin}/` : `${ncogaOrigin}${path}`;
+  const shareImage = image === undefined ? sitePreview : image;
+  const images = shareImage
+    ? [
+        {
+          url: shareImage.url,
+          width: shareImage.width,
+          height: shareImage.height,
+          alt: shareImage.alt,
+          type: imageType(shareImage.url),
+        },
+      ]
+    : undefined;
 
   return {
     metadataBase: new URL(ncogaOrigin),
@@ -45,13 +74,13 @@ export function ncogaPageMetadata({
       siteName: "NCOGA",
       title,
       description,
-      images: [previewImage],
+      ...(images ? { images } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [previewImage.url],
+      ...(shareImage ? { images: [shareImage.url] } : {}),
     },
   };
 }

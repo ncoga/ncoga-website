@@ -18,6 +18,7 @@ export const metadata = ncogaPageMetadata({
   title: "NCOGA YAY Events & Meetings | NCOGA",
   description,
   path: "/ncoga-yay/events",
+  image: null,
 });
 
 function FishermanText({ text }: { text: string }) {

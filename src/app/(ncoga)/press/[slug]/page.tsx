@@ -28,10 +28,22 @@ export async function generateMetadata({
   const article = getPressArticle(slug);
   if (!article) return {};
 
+  const figure = article.heroFigure;
+
   return ncogaPageMetadata({
     title: `${article.title} | NCOGA`,
     description: article.description,
     path: `/press/${article.slug}`,
+    ...(figure.kind === "image"
+      ? {
+          image: {
+            url: figure.src,
+            width: figure.width,
+            height: figure.height,
+            alt: figure.alt,
+          },
+        }
+      : {}),
   });
 }
 

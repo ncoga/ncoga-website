@@ -10,6 +10,7 @@ export const metadata = ncogaPageMetadata({
   title,
   description,
   path: "/privacy",
+  image: null,
 });
 
 export default function PrivacyPage() {

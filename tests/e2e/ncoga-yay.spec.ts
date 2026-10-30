@@ -362,6 +362,51 @@ test("Press, Events, Partner, Programs, and pillars use the September draft", as
   await expect(
     page.getByRole("link", { name: /Restore Ghana/ }),
   ).toHaveAttribute("href", "/press/restore-ghana");
+  await expect(page.locator(".ncoga-press-lead")).toHaveAttribute(
+    "href",
+    "/press/we-are-all-javits-frimpong",
+  );
+
+  await page.goto("/press/we-are-all-javits-frimpong");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "We Are All Javits Frimpong",
+  );
+  await expect(page.getByText("He’s my everything.")).toBeVisible();
+  const sources = [
+    [
+      "News 12 Bronx",
+      "https://bronx.news12.com/2026/10/30/teen-dies-after-shooting-in-claremont-section-of-the-bronx-police-looking-for-3-people/MMEY8UNWKfjtw0nIMvzw3",
+    ],
+    ["FOX 5 New York", "https://www.fox5ny.com/video/fmc-cqmchjuwqfnm01ds"],
+    [
+      "Graphic Online",
+      "https://www.graphic.com.gh/international/international-news/video-hes-my-everything-father-mourns-ghanaian-son-killed-in-bronx-shooting.html",
+    ],
+    ["NCOGA YAY on Instagram", "https://www.instagram.com/p/DfHtX99Dudc/"],
+  ] as const;
+  for (const [label, href] of sources) {
+    const link = page.getByRole("link", { name: label });
+    await expect(link).toHaveAttribute("href", href);
+    await expect(link).toHaveAttribute("target", "_blank");
+    await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  }
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    "content",
+    /we-are-javits-frimpong\.PNG/,
+  );
+
+  await page.goto("/about");
+  const aboutImages = await page
+    .locator('meta[property="og:image"]')
+    .evaluateAll((nodes) =>
+      nodes.map((node) => node.getAttribute("content") ?? ""),
+    );
+  expect(
+    aboutImages.some((src) => src.includes("/about/opengraph-image")),
+  ).toBe(true);
+  expect(aboutImages.some((src) => src.includes("og-metadata.jpg"))).toBe(
+    false,
+  );
 
   await page.goto("/press/the-fisherman");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(

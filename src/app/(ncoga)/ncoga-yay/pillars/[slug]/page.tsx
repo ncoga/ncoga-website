@@ -65,6 +65,7 @@ export async function generateMetadata({
     title: `${pillar.name} | NCOGA YAY`,
     description: pillar.detail,
     path: `/ncoga-yay/pillars/${pillar.slug}`,
+    image: null,
   });
 }
 

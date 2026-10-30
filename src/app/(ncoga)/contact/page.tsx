@@ -10,6 +10,7 @@ export const metadata = ncogaPageMetadata({
   title,
   description,
   path: "/contact",
+  image: null,
 });
 
 export default function NcogaContactPage() {

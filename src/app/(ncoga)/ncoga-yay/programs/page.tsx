@@ -21,6 +21,7 @@ export const metadata = ncogaPageMetadata({
   title: "Our Programs | NCOGA YAY",
   description,
   path: "/ncoga-yay/programs",
+  image: null,
 });
 
 export default function NcogaYayProgramsPage() {

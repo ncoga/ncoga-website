@@ -37,6 +37,7 @@ export const metadata = ncogaPageMetadata({
   title,
   description,
   path: "/ncoga-yay",
+  image: null,
 });
 
 function AccountMark() {
