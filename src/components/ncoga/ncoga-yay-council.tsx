@@ -55,60 +55,88 @@ export function NcogaYayCouncil({ names }: { names?: readonly string[] }) {
                   </span>
                 )}
                 <span className="ncoga-yay-leader-name">{leader.name}</span>
+                {leader.bio ? (
+                  <span className="ncoga-yay-leader-bio">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <circle
+                        cx="12"
+                        cy="8"
+                        r="3.25"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                      />
+                      <path
+                        d="M5.5 19.2c1.3-2.8 3.5-4.2 6.5-4.2s5.2 1.4 6.5 4.2"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    Bio
+                  </span>
+                ) : null}
               </button>
             </DialogTrigger>
             <DialogContent
-              className="ncoga-yay-leader-dialog rounded-[4px] bg-[var(--ncoga-ivory)] text-[var(--ncoga-ink)] sm:max-w-md"
+              className="ncoga-yay-leader-dialog flex max-h-[min(88dvh,760px)] flex-col gap-0 overflow-hidden rounded-[4px] bg-[#faf8f2] p-0 text-[#171c19] sm:max-w-3xl"
               showCloseButton={false}
             >
-              <DialogHeader>
+              <DialogHeader className="ncoga-yay-leader-dialog-header">
                 <DialogTitle>{leader.name}</DialogTitle>
               </DialogHeader>
-              {leader.image && leader.width && leader.height ? (
-                <span className="ncoga-yay-leader-frame is-portrait">
-                  <Image
-                    className="ncoga-yay-leader-photo"
-                    src={leader.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 640px) 90vw, 420px"
-                    style={
-                      leader.photoPosition
-                        ? { objectPosition: leader.photoPosition }
-                        : undefined
-                    }
-                  />
-                </span>
-              ) : null}
-              {leader.bio ? (
-                <DialogDescription asChild>
-                  <div className="ncoga-yay-leader-note">
-                    {leader.bio.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                    {leader.link ? (
-                      <p>
-                        {leader.link.lead}{" "}
-                        <a
-                          href={leader.link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {leader.link.label}
-                          <span className="sr-only"> (opens in a new tab)</span>
-                        </a>
-                      </p>
-                    ) : null}
-                  </div>
-                </DialogDescription>
-              ) : (
-                <DialogDescription className="ncoga-yay-leader-note">
-                  {unpublishedCouncilBiography}
-                </DialogDescription>
-              )}
+              <div className="ncoga-yay-leader-dialog-body">
+                {leader.image && leader.width && leader.height ? (
+                  <figure className="ncoga-yay-leader-portrait">
+                    <Image
+                      className="ncoga-yay-leader-dialog-photo"
+                      src={leader.image}
+                      alt=""
+                      width={leader.width}
+                      height={leader.height}
+                      sizes="(max-width: 700px) 100vw, 200px"
+                      style={
+                        leader.photoPosition
+                          ? { objectPosition: leader.photoPosition }
+                          : undefined
+                      }
+                    />
+                  </figure>
+                ) : null}
+                {leader.bio ? (
+                  <DialogDescription asChild>
+                    <div className="ncoga-yay-leader-note">
+                      {leader.bio.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                      {leader.link ? (
+                        <p>
+                          {leader.link.lead}{" "}
+                          <a
+                            href={leader.link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {leader.link.label}
+                            <span className="sr-only">
+                              {" "}
+                              (opens in a new tab)
+                            </span>
+                          </a>
+                        </p>
+                      ) : null}
+                    </div>
+                  </DialogDescription>
+                ) : (
+                  <DialogDescription className="ncoga-yay-leader-note">
+                    {unpublishedCouncilBiography}
+                  </DialogDescription>
+                )}
+              </div>
               <DialogFooter
                 showCloseButton
-                className="mx-0 mt-2 mb-0 rounded-none border-[var(--ncoga-stone)] bg-transparent px-0 pt-4 pb-0"
+                className="ncoga-yay-leader-dialog-footer mx-0 mb-0 rounded-none border-[#dcd8cc] bg-transparent px-6 py-4"
               />
             </DialogContent>
           </Dialog>
