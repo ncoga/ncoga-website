@@ -10,6 +10,7 @@ export const metadata = ncogaPageMetadata({
   title,
   description,
   path: "/terms",
+  image: null,
 });
 
 export default function TermsPage() {

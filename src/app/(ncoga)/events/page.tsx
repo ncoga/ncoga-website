@@ -13,6 +13,7 @@ export const metadata = ncogaPageMetadata({
   title: "NCOGA Events & Meetings | NCOGA",
   description,
   path: "/events",
+  image: null,
 });
 
 export default function NcogaEventsPage() {
