@@ -177,6 +177,14 @@ const horizonGraphic: PressImage = {
   height: 1024,
 };
 
+const javitsGraphic: PressImage = {
+  kind: "image",
+  src: "/images/we-are-javits-frimpong.PNG",
+  alt: "NCOGA Young Adult and Youth graphic. We Are All Javits Frimpong. A reflection on immigrant transition, safety, and community support, with the Ghana flag, books, and the New York skyline.",
+  width: 1254,
+  height: 1254,
+};
+
 const meetingPoster: PressImage = {
   kind: "image",
   src: "/images/ncoga-yay-first-general-meeting-poster.png",
@@ -897,6 +905,317 @@ export const pressArticles = [
             label: generalMembersMeetingWhen,
             external: false,
             variant: "outline",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "we-are-all-javits-frimpong",
+    title:
+      "We Are All Javits Frimpong: Remembering His Life, Rethinking How We Welcome Our Own.",
+    kicker: "In remembrance",
+    when: "October 30, 2026",
+    dek: "Remembering a young Ghanaian life and reflecting on the immigrant experience, the sacrifices of our families, and our responsibility to the next generation.",
+    linkLabel: "Read the reflection",
+    description:
+      "Remembering a young Ghanaian life and reflecting on the immigrant experience, the sacrifices of our families, and our responsibility to the next generation.",
+    indexFigure: javitsGraphic,
+    heroFigure: javitsGraphic,
+    blocks: [
+      {
+        kind: "paragraph",
+        text: "On October 29, 2026, 15-year-old Javits Frimpong, a young Ghanaian who had moved to the United States just a year earlier, was tragically shot and killed in the Bronx, New York, while reportedly making his way to school.",
+      },
+      {
+        kind: "paragraph",
+        text: "Javits had come to America to join his father, Thomas Frimpong, with the hope of building a better future. Instead, a journey that began with sacrifice, separation, and the promise of opportunity ended in unimaginable tragedy.",
+      },
+      {
+        kind: "paragraph",
+        text: "According to reports from News 12 Bronx and other media outlets, Javits attended DreamYard Preparatory School and had reportedly experienced repeated bullying. His father revealed that the school principal had recently contacted him about an incident involving two students who were subsequently suspended.",
+      },
+      {
+        kind: "paragraph",
+        text: "Speaking to reporters about the loss of his son, Mr. Frimpong said:",
+      },
+      {
+        kind: "quote",
+        text: "He’s my everything.",
+      },
+      {
+        kind: "paragraph",
+        text: "In those few words, we are reminded that this was not simply another tragic headline. This was someone’s son. Someone’s entire world. A young Ghanaian whose future was still being written.",
+      },
+      { kind: "heading", text: "We Were All Once Javits Frimpong" },
+      {
+        kind: "paragraph",
+        text: "For many of us who arrived in the United States as children, Javits’ story cuts deeper than words can explain.",
+      },
+      {
+        kind: "paragraph",
+        text: "We remember what it meant to arrive in a country where almost everything was unfamiliar.",
+      },
+      {
+        kind: "paragraph",
+        text: "We had to learn a new educational system, adjust our vocabulary, understand cultural differences, navigate unfamiliar expectations, and somehow find our place in a society we were still trying to understand.",
+      },
+      {
+        kind: "paragraph",
+        text: "And we were children.",
+      },
+      {
+        kind: "paragraph",
+        text: "At an age when we should have been concerned with friendships, schoolwork, and discovering ourselves, many of us were quietly doing the difficult work of learning how to belong.",
+      },
+      {
+        kind: "paragraph",
+        text: "We wanted to fit in, but not necessarily to be noticed. Because sometimes, being noticed brought attention we did not know how to handle. And that attention was not always praise or encouragement. Sometimes, it came with ridicule, rejection, or even danger.",
+      },
+      {
+        kind: "paragraph",
+        text: "For many of us, silence became a form of protection.",
+      },
+      {
+        kind: "paragraph",
+        text: "One of our NCOGA YAY leaders recalls spending nearly two years of her early experience in the United States hiding in the school library during lunch. Not because she was being bullied in that space, but because the environment was so unfamiliar that even navigating the cafeteria felt overwhelming.",
+      },
+      {
+        kind: "paragraph",
+        text: "The library became a place where she could exist without having to explain herself.",
+      },
+      {
+        kind: "paragraph",
+        text: "She also experienced bullying during her transition, and her teachers intervened. Her experience was not identical to Javits’, but it reflects the quiet struggles many immigrant children face while learning to navigate a new society.",
+      },
+      {
+        kind: "paragraph",
+        text: "In Javits’ case, his father reported that school leadership was aware of a bullying incident and had taken disciplinary action. Yet the tragedy that followed raises difficult questions about how we support young people, respond to their concerns, and ensure they feel safe.",
+      },
+      {
+        kind: "paragraph",
+        text: "Because learning to belong should never mean learning to survive alone.",
+      },
+      {
+        kind: "heading",
+        text: "Behind Every Immigrant Child Is a Family That Sacrificed",
+      },
+      {
+        kind: "paragraph",
+        text: "There is another part of Javits’ story that deserves our attention: his father.",
+      },
+      {
+        kind: "paragraph",
+        text: "For many Ghanaian immigrant families, reunification is not a simple journey.",
+      },
+      {
+        kind: "paragraph",
+        text: "We remember the years spent apart from our parents. The phone calls. The financial sacrifices. The paperwork. The uncertainty of when we would see each other again.",
+      },
+      {
+        kind: "paragraph",
+        text: "Our parents did not simply bring us to America. Many spent years working toward the possibility of holding us again, raising us under the same roof, and giving us opportunities they hoped would change our futures.",
+      },
+      {
+        kind: "paragraph",
+        text: "That sacrifice came at a cost.",
+      },
+      {
+        kind: "paragraph",
+        text: "It meant long working hours, missed milestones, emotional distance, and decisions that many of us would not fully understand until adulthood.",
+      },
+      {
+        kind: "paragraph",
+        text: "Like many immigrant parents, Mr. Frimpong worked to create a better future for his child. According to media reports, he worked as a taxi driver and had reunited with Javits in the United States just one year earlier.",
+      },
+      {
+        kind: "paragraph",
+        text: "One of our organization’s leaders recalls her mother leaving early for work, sometimes leaving her to navigate an unfamiliar environment independently. Her mother’s frequent reminder was simple:",
+      },
+      {
+        kind: "quote",
+        text: "Don’t go outside. It’s not safe.",
+      },
+      {
+        kind: "paragraph",
+        text: "There was love in that warning. There was fear. There was the understanding that a parent could not always be physically present to protect their child.",
+      },
+      {
+        kind: "paragraph",
+        text: "Now imagine doing everything you can to protect your child, only to lose that child on an ordinary morning when he was simply trying to get to school.",
+      },
+      {
+        kind: "paragraph",
+        text: "What happens to those years of sacrifice? What happens to the dreams that brought a family across an ocean? What happens to the future a parent worked so hard to make possible?",
+      },
+      {
+        kind: "paragraph",
+        text: "For the Frimpong family, those questions now carry a weight that no parent should ever have to endure.",
+      },
+      {
+        kind: "heading",
+        text: "What Does It Truly Mean to Welcome an Immigrant Child?",
+      },
+      {
+        kind: "paragraph",
+        text: "Javits’ death raises painful questions about bullying, school safety, gun violence, and the responsibility of institutions to protect young people.",
+      },
+      {
+        kind: "paragraph",
+        text: "But for our Ghanaian diaspora community, it must also raise a broader question:",
+      },
+      {
+        kind: "paragraph",
+        text: "What resources exist to support a child who arrives in this country and must learn an entirely new way of life?",
+      },
+      {
+        kind: "paragraph",
+        text: "We often celebrate the opportunities immigration creates. We speak about education, economic mobility, professional growth, and the promise of a better future.",
+      },
+      {
+        kind: "paragraph",
+        text: "But how often do we discuss the work it takes for a child to access those opportunities?",
+      },
+      {
+        kind: "paragraph",
+        text: "Who helps them understand the school system? Who helps them navigate unfamiliar social environments? Who recognizes when their silence is not comfort, but confusion? Who ensures that parents working long hours know where to turn for support?",
+      },
+      {
+        kind: "paragraph",
+        text: "And when a child reports feeling unsafe, how do we ensure those concerns are heard and appropriately addressed?",
+      },
+      {
+        kind: "paragraph",
+        text: "These questions remind us that access to opportunity is not the same as having the support necessary to succeed within it.",
+      },
+      {
+        kind: "paragraph",
+        text: "We need accessible resources, meaningful parent engagement, trusted community connections, and safe spaces where young immigrants can ask questions, share their experiences, and find guidance.",
+      },
+      {
+        kind: "paragraph",
+        text: "A child should not have to figure everything out alone simply because their family made the courageous decision to pursue a better future.",
+      },
+      {
+        kind: "heading",
+        text: "We Cannot Allow This to Become Another Forgotten Story",
+      },
+      {
+        kind: "paragraph",
+        text: "The death of Javits Frimpong has left a painful mark on the Ghanaian diaspora community.",
+      },
+      {
+        kind: "paragraph",
+        text: "For many of us, the grief feels personal, even though we never met him.",
+      },
+      {
+        kind: "paragraph",
+        text: "Because we recognize something of ourselves in his story.",
+      },
+      {
+        kind: "paragraph",
+        text: "We remember being the new child. The quiet student. The one learning how to pronounce words differently. The one trying to understand the cafeteria, the classroom, the friendships, and the unspoken rules of a society we had only recently entered.",
+      },
+      {
+        kind: "paragraph",
+        text: "We remember the parents who worked long hours and sacrificed so much for us to be here.",
+      },
+      {
+        kind: "paragraph",
+        text: "And we recognize how differently our own stories might have unfolded.",
+      },
+      {
+        kind: "paragraph",
+        text: "We were all once Javits Frimpong. The difference is that we are still here to tell our stories.",
+      },
+      {
+        kind: "paragraph",
+        text: "That realization must move us beyond mourning.",
+      },
+      {
+        kind: "paragraph",
+        text: "We must continue to demand justice for Javits and accountability for those responsible for his death. We must also support a thorough investigation into the circumstances surrounding the shooting, including the bullying concerns raised by his father, without assuming a connection that has not yet been established.",
+      },
+      {
+        kind: "paragraph",
+        text: "But justice must also inspire us to consider how we can better protect the children who are still here.",
+      },
+      {
+        kind: "paragraph",
+        text: "As young Ghanaians who have navigated similar experiences, we have a responsibility to help shape a better pathway for those who come after us.",
+      },
+      {
+        kind: "paragraph",
+        text: "A pathway where newly arrived Ghanaian children and their families can find information, support, community, and opportunities without having to navigate every challenge in isolation.",
+      },
+      {
+        kind: "paragraph",
+        text: "A pathway where young people can grow, contribute, and build meaningful lives in the United States while remaining connected to their heritage and the future of Ghana.",
+      },
+      {
+        kind: "paragraph",
+        text: "A pathway where the next generation does not have to choose between fitting in and feeling safe.",
+      },
+      { kind: "heading", text: "To Javits and the Frimpong Family" },
+      {
+        kind: "paragraph",
+        text: "To Mr. Thomas Frimpong and the entire Frimpong family, we extend our deepest condolences.",
+      },
+      {
+        kind: "paragraph",
+        text: "No words can restore the life of your son or ease the pain of a future that has been taken from you.",
+      },
+      {
+        kind: "paragraph",
+        text: "Javits was more than the circumstances of his death. He was a child with a family, a history, dreams, and a future that deserved the opportunity to unfold.",
+      },
+      {
+        kind: "paragraph",
+        text: "His life mattered long before his name became a headline.",
+      },
+      {
+        kind: "paragraph",
+        text: "As a community, we mourn with you. We stand with you in the call for justice, and we recognize the responsibility this moment places before us.",
+      },
+      {
+        kind: "paragraph",
+        text: "We cannot change what happened to Javits. But we can work toward changing what the next young immigrant experiences when they arrive.",
+      },
+      {
+        kind: "paragraph",
+        text: "Because every child who comes to this country deserves more than the promise of opportunity.",
+      },
+      {
+        kind: "paragraph",
+        text: "They deserve the safety, support, and freedom to live long enough to realize it.",
+      },
+      {
+        kind: "paragraph",
+        text: "We are all Javits Frimpong. The only difference is that we are still alive.",
+      },
+      {
+        kind: "paragraph",
+        text: "May Javits Frimpong rest in peace.",
+      },
+      { kind: "heading", text: "Sources and Reporting" },
+      {
+        kind: "links",
+        links: [
+          {
+            href: "https://bronx.news12.com/2026/10/30/teen-dies-after-shooting-in-claremont-section-of-the-bronx-police-looking-for-3-people/MMEY8UNWKfjtw0nIMvzw3",
+            label: "News 12 Bronx",
+          },
+          {
+            href: "https://www.fox5ny.com/video/fmc-cqmchjuwqfnm01ds",
+            label: "FOX 5 New York",
+          },
+          {
+            href: "https://www.graphic.com.gh/international/international-news/video-hes-my-everything-father-mourns-ghanaian-son-killed-in-bronx-shooting.html",
+            label: "Graphic Online",
+          },
+          {
+            href: "https://www.instagram.com/p/DfHtX99Dudc/",
+            label: "NCOGA YAY on Instagram",
           },
         ],
       },

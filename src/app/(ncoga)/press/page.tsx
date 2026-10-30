@@ -12,6 +12,7 @@ export const metadata = ncogaPageMetadata({
   title: "Press & Media | NCOGA",
   description,
   path: "/press",
+  image: null,
 });
 
 const leadSizes = "(min-width: 900px) 62vw, 100vw";
@@ -19,6 +20,7 @@ const pairSizes = "(min-width: 900px) 36vw, 100vw";
 const rowSizes = "(min-width: 900px) 320px, 100vw";
 
 export default function NcogaPressPage() {
+  const remembrance = pressArticle("we-are-all-javits-frimpong");
   const restore = pressArticle("restore-ghana");
   const fisherman = pressArticle("the-fisherman");
   const health = pressArticle("health-is-wealth");
@@ -53,7 +55,7 @@ export default function NcogaPressPage() {
             ))}
           </div>
           <PressStory
-            article={restore}
+            article={remembrance}
             className="ncoga-press-lead"
             heading="h2"
             priority
@@ -64,6 +66,12 @@ export default function NcogaPressPage() {
 
       <section className="ncoga-section ncoga-editorial is-sand">
         <div className="ncoga-container">
+          <PressStory
+            article={restore}
+            className="ncoga-press-row"
+            heading="h2"
+            sizes={rowSizes}
+          />
           <div className="ncoga-press-pair">
             <PressStory
               article={fisherman}

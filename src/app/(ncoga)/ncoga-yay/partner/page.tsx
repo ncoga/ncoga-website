@@ -37,6 +37,7 @@ export const metadata = ncogaPageMetadata({
   title: "Partner with Us | NCOGA YAY",
   description,
   path: "/ncoga-yay/partner",
+  image: null,
 });
 
 export default function NcogaYayPartnerPage() {

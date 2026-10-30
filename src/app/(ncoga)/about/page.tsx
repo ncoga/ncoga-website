@@ -14,6 +14,7 @@ export const metadata = ncogaPageMetadata({
   title,
   description,
   path: "/about",
+  image: null,
 });
 
 const historyNotes = [
