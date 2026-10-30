@@ -14,6 +14,8 @@ const publicRoutes = [
   "/press",
   "/events",
   "/ncoga-yay/events",
+  "/privacy",
+  "/terms",
   ...pressArticles.map((article) => `/press/${article.slug}`),
   ...yayPillars.map((pillar) => `/ncoga-yay/pillars/${pillar.slug}`),
 ];
