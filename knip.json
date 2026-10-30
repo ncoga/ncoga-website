@@ -3,15 +3,15 @@
   "entry": ["src/app/**/*.{ts,tsx}", "tests/**/*.ts", "scripts/**/*.mjs"],
   "project": ["src/**/*.{ts,tsx}", "tests/**/*.ts", "scripts/**/*.mjs"],
   "ignore": [
-    "src/components/brand/brand-graphic.tsx",
-    "src/components/layout/coming-soon.tsx",
-    "src/components/sections/resources-teaser.tsx",
-    "src/components/sections/trusted-by.tsx",
+    "src/content/editorial-types.ts",
+    "src/components/ui/accordion.tsx",
     "src/components/ui/checkbox.tsx",
+    "src/components/ui/input.tsx",
+    "src/components/ui/label.tsx",
     "src/components/ui/radio-group.tsx",
     "src/components/ui/select.tsx",
-    "src/content/employers.ts",
-    "src/content/editorial-types.ts"
+    "src/components/ui/sheet.tsx",
+    "src/components/ui/textarea.tsx"
   ],
   "ignoreDependencies": [
     "@secretlint/secretlint-rule-preset-recommend",

@@ -6,17 +6,10 @@ import { describe, expect, it } from "vitest";
 const srcRoot = join(process.cwd(), "src");
 
 /**
- * Files that may name Pennsylvania as one of the three states served, as a
- * sample job location, or in counsel-review legal copy. Marketing copy must
- * use the tri-state framing instead of treating Pennsylvania as the whole
- * service area.
+ * Files that may name Pennsylvania. Public NCOGA copy should not treat
+ * Pennsylvania as a service area.
  */
-const allowedPennsylvania = new Set([
-  "content/site.ts",
-  "content/faqs.ts",
-  "content/jobs/index.ts",
-  "app/(marketing)/privacy/page.tsx",
-]);
+const allowedPennsylvania = new Set<string>([]);
 
 const allowedPaAbbreviation = new Set<string>([]);
 
