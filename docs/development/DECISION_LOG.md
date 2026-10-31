@@ -1,5 +1,13 @@
 # Decision log
 
+## Family support on the Javits Frimpong remembrance — 2026-10-30
+
+**Status:** Implemented locally.
+
+**Decision:** The remembrance closes with the owner-supplied campaign card for Support for Javits Frimpong’s Family, organized by Tracy Boampong, and a link to `https://gofund.me/4c5d5f9ba`. The note says NCOGA stands with the family and asks readers who are able to donate. It does not say NCOGA organized the campaign, and it does not repeat the goal amount shown on the card.
+
+**Reason:** The owner asked the article to share the family’s loss and point people to the fundraiser.
+
 ## Share previews and the Javits Frimpong remembrance — 2026-10-30
 
 **Status:** Implemented locally.

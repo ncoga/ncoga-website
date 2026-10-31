@@ -185,6 +185,14 @@ const javitsGraphic: PressImage = {
   height: 1254,
 };
 
+const javitsFundraiser: PressImage = {
+  kind: "image",
+  src: "/images/gofundme-javits-frimpong.PNG",
+  alt: "GoFundMe campaign card for Support for Javits Frimpong\u2019s Family, organized by Tracy Boampong.",
+  width: 1080,
+  height: 1920,
+};
+
 const meetingPoster: PressImage = {
   kind: "image",
   src: "/images/ncoga-yay-first-general-meeting-poster.png",
@@ -1196,6 +1204,27 @@ export const pressArticles = [
       {
         kind: "paragraph",
         text: "May Javits Frimpong rest in peace.",
+      },
+      {
+        kind: "figure",
+        figure: javitsFundraiser,
+        placement: "inset",
+      },
+      { kind: "heading", text: "Support the Frimpong Family" },
+      {
+        kind: "paragraph",
+        text: "NCOGA stands with the Frimpong family. Tracy Boampong is organizing Support for Javits Frimpong\u2019s Family so people can help the family directly. If you are able, please donate.",
+      },
+      {
+        kind: "actions",
+        actions: [
+          {
+            href: "https://gofund.me/4c5d5f9ba",
+            label: "Donate now",
+            external: true,
+            variant: "default",
+          },
+        ],
       },
       { kind: "heading", text: "Sources and Reporting" },
       {
