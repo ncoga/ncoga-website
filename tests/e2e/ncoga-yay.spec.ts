@@ -390,6 +390,15 @@ test("Press, Events, Partner, Programs, and pillars use the September draft", as
     await expect(link).toHaveAttribute("target", "_blank");
     await expect(link).toHaveAttribute("rel", "noopener noreferrer");
   }
+  const donate = page.getByRole("link", { name: "Donate now" });
+  await expect(donate).toHaveAttribute("href", "https://gofund.me/4c5d5f9ba");
+  await expect(donate).toHaveAttribute("target", "_blank");
+  await expect(donate).toHaveAttribute("rel", "noopener noreferrer");
+  await expect(
+    page.getByText(
+      "Tracy Boampong is organizing Support for Javits Frimpong\u2019s Family",
+    ),
+  ).toBeVisible();
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
     "content",
     /we-are-javits-frimpong\.PNG/,
