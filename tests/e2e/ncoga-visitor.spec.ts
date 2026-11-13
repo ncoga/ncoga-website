@@ -1,13 +1,17 @@
 import { expect, test } from "@playwright/test";
 
+import { expect as fixtureExpect, test as fixtureTest } from "./fixtures";
+
 const membershipUrl = "https://forms.gle/H79ctbo7RD1oLnad8";
 const announcementKey =
   "ncoga-announcement:yay-first-general-meeting-2026-11-07";
+/** Keep announcement tests inside the configured Eastern window. */
+const announcementActiveAt = new Date("2026-11-08T12:00:00-05:00");
 
 test("the meeting announcement opens once per tab, including a deep link", async ({
   page,
 }) => {
-  await page.clock.install();
+  await page.clock.install({ time: announcementActiveAt });
   await page.goto("/press/the-fisherman");
   const dialog = page.getByRole("dialog");
   await expect(dialog).toHaveCount(0);
@@ -50,7 +54,7 @@ test("the meeting announcement opens once per tab, including a deep link", async
 test("interaction opens the meeting announcement after a short pause", async ({
   page,
 }) => {
-  await page.clock.install();
+  await page.clock.install({ time: announcementActiveAt });
   await page.goto("/about");
   const dialog = page.getByRole("dialog");
   await page.keyboard.press("Tab");
@@ -61,28 +65,35 @@ test("interaction opens the meeting announcement after a short pause", async ({
 });
 
 test("the announcement stays off the design system", async ({ page }) => {
+  await page.clock.install({ time: announcementActiveAt });
   await page.goto("/design-system");
   await expect(page.getByRole("dialog")).toHaveCount(0);
 });
 
-test("rejecting cookies keeps the YAY film on its still", async ({ page }) => {
-  await page.goto("/ncoga-yay");
-  await page.getByRole("button", { name: "Close" }).click();
-  await expect(page.locator(".ncoga-yay-film iframe")).toHaveCount(0);
-  await page.getByRole("button", { name: "Reject" }).click();
-  await expect(page.locator(".ncoga-yay-film iframe")).toHaveCount(0);
-  await expect(page.locator(".ncoga-yay-film-still")).toBeVisible();
-  await expect(page.getByRole("button", { name: "Accept" })).toHaveCount(0);
-});
+fixtureTest(
+  "rejecting cookies keeps the YAY film on its still",
+  async ({ page }) => {
+    await page.goto("/ncoga-yay");
+    await fixtureExpect(page.locator(".ncoga-yay-film iframe")).toHaveCount(0);
+    await page.getByRole("button", { name: "Reject" }).click();
+    await fixtureExpect(page.locator(".ncoga-yay-film iframe")).toHaveCount(0);
+    await fixtureExpect(page.locator(".ncoga-yay-film-still")).toBeVisible();
+    await fixtureExpect(
+      page.getByRole("button", { name: "Accept" }),
+    ).toHaveCount(0);
+  },
+);
 
-test("accepting cookies loads the YAY film from YouTube", async ({ page }) => {
-  await page.goto("/ncoga-yay");
-  await page.getByRole("button", { name: "Close" }).click();
-  await page.getByRole("button", { name: "Accept" }).click();
-  const frame = page.locator(".ncoga-yay-film iframe");
-  await expect(frame).toBeVisible();
-  await expect(frame).toHaveAttribute(
-    "src",
-    /youtube-nocookie\.com\/embed\/izmN42dVWBM/,
-  );
-});
+fixtureTest(
+  "accepting cookies loads the YAY film from YouTube",
+  async ({ page }) => {
+    await page.goto("/ncoga-yay");
+    await page.getByRole("button", { name: "Accept" }).click();
+    const frame = page.locator(".ncoga-yay-film iframe");
+    await fixtureExpect(frame).toBeVisible();
+    await fixtureExpect(frame).toHaveAttribute(
+      "src",
+      /youtube-nocookie\.com\/embed\/izmN42dVWBM/,
+    );
+  },
+);
