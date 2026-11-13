@@ -47,6 +47,11 @@ updates:
       timezone: America/Chicago
     cooldown:
       default-days: 7
+    groups:
+      # CodeQL init/analyze must share one action version or the job fails.
+      codeql-action:
+        patterns:
+          - github/codeql-action*
     labels:
       - dependencies
       - ci
